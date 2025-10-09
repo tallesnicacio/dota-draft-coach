@@ -49,4 +49,4 @@ export interface HeroBuild {
 }
 
 export type MMRBucket = 'Herald-Crusader' | 'Archon-Legend' | 'Ancient-Divine' | 'Immortal';
-export type Patch = '7.37' | '7.36' | '7.35';
+export type Patch = '7.39e' | '7.39d' | '7.39c' | '7.39b' | '7.39a' | '7.39' | '7.38' | '7.37';

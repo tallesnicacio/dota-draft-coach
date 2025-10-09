@@ -25,7 +25,7 @@ export const useBuildStore = create<BuildState>((set) => ({
   allies: [],
   enemies: [],
   currentBuild: null,
-  patch: '7.37',
+  patch: '7.39e',
   mmrBucket: 'Ancient-Divine',
   
   setSelectedHero: (hero) => set({ selectedHero: hero }),

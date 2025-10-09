@@ -18,9 +18,14 @@ export const FiltersBar = ({ patch, mmrBucket, onPatchChange, onMMRChange }: Fil
             <SelectValue />
           </SelectTrigger>
           <SelectContent className="bg-popover border-border">
+            <SelectItem value="7.39e">7.39e</SelectItem>
+            <SelectItem value="7.39d">7.39d</SelectItem>
+            <SelectItem value="7.39c">7.39c</SelectItem>
+            <SelectItem value="7.39b">7.39b</SelectItem>
+            <SelectItem value="7.39a">7.39a</SelectItem>
+            <SelectItem value="7.39">7.39</SelectItem>
+            <SelectItem value="7.38">7.38</SelectItem>
             <SelectItem value="7.37">7.37</SelectItem>
-            <SelectItem value="7.36">7.36</SelectItem>
-            <SelectItem value="7.35">7.35</SelectItem>
           </SelectContent>
         </Select>
       </div>
