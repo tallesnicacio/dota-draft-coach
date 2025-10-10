@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+yarn.lock
+pnpm-lock.yaml
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Build outputs
+dist/
+build/
+*.tsbuildinfo
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Testing
+coverage/
+
+# PWA
+dev-dist/
+sw.js
+workbox-*.js
+
+# Backups
+*-backup-*/
+*.backup
+
+# Vite
+.vite/
+vite.config.*.timestamp-*
