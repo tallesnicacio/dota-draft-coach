@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useBuildStore } from '@/store/buildStore';
 import { FiltersBar } from '@/components/FiltersBar';
 import { TeamDraft } from '@/components/TeamDraft';
@@ -7,11 +7,15 @@ import { SkillsPanel } from '@/components/SkillsPanel';
 import { MatchupsPanel } from '@/components/MatchupsPanel';
 import { ConfidenceBadge } from '@/components/ConfidenceBadge';
 import { HeroPicker } from '@/components/HeroPicker';
+import { GameTimer } from '@/components/timers/GameTimer';
 import { mockBuild } from '@/data/mockData';
 import { Button } from '@/components/ui/button';
-import { Sparkles, Trash2 } from 'lucide-react';
+import { Drawer, DrawerContent, DrawerTrigger } from '@/components/ui/drawer';
+import { Sparkles, Trash2, Clock } from 'lucide-react';
 
 const Index = () => {
+  const [isTimerOpen, setIsTimerOpen] = useState(false);
+  
   const {
     selectedHero,
     allies,
@@ -46,7 +50,7 @@ const Index = () => {
   ].filter(Boolean) as string[];
 
   return (
-    <div className="min-h-screen pb-12">
+    <div className="min-h-screen pb-24">
       {/* Header */}
       <header className="border-b border-border/50 bg-card/30 backdrop-blur-md sticky top-0 z-10">
         <div className="container mx-auto px-4 py-6">
@@ -150,6 +154,21 @@ const Index = () => {
           </>
         )}
       </div>
+
+      {/* FAB - Botão Flutuante para Timers */}
+      <Drawer open={isTimerOpen} onOpenChange={setIsTimerOpen}>
+        <DrawerTrigger asChild>
+          <Button
+            size="lg"
+            className="fixed bottom-6 right-6 h-14 w-14 rounded-full shadow-lg z-50 glow-primary"
+          >
+            <Clock className="h-6 w-6" />
+          </Button>
+        </DrawerTrigger>
+        <DrawerContent className="h-[85vh]">
+          <GameTimer />
+        </DrawerContent>
+      </Drawer>
     </div>
   );
 };
