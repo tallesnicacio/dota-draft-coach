@@ -356,6 +356,9 @@ git log --oneline        # Histórico de commits
 - `FIX_NOTES.md` - Histórico de correções
 - `MATCHUP_IMAGES_FIX.md` - Fix específico de imagens
 - `PROJECT_STATUS.md` - Este arquivo
+- `LIVE_MODE_ARCHITECTURE.md` - Arquitetura completa do Live Mode
+- `LIVE_MODE_IMPLEMENTATION.md` - Testes, troubleshooting e rollout
+- `LIVE_MODE_PROGRESS.md` - **Tracking de progresso do desenvolvimento**
 
 ---
 
