@@ -88,6 +88,14 @@ router.post(
         return;
       }
 
+      // Broadcast to WebSocket clients if not a duplicate
+      let wsBroadcastCount = 0;
+      if (result.broadcast) {
+        // Import wsServer dynamically to avoid circular dependency
+        const { wsServer } = await import('../server.js');
+        wsBroadcastCount = wsServer.broadcastSnapshot(snapshot);
+      }
+
       gsiLogger.info(
         {
           matchId,
@@ -95,19 +103,18 @@ router.post(
           heroName,
           gameTime,
           broadcast: result.broadcast,
+          wsBroadcastCount,
           processingTime: Date.now() - startTime,
         },
         'GSI snapshot processed'
       );
-
-      // TODO Phase 3: Broadcast to WebSocket clients
-      // wsServer.broadcast({ type: 'snapshot', data: snapshot });
 
       // Return success
       res.status(200).json({
         success: true,
         sessionId: result.sessionId,
         broadcast: result.broadcast,
+        wsBroadcastCount,
         timestamp: snapshot.t,
       });
     } catch (error) {
@@ -148,6 +155,31 @@ router.get('/gsi/stats', (req: Request, res: Response) => {
     },
     timestamp: new Date().toISOString(),
   });
+});
+
+/**
+ * GET /ws/stats
+ *
+ * Returns WebSocket statistics (connections, rooms, etc.)
+ * Useful for monitoring and debugging
+ */
+router.get('/ws/stats', async (req: Request, res: Response) => {
+  try {
+    // Import wsServer dynamically
+    const { wsServer } = await import('../server.js');
+    const stats = wsServer.getStats();
+
+    res.json({
+      success: true,
+      stats,
+      timestamp: new Date().toISOString(),
+    });
+  } catch (error) {
+    res.status(500).json({
+      error: 'Failed to get WebSocket stats',
+      message: error instanceof Error ? error.message : String(error),
+    });
+  }
 });
 
 export default router;

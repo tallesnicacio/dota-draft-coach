@@ -1,8 +1,8 @@
 # Live Mode - Development Progress
 
 **Última atualização:** 2025-10-10
-**Branch atual:** `feature/live-mode-phase-2`
-**Status:** 🟢 Fase 1 & 2 Completas | Fase 3 Pendente
+**Branch atual:** `feature/live-mode-phase-3`
+**Status:** 🟢 Fase 1, 2 & 3 Completas | Fase 4 Pendente
 
 ---
 
@@ -12,7 +12,7 @@
 |------|--------|---------|--------|------|
 | **Fase 1: Backend Foundation** | ✅ **COMPLETA** | 1 | 57/57 ✓ | 2025-10-10 |
 | **Fase 2: API Endpoint** | ✅ **COMPLETA** | 1 | 70/70 ✓ | 2025-10-10 |
-| **Fase 3: WebSocket Server** | ⏳ Pendente | 0 | - | - |
+| **Fase 3: WebSocket Server** | ✅ **COMPLETA** | 1 | 88/88 ✓ | 2025-10-10 |
 | **Fase 4: Frontend Client** | ⏳ Pendente | 0 | - | - |
 | **Fase 5: UI Components** | ⏳ Pendente | 0 | - | - |
 | **Fase 6: Recommendation Fusion** | ⏳ Pendente | 0 | - | - |
@@ -20,7 +20,7 @@
 | **Fase 8: Documentation** | ⏳ Pendente | 0 | - | - |
 | **Fase 9: Beta Release** | ⏳ Pendente | 0 | - | - |
 
-**Progresso total:** 22% (2/9 fases)
+**Progresso total:** 33% (3/9 fases)
 
 ---
 
@@ -174,33 +174,97 @@ TBD feat(backend): Phase 2 - GSI endpoint with auth, rate limiting & validation
 
 ---
 
-## ⏳ Fase 3: WebSocket Server - PRÓXIMA
+## ✅ Fase 3: WebSocket Server - CONCLUÍDA
 
-### 🎯 Objetivos
-- [ ] Criar WebSocket server (ws library)
-- [ ] Room management (por matchId)
-- [ ] Broadcast de snapshots
-- [ ] Connection authentication
-- [ ] Heartbeat/ping-pong
-- [ ] Reconnection handling
-- [ ] Integration com POST /gsi
-- [ ] Unit tests
+### 🎯 Objetivos Alcançados
+- [x] Criar WebSocket server (ws library)
+- [x] Room management (por matchId)
+- [x] Broadcast de snapshots
+- [x] Connection authentication
+- [x] Heartbeat/ping-pong
+- [x] Reconnection handling (via timeout detection)
+- [x] Integration com POST /gsi
+- [x] Unit tests (18 test cases no RoomManager)
+- [x] Endpoint GET /ws/stats para monitoramento
 
-### 📦 Arquivos a Criar
+### 📦 Arquivos Criados
 ```
 backend/src/
 ├── websocket/
-│   ├── server.ts                ~200 linhas
-│   ├── RoomManager.ts           ~150 linhas
+│   ├── types.ts                        135 linhas
+│   ├── server.ts                       434 linhas
+│   ├── RoomManager.ts                  258 linhas
 │   └── __tests__/
-│       └── server.test.ts       ~250 linhas
+│       └── RoomManager.test.ts         280 linhas
 ```
 
-### ⏱️ Estimativa
-3–4 dias de desenvolvimento
+### 🧪 Testes
+- **Total:** 88 testes passando (+18 novos)
+- **RoomManager:** 18 tests ✓
+  - ✅ Room creation
+  - ✅ Client subscription/unsubscription
+  - ✅ Room queries
+  - ✅ Broadcasting (com exclusão)
+  - ✅ Statistics
+  - ✅ Cleanup (empty + TTL)
+
+### 📝 Commit
+```
+TBD feat(backend): Phase 3 - WebSocket server with rooms, auth & heartbeat
++1,107 linhas em 4 arquivos
+```
+
+### ⚙️ Funcionalidades Implementadas
+
+#### WebSocket Server (LiveWebSocketServer)
+- ✅ **Anexado ao HTTP server** via ws library
+- ✅ **Path:** `/ws` para conexões WebSocket
+- ✅ **Autenticação:** Token-based (WS_AUTH_TOKEN env)
+- ✅ **Heartbeat:** Ping/pong a cada 30s (configurável)
+- ✅ **Timeout:** Desconecta clients inativos após 60s
+- ✅ **Graceful shutdown:** SIGTERM handling
+
+#### Protocol (Client → Server)
+- ✅ `auth`: Autenticação com token
+- ✅ `subscribe`: Inscrever em matchId
+- ✅ `unsubscribe`: Sair do match
+- ✅ `ping`: Manual ping do client
+
+#### Protocol (Server → Client)
+- ✅ `auth_response`: Resultado da autenticação
+- ✅ `subscribe_response`: Confirmação de inscrição
+- ✅ `snapshot`: Game state update (broadcast)
+- ✅ `pong`: Resposta ao ping
+- ✅ `error`: Mensagens de erro
+
+#### RoomManager
+- ✅ **Rooms por matchId:** Isolamento de broadcasts
+- ✅ **Subscribe/Unsubscribe:** Gerenciamento dinâmico
+- ✅ **Broadcast seletivo:** Com opção de excluir cliente
+- ✅ **Cleanup automático:** Empty rooms + TTL (10min)
+- ✅ **Statistics:** Rooms, clients, activity
+
+#### Integration com POST /gsi
+- ✅ **Broadcast automático:** Quando novo snapshot (não duplicado)
+- ✅ **Async import:** Evita circular dependency
+- ✅ **Retorna wsBroadcastCount:** Quantos clients receberam
+
+#### Servidor HTTP
+- ✅ **Lazy initialization:** WS server só inicia quando necessário
+- ✅ **Test-friendly:** Não inicia em NODE_ENV=test
+- ✅ **Graceful shutdown:** Fecha WS e HTTP corretamente
+
+### 📌 Notas
+- Auth token pode ser `WS_AUTH_TOKEN` ou `GSI_AUTH_TOKEN` (fallback)
+- Se nenhum token configurado, aceita todas conexões (dev mode)
+- WebSocket usa heartbeat nativo (ws.ping/pong)
+- Rooms são limpas automaticamente após 10min de inatividade
+- Broadcast retorna contagem de mensagens enviadas
 
 ### 🔗 Dependências
 - ✅ Fase 1 & 2 completas
+- ✅ uuid para client IDs
+- ✅ ws library (WebSocket)
 
 ---
 
@@ -209,7 +273,7 @@ backend/src/
 ```
 [✅] Fase 1: Backend Foundation        (3 dias)  ━━━━━━━━━━ 2025-10-10
 [✅] Fase 2: API Endpoint               (3 dias)  ━━━━━━━━━━ 2025-10-10
-[  ] Fase 3: WebSocket Server           (4 dias)  ━━━━━━━━━━ 2025-10-17 (estimado)
+[✅] Fase 3: WebSocket Server           (4 dias)  ━━━━━━━━━━ 2025-10-10
 [  ] Fase 4: Frontend Client            (3 dias)  ━━━━━━━━━━ 2025-10-20 (estimado)
 [  ] Fase 5: UI Components              (3 dias)  ━━━━━━━━━━ 2025-10-23 (estimado)
 [  ] Fase 6: Recommendation Fusion      (4 dias)  ━━━━━━━━━━ 2025-10-27 (estimado)
@@ -367,11 +431,11 @@ Co-Authored-By: Claude <noreply@anthropic.com>
 ## 🔄 Última Ação Realizada
 
 **Data:** 2025-10-10
-**Ação:** Completada Fase 2 - API Endpoint
-**Branch:** `feature/live-mode-phase-2` (a ser criada)
+**Ação:** Completada Fase 3 - WebSocket Server
+**Branch:** `feature/live-mode-phase-3` (a ser criada)
 **Commit:** Pendente
-**Testes:** 70/70 ✓ (+13 novos)
-**Próximo passo:** Commit Fase 2 → Iniciar Fase 3 (WebSocket Server)
+**Testes:** 88/88 ✓ (+18 novos)
+**Próximo passo:** Commit Fase 3 → Iniciar Fase 4 (Frontend Client)
 
 ---
 
@@ -416,5 +480,9 @@ git checkout -b feature/live-mode-phase-2
 - ✅ Middlewares: auth, rate limit, validation (Zod)
 - ✅ Structured logging com Pino
 - ✅ POST /gsi e GET /gsi/stats endpoints
+- ✅ Fase 3 implementada e testada (88 tests total)
+- ✅ WebSocket server com rooms por matchId
+- ✅ RoomManager com broadcast seletivo
+- ✅ Integration com POST /gsi (auto-broadcast)
 
-**Próxima sessão:** Fazer commit da Fase 2 → Implementar Fase 3 (WebSocket Server)
+**Próxima sessão:** Fazer commit da Fase 3 → Implementar Fase 4 (Frontend Client)
