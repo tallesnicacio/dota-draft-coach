@@ -1363,5 +1363,752 @@
       "lastUpdated": "2025-10-10T00:32:42.399Z",
       "confidence": 0.559948500216801
     }
+  },
+  "hero:18:patch:7.39e:mmr:4000": {
+    "hero": "Sven",
+    "heroId": 18,
+    "patch": "7.39e",
+    "mmr": 4000,
+    "coreBuild": {
+      "starting": [
+        {
+          "itemId": 16,
+          "itemName": "item_16",
+          "priority": 0.39799999999999996,
+          "pickRate": 0.16
+        },
+        {
+          "itemId": 11,
+          "itemName": "item_11",
+          "priority": 0.37429999999999997,
+          "pickRate": 0.081
+        },
+        {
+          "itemId": 44,
+          "itemName": "clarity",
+          "priority": 0.3692,
+          "pickRate": 0.064
+        },
+        {
+          "itemId": 13,
+          "itemName": "item_13",
+          "priority": 0.3656,
+          "pickRate": 0.052
+        },
+        {
+          "itemId": 20,
+          "itemName": "item_20",
+          "priority": 0.3644,
+          "pickRate": 0.048
+        },
+        {
+          "itemId": 34,
+          "itemName": "item_34",
+          "priority": 0.36319999999999997,
+          "pickRate": 0.044
+        }
+      ],
+      "early": [
+        {
+          "itemId": 29,
+          "itemName": "item_29",
+          "priority": 0.3937,
+          "pickRate": 0.099
+        },
+        {
+          "itemId": 63,
+          "itemName": "Black King Bar",
+          "priority": 0.3931,
+          "pickRate": 0.097
+        },
+        {
+          "itemId": 26,
+          "itemName": "item_26",
+          "priority": 0.39189999999999997,
+          "pickRate": 0.093
+        },
+        {
+          "itemId": 3,
+          "itemName": "broadsword",
+          "priority": 0.38739999999999997,
+          "pickRate": 0.078
+        },
+        {
+          "itemId": 172,
+          "itemName": "item_172",
+          "priority": 0.3817,
+          "pickRate": 0.059
+        }
+      ],
+      "mid": [
+        {
+          "itemId": 21,
+          "itemName": "item_21",
+          "priority": 0.4124,
+          "pickRate": 0.138
+        },
+        {
+          "itemId": 3,
+          "itemName": "broadsword",
+          "priority": 0.4061,
+          "pickRate": 0.117
+        },
+        {
+          "itemId": 252,
+          "itemName": "item_252",
+          "priority": 0.4019,
+          "pickRate": 0.103
+        },
+        {
+          "itemId": 1,
+          "itemName": "Blink Dagger",
+          "priority": 0.3986,
+          "pickRate": 0.092
+        },
+        {
+          "itemId": 5,
+          "itemName": "claymore",
+          "priority": 0.3923,
+          "pickRate": 0.071
+        }
+      ],
+      "situational": [],
+      "luxury": [
+        {
+          "itemId": 51,
+          "itemName": "item_51",
+          "priority": 0.3936,
+          "pickRate": 0.052
+        },
+        {
+          "itemId": 141,
+          "itemName": "Nullifier",
+          "priority": 0.3912,
+          "pickRate": 0.044
+        },
+        {
+          "itemId": 939,
+          "itemName": "item_939",
+          "priority": 0.3885,
+          "pickRate": 0.035
+        },
+        {
+          "itemId": 53,
+          "itemName": "item_53",
+          "priority": 0.3858,
+          "pickRate": 0.026
+        },
+        {
+          "itemId": 156,
+          "itemName": "Arcane Blink",
+          "priority": 0.3855,
+          "pickRate": 0.025
+        }
+      ]
+    },
+    "skillOrder": {
+      "levels": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        3,
+        2,
+        1,
+        1,
+        4,
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
+      "talents": [
+        {
+          "level": 10,
+          "option": "left",
+          "description": "Talent de nível 10",
+          "pickRate": 0.6
+        },
+        {
+          "level": 15,
+          "option": "right",
+          "description": "Talent de nível 15",
+          "pickRate": 0.55
+        },
+        {
+          "level": 20,
+          "option": "left",
+          "description": "Talent de nível 20",
+          "pickRate": 0.52
+        },
+        {
+          "level": 25,
+          "option": "right",
+          "description": "Talent de nível 25",
+          "pickRate": 0.58
+        }
+      ],
+      "reasoning": "Ordem padrão para Carry, Disabler, Initiator, Durable, Nuker"
+    },
+    "matchups": {
+      "countersToMe": [
+        {
+          "heroId": 32,
+          "heroName": "Hero 32",
+          "advantage": -4.074074074074074,
+          "sampleSize": 27,
+          "reasoning": "4.1% desvantagem"
+        },
+        {
+          "heroId": 80,
+          "heroName": "Hero 80",
+          "advantage": -3.333333333333334,
+          "sampleSize": 12,
+          "reasoning": "3.3% desvantagem"
+        },
+        {
+          "heroId": 67,
+          "heroName": "Hero 67",
+          "advantage": -3.1034482758620685,
+          "sampleSize": 29,
+          "reasoning": "3.1% desvantagem"
+        },
+        {
+          "heroId": 3,
+          "heroName": "Hero 3",
+          "advantage": -3.0158730158730163,
+          "sampleSize": 63,
+          "reasoning": "3.0% desvantagem"
+        },
+        {
+          "heroId": 92,
+          "heroName": "Hero 92",
+          "advantage": -2.9411764705882346,
+          "sampleSize": 17,
+          "reasoning": "2.9% desvantagem"
+        }
+      ],
+      "goodVs": [
+        {
+          "heroId": 82,
+          "heroName": "Hero 82",
+          "advantage": 2.222222222222223,
+          "sampleSize": 18,
+          "reasoning": "2.2% vantagem"
+        },
+        {
+          "heroId": 110,
+          "heroName": "Hero 110",
+          "advantage": 1.8918918918918926,
+          "sampleSize": 74,
+          "reasoning": "1.9% vantagem"
+        },
+        {
+          "heroId": 16,
+          "heroName": "Hero 16",
+          "advantage": 1.8309859154929575,
+          "sampleSize": 71,
+          "reasoning": "1.8% vantagem"
+        },
+        {
+          "heroId": 30,
+          "heroName": "Hero 30",
+          "advantage": 1.7948717948717952,
+          "sampleSize": 39,
+          "reasoning": "1.8% vantagem"
+        },
+        {
+          "heroId": 12,
+          "heroName": "Hero 12",
+          "advantage": 1.7647058823529416,
+          "sampleSize": 34,
+          "reasoning": "1.8% vantagem"
+        }
+      ],
+      "synergies": []
+    },
+    "indicators": {
+      "winRate": 0.5,
+      "popularity": 0.05,
+      "sampleSize": 5000,
+      "lastUpdated": "2025-10-10T12:26:13.044Z",
+      "confidence": 0.559948500216801
+    }
+  },
+  "hero:20:patch:7.39e:mmr:4000": {
+    "hero": "Vengeful Spirit",
+    "heroId": 20,
+    "patch": "7.39e",
+    "mmr": 4000,
+    "coreBuild": {
+      "starting": [
+        {
+          "itemId": 16,
+          "itemName": "item_16",
+          "priority": 0.3908,
+          "pickRate": 0.136
+        },
+        {
+          "itemId": 44,
+          "itemName": "clarity",
+          "priority": 0.3776,
+          "pickRate": 0.092
+        },
+        {
+          "itemId": 34,
+          "itemName": "item_34",
+          "priority": 0.36739999999999995,
+          "pickRate": 0.058
+        },
+        {
+          "itemId": 20,
+          "itemName": "item_20",
+          "priority": 0.36679999999999996,
+          "pickRate": 0.056
+        },
+        {
+          "itemId": 1123,
+          "itemName": "item_1123",
+          "priority": 0.35929999999999995,
+          "pickRate": 0.031
+        },
+        {
+          "itemId": 43,
+          "itemName": "ward_sentry",
+          "priority": 0.35719999999999996,
+          "pickRate": 0.024
+        }
+      ],
+      "early": [
+        {
+          "itemId": 29,
+          "itemName": "item_29",
+          "priority": 0.3877,
+          "pickRate": 0.079
+        },
+        {
+          "itemId": 214,
+          "itemName": "item_214",
+          "priority": 0.3787,
+          "pickRate": 0.049
+        },
+        {
+          "itemId": 75,
+          "itemName": "item_75",
+          "priority": 0.3736,
+          "pickRate": 0.032
+        },
+        {
+          "itemId": 73,
+          "itemName": "item_73",
+          "priority": 0.3694,
+          "pickRate": 0.018
+        },
+        {
+          "itemId": 63,
+          "itemName": "Black King Bar",
+          "priority": 0.3691,
+          "pickRate": 0.017
+        }
+      ],
+      "mid": [
+        {
+          "itemId": 185,
+          "itemName": "item_185",
+          "priority": 0.38029999999999997,
+          "pickRate": 0.031
+        },
+        {
+          "itemId": 22,
+          "itemName": "item_22",
+          "priority": 0.38,
+          "pickRate": 0.03
+        },
+        {
+          "itemId": 23,
+          "itemName": "item_23",
+          "priority": 0.38,
+          "pickRate": 0.03
+        },
+        {
+          "itemId": 21,
+          "itemName": "item_21",
+          "priority": 0.3794,
+          "pickRate": 0.028
+        },
+        {
+          "itemId": 215,
+          "itemName": "item_215",
+          "priority": 0.37879999999999997,
+          "pickRate": 0.026
+        }
+      ],
+      "situational": [],
+      "luxury": [
+        {
+          "itemId": 108,
+          "itemName": "Orchid Malevolence",
+          "priority": 0.3807,
+          "pickRate": 0.009
+        },
+        {
+          "itemId": 81,
+          "itemName": "item_81",
+          "priority": 0.3804,
+          "pickRate": 0.008
+        },
+        {
+          "itemId": 254,
+          "itemName": "item_254",
+          "priority": 0.3804,
+          "pickRate": 0.008
+        },
+        {
+          "itemId": 147,
+          "itemName": "item_147",
+          "priority": 0.3795,
+          "pickRate": 0.005
+        },
+        {
+          "itemId": 170,
+          "itemName": "item_170",
+          "priority": 0.3795,
+          "pickRate": 0.005
+        }
+      ]
+    },
+    "skillOrder": {
+      "levels": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        3,
+        2,
+        1,
+        1,
+        4,
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
+      "talents": [
+        {
+          "level": 10,
+          "option": "left",
+          "description": "Talent de nível 10",
+          "pickRate": 0.6
+        },
+        {
+          "level": 15,
+          "option": "right",
+          "description": "Talent de nível 15",
+          "pickRate": 0.55
+        },
+        {
+          "level": 20,
+          "option": "left",
+          "description": "Talent de nível 20",
+          "pickRate": 0.52
+        },
+        {
+          "level": 25,
+          "option": "right",
+          "description": "Talent de nível 25",
+          "pickRate": 0.58
+        }
+      ],
+      "reasoning": "Ordem padrão para Support, Initiator, Disabler, Nuker, Escape"
+    },
+    "matchups": {
+      "countersToMe": [],
+      "goodVs": [],
+      "synergies": []
+    },
+    "indicators": {
+      "winRate": 0.5,
+      "popularity": 0.05,
+      "sampleSize": 5000,
+      "lastUpdated": "2025-10-10T13:30:18.841Z",
+      "confidence": 0.559948500216801
+    }
+  },
+  "hero:20:patch:7.39e:mmr:1000": {
+    "hero": "Vengeful Spirit",
+    "heroId": 20,
+    "patch": "7.39e",
+    "mmr": 1000,
+    "coreBuild": {
+      "starting": [
+        {
+          "itemId": 16,
+          "itemName": "item_16",
+          "priority": 0.3908,
+          "pickRate": 0.136
+        },
+        {
+          "itemId": 44,
+          "itemName": "clarity",
+          "priority": 0.3776,
+          "pickRate": 0.092
+        },
+        {
+          "itemId": 34,
+          "itemName": "item_34",
+          "priority": 0.36739999999999995,
+          "pickRate": 0.058
+        },
+        {
+          "itemId": 20,
+          "itemName": "item_20",
+          "priority": 0.36679999999999996,
+          "pickRate": 0.056
+        },
+        {
+          "itemId": 1123,
+          "itemName": "item_1123",
+          "priority": 0.35929999999999995,
+          "pickRate": 0.031
+        },
+        {
+          "itemId": 43,
+          "itemName": "ward_sentry",
+          "priority": 0.35719999999999996,
+          "pickRate": 0.024
+        }
+      ],
+      "early": [
+        {
+          "itemId": 29,
+          "itemName": "item_29",
+          "priority": 0.3877,
+          "pickRate": 0.079
+        },
+        {
+          "itemId": 214,
+          "itemName": "item_214",
+          "priority": 0.3787,
+          "pickRate": 0.049
+        },
+        {
+          "itemId": 75,
+          "itemName": "item_75",
+          "priority": 0.3736,
+          "pickRate": 0.032
+        },
+        {
+          "itemId": 73,
+          "itemName": "item_73",
+          "priority": 0.3694,
+          "pickRate": 0.018
+        },
+        {
+          "itemId": 63,
+          "itemName": "Black King Bar",
+          "priority": 0.3691,
+          "pickRate": 0.017
+        }
+      ],
+      "mid": [
+        {
+          "itemId": 185,
+          "itemName": "item_185",
+          "priority": 0.38029999999999997,
+          "pickRate": 0.031
+        },
+        {
+          "itemId": 22,
+          "itemName": "item_22",
+          "priority": 0.38,
+          "pickRate": 0.03
+        },
+        {
+          "itemId": 23,
+          "itemName": "item_23",
+          "priority": 0.38,
+          "pickRate": 0.03
+        },
+        {
+          "itemId": 21,
+          "itemName": "item_21",
+          "priority": 0.3794,
+          "pickRate": 0.028
+        },
+        {
+          "itemId": 215,
+          "itemName": "item_215",
+          "priority": 0.37879999999999997,
+          "pickRate": 0.026
+        }
+      ],
+      "situational": [],
+      "luxury": [
+        {
+          "itemId": 108,
+          "itemName": "Orchid Malevolence",
+          "priority": 0.3807,
+          "pickRate": 0.009
+        },
+        {
+          "itemId": 81,
+          "itemName": "item_81",
+          "priority": 0.3804,
+          "pickRate": 0.008
+        },
+        {
+          "itemId": 254,
+          "itemName": "item_254",
+          "priority": 0.3804,
+          "pickRate": 0.008
+        },
+        {
+          "itemId": 147,
+          "itemName": "item_147",
+          "priority": 0.3795,
+          "pickRate": 0.005
+        },
+        {
+          "itemId": 170,
+          "itemName": "item_170",
+          "priority": 0.3795,
+          "pickRate": 0.005
+        }
+      ]
+    },
+    "skillOrder": {
+      "levels": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        3,
+        2,
+        1,
+        1,
+        4,
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
+      "talents": [
+        {
+          "level": 10,
+          "option": "left",
+          "description": "Talent de nível 10",
+          "pickRate": 0.6
+        },
+        {
+          "level": 15,
+          "option": "right",
+          "description": "Talent de nível 15",
+          "pickRate": 0.55
+        },
+        {
+          "level": 20,
+          "option": "left",
+          "description": "Talent de nível 20",
+          "pickRate": 0.52
+        },
+        {
+          "level": 25,
+          "option": "right",
+          "description": "Talent de nível 25",
+          "pickRate": 0.58
+        }
+      ],
+      "reasoning": "Ordem padrão para Support, Initiator, Disabler, Nuker, Escape"
+    },
+    "matchups": {
+      "countersToMe": [
+        {
+          "heroId": 105,
+          "heroName": "Hero 105",
+          "advantage": -6.25,
+          "sampleSize": 32,
+          "reasoning": "6.3% desvantagem"
+        },
+        {
+          "heroId": 34,
+          "heroName": "Hero 34",
+          "advantage": -3.0232558139534884,
+          "sampleSize": 43,
+          "reasoning": "3.0% desvantagem"
+        },
+        {
+          "heroId": 92,
+          "heroName": "Hero 92",
+          "advantage": -2.727272727272727,
+          "sampleSize": 22,
+          "reasoning": "2.7% desvantagem"
+        },
+        {
+          "heroId": 96,
+          "heroName": "Hero 96",
+          "advantage": -2.592592592592593,
+          "sampleSize": 108,
+          "reasoning": "2.6% desvantagem"
+        },
+        {
+          "heroId": 114,
+          "heroName": "Hero 114",
+          "advantage": -2.5806451612903225,
+          "sampleSize": 62,
+          "reasoning": "2.6% desvantagem"
+        }
+      ],
+      "goodVs": [
+        {
+          "heroId": 82,
+          "heroName": "Hero 82",
+          "advantage": 6.666666666666668,
+          "sampleSize": 6,
+          "reasoning": "6.7% vantagem"
+        },
+        {
+          "heroId": 113,
+          "heroName": "Hero 113",
+          "advantage": 5,
+          "sampleSize": 12,
+          "reasoning": "5.0% vantagem"
+        },
+        {
+          "heroId": 80,
+          "heroName": "Hero 80",
+          "advantage": 3.999999999999999,
+          "sampleSize": 10,
+          "reasoning": "4.0% vantagem"
+        },
+        {
+          "heroId": 59,
+          "heroName": "Hero 59",
+          "advantage": 3.793103448275863,
+          "sampleSize": 29,
+          "reasoning": "3.8% vantagem"
+        },
+        {
+          "heroId": 32,
+          "heroName": "Hero 32",
+          "advantage": 3.3333333333333326,
+          "sampleSize": 15,
+          "reasoning": "3.3% vantagem"
+        }
+      ],
+      "synergies": []
+    },
+    "indicators": {
+      "winRate": 0.5,
+      "popularity": 0.05,
+      "sampleSize": 5000,
+      "lastUpdated": "2025-10-10T13:30:51.160Z",
+      "confidence": 0.559948500216801
+    }
   }
 }

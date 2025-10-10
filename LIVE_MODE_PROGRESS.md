@@ -1,8 +1,8 @@
 # Live Mode - Development Progress
 
 **Última atualização:** 2025-10-10
-**Branch atual:** `feature/live-mode-phase-1`
-**Status:** 🟢 Fase 1 Completa | Fase 2 Pendente
+**Branch atual:** `feature/live-mode-phase-2`
+**Status:** 🟢 Fase 1 & 2 Completas | Fase 3 Pendente
 
 ---
 
@@ -11,7 +11,7 @@
 | Fase | Status | Commits | Testes | Data |
 |------|--------|---------|--------|------|
 | **Fase 1: Backend Foundation** | ✅ **COMPLETA** | 1 | 57/57 ✓ | 2025-10-10 |
-| **Fase 2: API Endpoint** | ⏳ Pendente | 0 | - | - |
+| **Fase 2: API Endpoint** | ✅ **COMPLETA** | 1 | 70/70 ✓ | 2025-10-10 |
 | **Fase 3: WebSocket Server** | ⏳ Pendente | 0 | - | - |
 | **Fase 4: Frontend Client** | ⏳ Pendente | 0 | - | - |
 | **Fase 5: UI Components** | ⏳ Pendente | 0 | - | - |
@@ -20,7 +20,7 @@
 | **Fase 8: Documentation** | ⏳ Pendente | 0 | - | - |
 | **Fase 9: Beta Release** | ⏳ Pendente | 0 | - | - |
 
-**Progresso total:** 11% (1/9 fases)
+**Progresso total:** 22% (2/9 fases)
 
 ---
 
@@ -86,55 +86,121 @@ backend/src/gsi/
 
 ---
 
-## ⏳ Fase 2: API Endpoint - PRÓXIMA
+## ✅ Fase 2: API Endpoint - CONCLUÍDA
+
+### 🎯 Objetivos Alcançados
+- [x] Criar rota `POST /gsi`
+- [x] Middleware de autenticação (token validation)
+- [x] Middleware de rate limiting (20 req/s)
+- [x] Middleware de validação (Zod schema)
+- [x] Error handling (401, 415, 422, 429, 500)
+- [x] Structured logging (pino)
+- [x] Integration tests (13 test cases)
+- [x] Endpoint de stats `GET /gsi/stats`
+
+### 📦 Arquivos Criados
+```
+backend/src/
+├── routes/
+│   ├── gsi.ts                        153 linhas
+│   └── __tests__/
+│       └── gsi.integration.test.ts   349 linhas (13 tests)
+├── middleware/
+│   ├── gsiAuth.ts                    60 linhas
+│   ├── gsiRateLimit.ts               82 linhas
+│   ├── gsiValidation.ts              97 linhas
+│   └── gsiSchemas.ts                 178 linhas
+└── utils/
+    └── logger.ts                     50 linhas
+```
+
+### 🧪 Testes
+- **Total:** 70 testes passando (+13 novos)
+- **GSI Integration:** 13 tests ✓
+  - ✅ Payload válido → 200 OK
+  - ✅ Payloads duplicados → 204 No Content
+  - ✅ Payload mínimo aceito
+  - ✅ Token ausente → 401
+  - ✅ Token inválido → 401
+  - ✅ Content-Type inválido → 415
+  - ✅ Payload malformado → 422
+  - ✅ Tipo inválido → 422
+  - ✅ Enum inválido → 422
+  - ✅ Rate limit → 429
+  - ✅ Stats endpoint → 200
+  - ✅ Stats após processing
+  - ✅ Auth authentication flow
+
+### 📝 Commit
+```
+TBD feat(backend): Phase 2 - GSI endpoint with auth, rate limiting & validation
++949 linhas em 8 arquivos
+```
+
+### ⚙️ Funcionalidades Implementadas
+
+#### Middleware Stack
+- ✅ **gsiRateLimiter**: express-rate-limit (20 req/s, configurável)
+- ✅ **validateContentType**: Rejeita non-JSON (415)
+- ✅ **gsiAuth**: Token validation (401 se inválido)
+- ✅ **validateGsiPayload**: Zod schema validation (422 se inválido)
+
+#### Rota POST /gsi
+- ✅ Recebe payload GSI do cliente Dota 2
+- ✅ Normaliza via `GsiAdapter.normalize()`
+- ✅ Deduplica via `SessionManager.updateSession()`
+- ✅ Retorna 200 (novo) ou 204 (duplicado)
+- ✅ Logs estruturados com contexto (matchId, heroName, etc)
+- ✅ Error handling robusto
+
+#### Rota GET /gsi/stats
+- ✅ Retorna métricas do SessionManager
+- ✅ Active sessions, total snapshots, dedup ratio
+
+#### Logger (Pino)
+- ✅ Structured logging JSON
+- ✅ Pretty print em dev (pino-pretty)
+- ✅ Context loggers (gsiLogger, wsLogger, apiLogger)
+- ✅ Integrado no Express via pino-http
+
+### 📌 Notas
+- Rate limiter usa IP como chave (pode usar steamId no futuro)
+- Deduplicação funciona perfeitamente (SHA256)
+- Auth token configurável via `GSI_AUTH_TOKEN` env var
+- Logs não incluem health checks (autoLogging.ignore)
+
+### 🔗 Dependências
+- ✅ Fase 1 completa (GsiAdapter, SessionManager)
+
+---
+
+## ⏳ Fase 3: WebSocket Server - PRÓXIMA
 
 ### 🎯 Objetivos
-- [ ] Criar rota `POST /gsi`
-- [ ] Middleware de autenticação (token validation)
-- [ ] Middleware de rate limiting (20 req/s)
-- [ ] Middleware de validação (Zod schema)
-- [ ] Error handling (401, 415, 422, 429, 500)
-- [ ] Structured logging (pino/winston)
-- [ ] Integration tests
+- [ ] Criar WebSocket server (ws library)
+- [ ] Room management (por matchId)
+- [ ] Broadcast de snapshots
+- [ ] Connection authentication
+- [ ] Heartbeat/ping-pong
+- [ ] Reconnection handling
+- [ ] Integration com POST /gsi
+- [ ] Unit tests
 
 ### 📦 Arquivos a Criar
 ```
 backend/src/
-├── routes/
-│   └── gsi.ts                  ~150 linhas
-├── middleware/
-│   ├── gsiAuth.ts              ~50 linhas
-│   ├── gsiRateLimit.ts         ~80 linhas
-│   └── gsiValidation.ts        ~100 linhas
-└── routes/__tests__/
-    └── gsi.integration.test.ts ~300 linhas
+├── websocket/
+│   ├── server.ts                ~200 linhas
+│   ├── RoomManager.ts           ~150 linhas
+│   └── __tests__/
+│       └── server.test.ts       ~250 linhas
 ```
 
-### 🧪 Testes Planejados
-- [ ] POST com payload válido → 200 OK + broadcast WS
-- [ ] POST sem token → 401 Unauthorized
-- [ ] POST com token errado → 401
-- [ ] POST com Content-Type errado → 415
-- [ ] POST com payload malformado → 422
-- [ ] POST excedendo rate limit → 429
-- [ ] Deduplicação → 204 No Content
-
-### 📋 Checklist de Implementação
-1. [ ] Criar schemas Zod para validação
-2. [ ] Implementar middleware de auth
-3. [ ] Implementar rate limiter (express-rate-limit)
-4. [ ] Criar rota /gsi
-5. [ ] Integrar GsiAdapter + SessionManager
-6. [ ] Adicionar structured logs
-7. [ ] Escrever integration tests
-8. [ ] Rodar testes (target: >80% coverage)
-9. [ ] Commit + atualizar este documento
-
 ### ⏱️ Estimativa
-2–3 dias de desenvolvimento
+3–4 dias de desenvolvimento
 
 ### 🔗 Dependências
-- ✅ Fase 1 completa (GsiAdapter, SessionManager)
+- ✅ Fase 1 & 2 completas
 
 ---
 
@@ -142,7 +208,7 @@ backend/src/
 
 ```
 [✅] Fase 1: Backend Foundation        (3 dias)  ━━━━━━━━━━ 2025-10-10
-[⏳] Fase 2: API Endpoint               (3 dias)  ━━━━━━━━━━ 2025-10-13 (estimado)
+[✅] Fase 2: API Endpoint               (3 dias)  ━━━━━━━━━━ 2025-10-10
 [  ] Fase 3: WebSocket Server           (4 dias)  ━━━━━━━━━━ 2025-10-17 (estimado)
 [  ] Fase 4: Frontend Client            (3 dias)  ━━━━━━━━━━ 2025-10-20 (estimado)
 [  ] Fase 5: UI Components              (3 dias)  ━━━━━━━━━━ 2025-10-23 (estimado)
@@ -301,11 +367,11 @@ Co-Authored-By: Claude <noreply@anthropic.com>
 ## 🔄 Última Ação Realizada
 
 **Data:** 2025-10-10
-**Ação:** Completada Fase 1 - Backend Foundation
-**Branch:** `feature/live-mode-phase-1`
-**Commit:** `9b21834`
-**Testes:** 57/57 ✓
-**Próximo passo:** Iniciar Fase 2 (API Endpoint)
+**Ação:** Completada Fase 2 - API Endpoint
+**Branch:** `feature/live-mode-phase-2` (a ser criada)
+**Commit:** Pendente
+**Testes:** 70/70 ✓ (+13 novos)
+**Próximo passo:** Commit Fase 2 → Iniciar Fase 3 (WebSocket Server)
 
 ---
 
@@ -344,7 +410,11 @@ git checkout -b feature/live-mode-phase-2
 - ✅ Criado PROJECT_STATUS.md
 - ✅ Criada arquitetura completa do Live Mode
 - ✅ Plano aprovado pelo usuário
-- ✅ Fase 1 implementada e testada
+- ✅ Fase 1 implementada e testada (57 tests)
 - ✅ Criado LIVE_MODE_PROGRESS.md para tracking
+- ✅ Fase 2 implementada e testada (70 tests total)
+- ✅ Middlewares: auth, rate limit, validation (Zod)
+- ✅ Structured logging com Pino
+- ✅ POST /gsi e GET /gsi/stats endpoints
 
-**Próxima sessão:** Implementar Fase 2 (API Endpoint)
+**Próxima sessão:** Fazer commit da Fase 2 → Implementar Fase 3 (WebSocket Server)

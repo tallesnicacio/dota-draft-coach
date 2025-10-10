@@ -1,7 +1,10 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import pinoHttp from 'pino-http';
 import heroesRouter from './routes/heroes.js';
+import gsiRouter from './routes/gsi.js';
+import { logger } from './utils/logger.js';
 
 // Carregar variáveis de ambiente
 dotenv.config({ path: '../.env' });
@@ -13,11 +16,15 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
-// Logging middleware
-app.use((req, res, next) => {
-  console.log(`${new Date().toISOString()} ${req.method} ${req.path}`);
-  next();
-});
+// Structured logging with Pino
+app.use(
+  pinoHttp({
+    logger,
+    autoLogging: {
+      ignore: (req) => req.url === '/health', // Don't log health checks
+    },
+  })
+);
 
 // Health check
 app.get('/health', (req, res) => {
@@ -34,6 +41,7 @@ app.get('/health', (req, res) => {
 
 // Routes
 app.use('/api/heroes', heroesRouter);
+app.use('/api', gsiRouter);
 
 // 404 handler
 app.use((req, res) => {
@@ -45,7 +53,7 @@ app.use((req, res) => {
 
 // Error handler
 app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
-  console.error('Erro no servidor:', err);
+  logger.error({ err, path: req.path, method: req.method }, 'Erro no servidor');
   res.status(500).json({
     error: 'Erro interno do servidor',
     message: process.env.NODE_ENV === 'development' ? err.message : undefined,
@@ -54,10 +62,16 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
 
 // Start server
 app.listen(PORT, () => {
-  console.log(`🚀 Dota 2 Coach Backend rodando na porta ${PORT}`);
-  console.log(`📊 Patch padrão: ${process.env.PATCH_PADRAO || '7.39e'}`);
-  console.log(`🎮 MMR padrão: ${process.env.MMR_PADRAO || '3000'}`);
-  console.log(`💾 Cache TTL: ${process.env.CACHE_TTL || '21600'}s (${(parseInt(process.env.CACHE_TTL || '21600') / 3600).toFixed(1)}h)`);
+  logger.info(
+    {
+      port: PORT,
+      patch: process.env.PATCH_PADRAO || '7.39e',
+      mmr: process.env.MMR_PADRAO || '3000',
+      cacheTTL: `${process.env.CACHE_TTL || '21600'}s`,
+      gsiEnabled: true,
+    },
+    '🚀 Dota 2 Coach Backend rodando'
+  );
 });
 
 export default app;
