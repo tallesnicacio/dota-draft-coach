@@ -106,6 +106,34 @@ if (process.env.NODE_ENV !== 'test') {
     );
   });
 
+  // Handle server errors (e.g., port already in use)
+  httpServer.on('error', (error: NodeJS.ErrnoException) => {
+    if (error.code === 'EADDRINUSE') {
+      logger.error(
+        {
+          port: PORT,
+          error: error.message,
+        },
+        `❌ Porta ${PORT} já está em uso!`
+      );
+      console.error(`\n${'='.repeat(60)}`);
+      console.error(`❌ ERRO: Porta ${PORT} já está em uso!`);
+      console.error(`${'='.repeat(60)}`);
+      console.error(`\nPara resolver:`);
+      console.error(`1. Verifique processos usando a porta:`);
+      console.error(`   lsof -ti:${PORT}`);
+      console.error(`\n2. Mate o processo:`);
+      console.error(`   kill $(lsof -ti:${PORT})`);
+      console.error(`\n3. Ou use o script de diagnóstico:`);
+      console.error(`   ./scripts/check-ports.sh`);
+      console.error(`${'='.repeat(60)}\n`);
+      process.exit(1);
+    } else {
+      logger.error({ error: error.message }, 'Erro ao iniciar servidor');
+      process.exit(1);
+    }
+  });
+
   // Graceful shutdown
   process.on('SIGTERM', () => {
     logger.info('SIGTERM received, shutting down gracefully');

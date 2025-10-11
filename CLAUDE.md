@@ -159,6 +159,29 @@ confidence = w1*winRate + w2*popularity + w3*sampleSize + w4*freshness
 
 ## Troubleshooting Comum
 
+### Porta em Uso (EADDRINUSE)
+- **Erro**: `Error: listen EADDRINUSE: address already in use :::3001`
+- **Causa**: Outra instância do backend já está rodando na porta 3001
+- **Solução**:
+  ```bash
+  # Opção 1: Use o script de diagnóstico
+  ./scripts/check-ports.sh
+
+  # Opção 2: Manual
+  lsof -ti:3001        # Encontra o PID
+  kill $(lsof -ti:3001) # Mata o processo
+  ```
+- **Prevenção**: Sempre use `npm run dev` em vez de `npm start &` para desenvolvimento
+
+### WebSocket Connection Error
+- **Erro**: `WebSocket connection error` no frontend
+- **Causa Mais Comum**: Backend não está rodando ou porta 3001 em uso
+- **Solução**:
+  1. Verifique se o backend está rodando: `lsof -ti:3001`
+  2. Se não estiver, inicie com `npm run dev`
+  3. Se estiver, verifique logs do backend para outros erros
+- **Teste**: Acesse `ws://localhost:3001/ws` no navegador (deve retornar 400 Bad Request, não erro de conexão)
+
 ### CORS Error
 - Backend deve estar rodando na porta 3001
 - Frontend proxy configurado em `vite.config.ts`
