@@ -94,12 +94,7 @@ export class LiveWebSocketServer {
     authWs.on('close', () => this.handleClose(authWs));
     authWs.on('error', (error) => this.handleError(authWs, error));
 
-    // Send initial message (not authenticated yet)
-    this.sendMessage(authWs, {
-      type: 'auth_response',
-      success: false,
-      error: 'Not authenticated. Send auth message with token.',
-    });
+    // Client will send auth message - no need for initial message
   }
 
   /**
