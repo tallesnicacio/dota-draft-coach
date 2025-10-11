@@ -1,9 +1,16 @@
 import { SkillOrder } from '@/types/dota';
-import { Sparkles } from 'lucide-react';
+import { Sparkles, ArrowRight } from 'lucide-react';
 
 interface SkillsPanelProps {
   skillOrder: SkillOrder;
   heroName?: string;
+  nextSkill?: string | null;
+  currentSkillLevels?: {
+    q: number;
+    w: number;
+    e: number;
+    r: number;
+  };
 }
 
 const SkillBox = ({ skill, level, heroName }: { skill: string; level: number; heroName?: string }) => {
@@ -48,7 +55,7 @@ const SkillBox = ({ skill, level, heroName }: { skill: string; level: number; he
   );
 };
 
-export const SkillsPanel = ({ skillOrder, heroName }: SkillsPanelProps) => {
+export const SkillsPanel = ({ skillOrder, heroName, nextSkill, currentSkillLevels }: SkillsPanelProps) => {
   // Contar quantas vezes cada skill aparece
   const skillCounts = skillOrder.sequence.reduce((acc, skill) => {
     acc[skill] = (acc[skill] || 0) + 1;
@@ -61,6 +68,18 @@ export const SkillsPanel = ({ skillOrder, heroName }: SkillsPanelProps) => {
         <Sparkles className="h-5 w-5" />
         Ordem de Skills
       </h3>
+
+      {nextSkill && (
+        <div className="p-4 rounded-lg bg-primary/10 border border-primary/30">
+          <div className="flex items-center gap-3">
+            <ArrowRight className="h-5 w-5 text-primary" />
+            <div>
+              <p className="text-sm font-semibold text-primary">Próxima skill</p>
+              <p className="text-2xl font-bold">{nextSkill}</p>
+            </div>
+          </div>
+        </div>
+      )}
 
       <div className="space-y-4">
         <div className="flex flex-wrap gap-2">

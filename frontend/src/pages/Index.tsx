@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { useBuildStore } from '@/store/buildStore';
 import { useLiveStore } from '@/store/liveStore';
+import { mergeLiveWithRecommendations } from '@/services/recommendationFusion';
 import { FiltersBar } from '@/components/FiltersBar';
 import { TeamDraft } from '@/components/TeamDraft';
 import { BuildPanel } from '@/components/BuildPanel';
@@ -52,6 +53,19 @@ const Index = () => {
 
   // Show setup banner if Live Mode is not connected and not dismissed
   const showSetupBanner = !liveStore.enabled && !setupBannerDismissed;
+
+  // Merge live data with build recommendations when live mode is active
+  const enhancedBuild = useMemo(() => {
+    if (!currentBuild) return null;
+
+    // Only enhance if live mode is connected and has snapshot
+    if (liveStore.status === 'connected' && liveStore.snapshot) {
+      return mergeLiveWithRecommendations(currentBuild, liveStore.snapshot);
+    }
+
+    // Return base build without enhancement
+    return currentBuild;
+  }, [currentBuild, liveStore.status, liveStore.snapshot]);
 
   useEffect(() => {
     // Carrega dados reais da API quando seleciona herói ou muda draft
@@ -226,14 +240,19 @@ const Index = () => {
                   <MatchupsPanelSkeleton />
                 </div>
               </div>
-            ) : currentBuild && (
+            ) : enhancedBuild && (
               <div className="grid lg:grid-cols-2 gap-6">
                 <div className="space-y-6">
-                  <BuildPanel coreBuild={currentBuild.coreBuild} />
-                  <SkillsPanel skillOrder={currentBuild.skillOrder} heroName={selectedHero.displayName} />
+                  <BuildPanel coreBuild={enhancedBuild.coreBuild} />
+                  <SkillsPanel
+                    skillOrder={enhancedBuild.skillOrder}
+                    heroName={selectedHero.displayName}
+                    nextSkill={enhancedBuild.nextSkill}
+                    currentSkillLevels={enhancedBuild.currentSkillLevels}
+                  />
                 </div>
                 <div>
-                  <MatchupsPanel matchups={currentBuild.matchups} />
+                  <MatchupsPanel matchups={enhancedBuild.matchups} />
                 </div>
               </div>
             )}
