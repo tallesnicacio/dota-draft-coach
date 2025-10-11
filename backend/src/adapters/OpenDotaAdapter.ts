@@ -190,11 +190,15 @@ export class OpenDotaAdapter {
    */
   private async extractMatchups(heroId: number): Promise<Matchups> {
     try {
+      // Buscar lista de heróis para resolver nomes
+      const heroes = await this.getHeroes();
+      const heroMap = new Map(heroes.map(h => [h.id, h.localized_name]));
+
       const matchupData = await this.fetchWithRetry<any>(`/api/heroes/${heroId}/matchups`);
 
       const allMatchups: HeroMatchup[] = matchupData.map((m: any) => ({
         heroId: m.hero_id,
-        heroName: `Hero ${m.hero_id}`,
+        heroName: heroMap.get(m.hero_id) || `Hero ${m.hero_id}`,
         advantage: (m.wins / m.games_played - 0.5) * 20, // Normalizar para -10 a +10
         sampleSize: m.games_played,
       }));
@@ -205,13 +209,13 @@ export class OpenDotaAdapter {
       return {
         countersToMe: sorted.slice(0, 5).map(m => ({
           ...m,
-          reasoning: `${Math.abs(m.advantage).toFixed(1)}% desvantagem`,
+          reasoning: `${Math.abs(m.advantage).toFixed(1)}% desvantagem em ${(m.sampleSize || 0).toLocaleString()} jogos`,
         })),
         goodVs: sorted.slice(-5).reverse().map(m => ({
           ...m,
-          reasoning: `${m.advantage.toFixed(1)}% vantagem`,
+          reasoning: `${m.advantage.toFixed(1)}% vantagem em ${(m.sampleSize || 0).toLocaleString()} jogos`,
         })),
-        synergies: [], // Requer análise de pares de heróis, não disponível facilmente
+        synergies: [], // TODO: Implementar sinergias - requer análise de pares de heróis (não disponível diretamente na API OpenDota)
       };
     } catch (error) {
       console.error('Erro ao buscar matchups:', error);

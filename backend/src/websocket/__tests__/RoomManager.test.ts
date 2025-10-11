@@ -2,7 +2,7 @@
  * RoomManager tests
  */
 
-import { describe, it, expect, beforeEach, afterEach } from 'vitest';
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { RoomManager } from '../RoomManager.js';
 import { WebSocket } from 'ws';
 import type { AuthenticatedWebSocket } from '../types.js';
@@ -136,7 +136,7 @@ describe('RoomManager', () => {
           isAlive: true,
           readyState: 1, // OPEN
           OPEN: 1,
-          send: vitest.fn(),
+          send: vi.fn(),
         } as unknown as AuthenticatedWebSocket;
         return ws;
       };
@@ -169,7 +169,7 @@ describe('RoomManager', () => {
           clientId,
           readyState: 1,
           OPEN: 1,
-          send: vitest.fn(),
+          send: vi.fn(),
         } as unknown as AuthenticatedWebSocket;
         return ws;
       };

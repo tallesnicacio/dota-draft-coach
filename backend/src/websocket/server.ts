@@ -9,7 +9,7 @@
  * - Automatic cleanup of dead connections
  */
 
-import { WebSocketServer, WebSocket } from 'ws';
+import { WebSocketServer, WebSocket, RawData } from 'ws';
 import { v4 as uuidv4 } from 'uuid';
 import type { Server as HTTPServer } from 'http';
 import { RoomManager } from './RoomManager.js';
@@ -105,7 +105,7 @@ export class LiveWebSocketServer {
   /**
    * Handle incoming message from client
    */
-  private handleMessage(ws: AuthenticatedWebSocket, data: Buffer | string): void {
+  private handleMessage(ws: AuthenticatedWebSocket, data: RawData): void {
     try {
       const message: ClientMessage = JSON.parse(data.toString());
 

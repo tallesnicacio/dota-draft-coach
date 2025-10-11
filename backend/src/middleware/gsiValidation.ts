@@ -49,7 +49,7 @@ export function validateGsiPayload(req: Request, res: Response, next: NextFuncti
   } catch (error) {
     if (error instanceof ZodError) {
       // Format Zod errors into a readable response
-      const errors = error.errors?.map((err) => ({
+      const errors = error.issues?.map((err: any) => ({
         path: err.path?.join('.') || 'unknown',
         message: err.message || 'Validation error',
         code: err.code || 'UNKNOWN',

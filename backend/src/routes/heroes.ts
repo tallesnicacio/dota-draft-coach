@@ -2,7 +2,7 @@ import { Router, Request, Response } from 'express';
 import { OpenDotaAdapter } from '../adapters/OpenDotaAdapter.js';
 import { recommendationEngine } from '../adapters/RecommendationEngine.js';
 import { cacheManager } from '../cache/CacheManager.js';
-import { DraftContext } from '../types/index.js';
+import { DraftContext, HeroData } from '../types/index.js';
 
 const router = Router();
 const adapter = new OpenDotaAdapter();
@@ -53,7 +53,7 @@ router.get('/:heroId', async (req: Request, res: Response) => {
     }
 
     res.json({
-      ...heroData,
+      ...(heroData || {}),
       _meta: {
         cached: fromCache,
         cacheKey,
@@ -116,7 +116,7 @@ router.post('/:heroId/recommendations', async (req: Request, res: Response) => {
     }
 
     // Aplicar recomendações contextuais
-    const adjustedData = recommendationEngine.adjustRecommendations(heroData, context);
+    const adjustedData = recommendationEngine.adjustRecommendations(heroData as HeroData, context);
     const explanation = recommendationEngine.generateExplanation(adjustedData, context);
 
     res.json({

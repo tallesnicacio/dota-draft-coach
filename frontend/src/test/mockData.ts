@@ -38,6 +38,10 @@ export const mockBuild: HeroBuild = {
     situational: ['Butterfly', 'Abyssal Blade', 'Heart of Tarrasque'],
   },
   skillOrder: {
+    id: 'am-skillorder-1',
+    name: 'Anti-Mage Standard Skill Order',
+    image: 'https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/antimage.png',
+    displayName: 'Anti-Mage',
     sequence: ['Q', 'W', 'Q', 'E', 'Q', 'R', 'Q', 'W', 'W', 'W', 'R', 'E', 'E', 'E', 'R'],
     talents: [10, 15, 20, 25],
   },
