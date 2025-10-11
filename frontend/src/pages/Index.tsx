@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useBuildStore } from '@/store/buildStore';
+import { useLiveStore } from '@/store/liveStore';
 import { FiltersBar } from '@/components/FiltersBar';
 import { TeamDraft } from '@/components/TeamDraft';
 import { BuildPanel } from '@/components/BuildPanel';
@@ -8,6 +9,9 @@ import { MatchupsPanel } from '@/components/MatchupsPanel';
 import { ConfidenceBadge } from '@/components/ConfidenceBadge';
 import { HeroPicker } from '@/components/HeroPicker';
 import { Timers } from '@/components/Timers';
+import { LiveBadge } from '@/components/LiveBadge';
+import { LiveSetupBanner } from '@/components/LiveSetupBanner';
+import { LiveDevTools } from '@/components/LiveDevTools';
 import { apiService } from '@/services/api';
 import { Button } from '@/components/ui/button';
 import { Sparkles, Trash2 } from 'lucide-react';
@@ -43,6 +47,11 @@ const Index = () => {
   } = useBuildStore();
 
   const [loading, setLoading] = useState(false);
+  const [setupBannerDismissed, setSetupBannerDismissed] = useState(false);
+  const liveStore = useLiveStore();
+
+  // Show setup banner if Live Mode is not connected and not dismissed
+  const showSetupBanner = !liveStore.enabled && !setupBannerDismissed;
 
   useEffect(() => {
     // Carrega dados reais da API quando seleciona herói ou muda draft
@@ -103,7 +112,7 @@ const Index = () => {
       <header className="border-b border-border/50 bg-card/30 backdrop-blur-md sticky top-0 z-10">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <div>
+            <div className="flex-1">
               <h1 className="text-3xl md:text-4xl font-bold bg-gradient-primary bg-clip-text text-transparent">
                 Guia de Build Dota 2
               </h1>
@@ -111,26 +120,35 @@ const Index = () => {
                 Recomendações inteligentes por patch e MMR, ajustadas ao seu draft
               </p>
             </div>
-            
-            {selectedHero && (
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => {
-                  setSelectedHero(null);
-                  clearDraft();
-                }}
-                className="border-destructive/50 hover:bg-destructive/10 hover:text-destructive"
-              >
-                <Trash2 className="h-4 w-4 mr-2" />
-                Limpar Seleção
-              </Button>
-            )}
+
+            <div className="flex items-center gap-3">
+              <LiveBadge />
+
+              {selectedHero && (
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => {
+                    setSelectedHero(null);
+                    clearDraft();
+                  }}
+                  className="border-destructive/50 hover:bg-destructive/10 hover:text-destructive"
+                >
+                  <Trash2 className="h-4 w-4 mr-2" />
+                  Limpar Seleção
+                </Button>
+              )}
+            </div>
           </div>
         </div>
       </header>
 
       <div className="container mx-auto px-4 py-8 space-y-8">
+        {/* Live Setup Banner */}
+        {showSetupBanner && (
+          <LiveSetupBanner onDismiss={() => setSetupBannerDismissed(true)} />
+        )}
+
         {/* Filtros e Timers */}
         <div className="grid lg:grid-cols-3 gap-6">
           <section className="lg:col-span-2 glass-card rounded-xl p-6 border">
@@ -221,6 +239,9 @@ const Index = () => {
             )}
           </>
         )}
+
+        {/* Live Dev Tools (for debugging) */}
+        {import.meta.env.DEV && <LiveDevTools />}
       </div>
     </div>
   );
