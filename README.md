@@ -27,33 +27,52 @@ Aplicação **mobile-first** em PT-BR para melhorar sua gameplay de Dota 2, forn
   - Fallback para cache stale se API indisponível
   - Retry com exponential backoff em erros
 
+- **🔴 Live Mode (NEW!)** [🧪 Beta]
+  - Integração em tempo real com Dota 2 via Game State Integration (GSI)
+  - Recomendações dinâmicas baseadas no estado atual do jogo
+  - WebSocket para atualizações instantâneas
+  - Detecta herói, items, gold, e estado da partida automaticamente
+  - Funciona em background durante o jogo
+  - 👉 **[Guia de Configuração](LIVE_MODE_SETUP.md)**
+
 ## 🏗️ Arquitetura
 
 ```
-┌─────────────────┐
-│   Frontend      │  React + TypeScript + Tailwind
-│   (Vite + PWA)  │  Estado: Zustand
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│   Backend       │  Node + Express
-│   Proxy+Cache   │  Cache: 6h TTL
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│   Adapter       │  Normalização de dados
-│   OpenDota API  │  Schema interno
-└─────────────────┘
+┌─────────────────────────────────────────────────┐
+│   Frontend (React + TypeScript + Tailwind)      │
+│   Estado: Zustand (App + Live stores)           │
+│   PWA com Service Worker                        │
+└──────────┬───────────────────────┬──────────────┘
+           │ HTTP                  │ WebSocket
+           ▼                       ▼
+┌──────────────────┐      ┌──────────────────┐
+│   Backend        │      │   Live Mode      │
+│   Proxy + Cache  │◄─────┤   WebSocket      │
+│   Cache: 6h TTL  │      │   Broadcast      │
+└────────┬─────────┘      └────────▲─────────┘
+         │                         │
+         ▼                         │ POST /gsi
+┌──────────────────┐      ┌────────┴─────────┐
+│   Adapter        │      │   Dota 2 Client  │
+│   OpenDota API   │      │   GSI Payloads   │
+│   Schema interno │      │   Real-time data │
+└──────────────────┘      └──────────────────┘
 ```
 
-### Fluxo de Dados
+### Fluxos de Dados
 
+**Modo Histórico (OpenDota):**
 ```
 OpenDota API → Adapter Layer → Cache Layer → Frontend
                      ↓
               Schema Interno Normalizado
+```
+
+**Live Mode (GSI):**
+```
+Dota 2 Client → POST /gsi → GsiAdapter → SessionManager → WebSocket → Frontend
+                                  ↓
+                           LiveSnapshot (schema canônico)
 ```
 
 ## 🚀 Como Rodar
@@ -109,11 +128,17 @@ npm start
 ## 🧪 Testes
 
 ```bash
-# Roda testes do backend
+# Unit tests (backend)
 npm test
 
-# Testes em watch mode
+# Unit tests em watch mode
 cd backend && npm run test -- --watch
+
+# E2E tests (Playwright)
+npm run test:e2e
+
+# E2E com UI interativa
+cd frontend && npm run test:e2e:ui
 ```
 
 ## 📁 Estrutura do Projeto
@@ -143,7 +168,9 @@ dota2-coach/
 
 ## 📊 API Endpoints
 
-### `GET /api/heroes`
+### Dados Históricos (OpenDota)
+
+#### `GET /api/heroes`
 Lista todos os heróis disponíveis.
 
 **Resposta:**
@@ -210,6 +237,59 @@ Ajusta recomendações baseado no draft.
 
 **Resposta:** Igual ao GET, mas com build ajustado e campo `explanation`.
 
+### Live Mode (GSI)
+
+#### `POST /api/gsi`
+Recebe payloads do Dota 2 Game State Integration.
+
+**Headers:**
+- `Content-Type: application/json`
+
+**Body:**
+```json
+{
+  "auth": { "token": "COACH_LOCAL_SECRET" },
+  "provider": { "appid": 570, "timestamp": 1234567890 },
+  "map": { "matchid": "7890123456", ... },
+  "player": { "gold": 2500, ... },
+  "hero": { "id": 46, "level": 12, ... },
+  "items": { ... },
+  "abilities": { ... }
+}
+```
+
+**Resposta (200 OK - novo snapshot):**
+```json
+{
+  "broadcast": true,
+  "wsBroadcastCount": 2,
+  "matchId": "7890123456"
+}
+```
+
+**Resposta (204 No Content - duplicado):**
+- Snapshot idêntico ao anterior (deduplicado)
+
+#### `GET /api/gsi/stats`
+Estatísticas do Live Mode.
+
+**Resposta:**
+```json
+{
+  "activeSessions": 1,
+  "totalSnapshots": 450,
+  "dedupHits": 320,
+  "dedupRatio": 0.71
+}
+```
+
+#### `GET /ws`
+WebSocket endpoint para receber snapshots em tempo real.
+
+**Protocol:**
+- Client → Server: `{"type":"auth","token":"..."}`
+- Server → Client: `{"type":"snapshot","data":{...}}`
+
 ## ⚙️ Configuração (.env)
 
 ```bash
@@ -227,7 +307,13 @@ MMR_PADRAO=3000
 
 # Cache (em segundos)
 CACHE_TTL=21600             # 6 horas
+
+# Live Mode / GSI
+GSI_AUTH_TOKEN=COACH_LOCAL_SECRET    # Token para autenticação GSI
+WS_AUTH_TOKEN=                       # Opcional (usa GSI_AUTH_TOKEN se não definido)
 ```
+
+**📝 Nota:** Para usar Live Mode, veja o **[Guia de Configuração](LIVE_MODE_SETUP.md)** completo.
 
 ## 🎯 Critérios de Aceite (Implementados)
 
@@ -301,9 +387,17 @@ A aplicação é uma PWA (Progressive Web App):
 - **Touch-optimized** buttons
 - Paleta de cores temática de Dota 2
 
+## 📚 Documentação Adicional
+
+- **[Guia de Setup do Live Mode](LIVE_MODE_SETUP.md)** - Configuração passo-a-passo do GSI
+- **[Arquitetura do Live Mode](LIVE_MODE_ARCHITECTURE.md)** - Especificações técnicas
+- **[Progresso de Desenvolvimento](LIVE_MODE_PROGRESS.md)** - Status das fases implementadas
+- **[Guia para Desenvolvedores](CLAUDE.md)** - Convenções e padrões do projeto
+
 ## 📝 TODO Futuro
 
 - [ ] Integração com Stratz API para dados mais ricos
+- [ ] Detecção automática de draft via Live Mode
 - [ ] Sistema de favoritos de heróis
 - [ ] Histórico de partidas do jogador
 - [ ] Análise de replays
