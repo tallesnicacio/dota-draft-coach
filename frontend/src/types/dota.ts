@@ -14,8 +14,12 @@ export interface ItemBuild {
 }
 
 export interface SkillOrder {
+  id: string;
+  name: string;
   sequence: string[];
   talents: number[];
+  image: string;
+  displayName: string;
 }
 
 export interface HeroSkill {
@@ -66,3 +70,136 @@ export interface Timer {
   endTime: number;
   active: boolean;
 }
+
+// ============================================================================
+// Live Mode Types (Game State Integration)
+// ============================================================================
+
+export interface LiveSnapshot {
+  /** Timestamp in milliseconds */
+  t: number;
+  /** Match ID (null if not in match) */
+  matchId: string | null;
+  /** Player information */
+  player: LivePlayer | null;
+  /** Map/game state */
+  map: LiveMap | null;
+  /** Hero state */
+  hero: LiveHero | null;
+  /** Abilities state */
+  abilities: LiveAbility[];
+  /** Items state */
+  items: LiveItem[];
+  /** Draft hints for recommendations */
+  draftHints: DraftHints | null;
+}
+
+export interface LivePlayer {
+  steamId: string;
+  accountId: string;
+  name: string;
+  activity: string;
+  teamName: 'radiant' | 'dire';
+  kills: number;
+  deaths: number;
+  assists: number;
+  lastHits: number;
+  denies: number;
+  gold: number;
+  goldReliable: number;
+  goldUnreliable: number;
+  gpm: number;
+  xpm: number;
+}
+
+export interface LiveMap {
+  clockTime: number;
+  gameTime: number;
+  daytime: boolean;
+  gameState: string;
+  paused: boolean;
+  winTeam: 'none' | 'radiant' | 'dire';
+  wardPurchaseCooldown: number;
+}
+
+export interface LiveHero {
+  id: number;
+  name: string;
+  displayName: string;
+  level: number;
+  xp: number;
+  alive: boolean;
+  respawnSeconds: number;
+  buybackCost: number;
+  buybackCooldown: number;
+  health: number;
+  maxHealth: number;
+  healthPercent: number;
+  mana: number;
+  maxMana: number;
+  manaPercent: number;
+  position: {
+    x: number;
+    y: number;
+  };
+  statuses: {
+    silenced: boolean;
+    stunned: boolean;
+    disarmed: boolean;
+    magicImmune: boolean;
+    hexed: boolean;
+    muted: boolean;
+    broken: boolean;
+    smoked: boolean;
+    hasDebuff: boolean;
+  };
+  talents: {
+    '10_left': boolean;
+    '10_right': boolean;
+    '15_left': boolean;
+    '15_right': boolean;
+    '20_left': boolean;
+    '20_right': boolean;
+    '25_left': boolean;
+    '25_right': boolean;
+  };
+}
+
+export interface LiveAbility {
+  name: string;
+  displayName: string;
+  level: number;
+  canCast: boolean;
+  passive: boolean;
+  abilityActive: boolean;
+  cooldown: number;
+  ultimate: boolean;
+}
+
+export interface LiveItem {
+  name: string;
+  displayName: string;
+  slot: number;
+  canCast: boolean;
+  cooldown: number;
+  passive: boolean;
+  charges: number;
+}
+
+export interface DraftHints {
+  allies: string[];
+  enemies: string[];
+  hasHeavyMagic: boolean;
+  hasHeavyPhysical: boolean;
+  hasDisables: boolean;
+  hasSilences: boolean;
+  hasInvis: boolean;
+  hasIllusions: boolean;
+  hasSummons: boolean;
+  needsBKB: boolean;
+  needsDispel: boolean;
+  needsDetection: boolean;
+}
+
+export type LiveStatus = 'disconnected' | 'connecting' | 'connected' | 'error';
+export type LiveReliability = 'high' | 'medium' | 'low' | 'unknown';

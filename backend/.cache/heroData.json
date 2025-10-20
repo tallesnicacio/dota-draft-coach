@@ -8,134 +8,134 @@
       "starting": [
         {
           "itemId": 16,
-          "itemName": "item_16",
-          "priority": 0.43639999999999995,
-          "pickRate": 0.288
+          "itemName": "Iron Branch",
+          "priority": 0.4346,
+          "pickRate": 0.282
         },
         {
           "itemId": 36,
-          "itemName": "magic_stick",
-          "priority": 0.36829999999999996,
-          "pickRate": 0.061
+          "itemName": "Magic Wand",
+          "priority": 0.3689,
+          "pickRate": 0.063
         },
         {
           "itemId": 44,
-          "itemName": "clarity",
-          "priority": 0.35929999999999995,
-          "pickRate": 0.031
+          "itemName": "Tango",
+          "priority": 0.3596,
+          "pickRate": 0.032
         },
         {
           "itemId": 20,
-          "itemName": "item_20",
-          "priority": 0.359,
-          "pickRate": 0.03
+          "itemName": "Circlet",
+          "priority": 0.3584,
+          "pickRate": 0.028
         },
         {
           "itemId": 34,
-          "itemName": "item_34",
-          "priority": 0.3566,
-          "pickRate": 0.022
+          "itemName": "Magic Stick",
+          "priority": 0.3569,
+          "pickRate": 0.023
         },
         {
           "itemId": 11,
-          "itemName": "item_11",
-          "priority": 0.35359999999999997,
-          "pickRate": 0.012
+          "itemName": "Quelling Blade",
+          "priority": 0.3548,
+          "pickRate": 0.016
         }
       ],
       "early": [
         {
           "itemId": 29,
-          "itemName": "item_29",
-          "priority": 0.3949,
-          "pickRate": 0.103
+          "itemName": "Boots of Speed",
+          "priority": 0.3946,
+          "pickRate": 0.102
         },
         {
           "itemId": 63,
-          "itemName": "Black King Bar",
+          "itemName": "Power Treads",
           "priority": 0.3931,
           "pickRate": 0.097
         },
         {
           "itemId": 22,
-          "itemName": "item_22",
-          "priority": 0.3856,
-          "pickRate": 0.072
+          "itemName": "Blade of Alacrity",
+          "priority": 0.3865,
+          "pickRate": 0.075
         },
         {
           "itemId": 236,
-          "itemName": "travel_boots_2",
-          "priority": 0.3727,
-          "pickRate": 0.029
+          "itemName": "Dragon Lance",
+          "priority": 0.37329999999999997,
+          "pickRate": 0.031
         },
         {
           "itemId": 77,
-          "itemName": "item_77",
-          "priority": 0.3706,
-          "pickRate": 0.022
+          "itemName": "Null Talisman",
+          "priority": 0.37,
+          "pickRate": 0.02
         }
       ],
       "mid": [
         {
           "itemId": 8,
-          "itemName": "item_8",
-          "priority": 0.4319,
-          "pickRate": 0.203
+          "itemName": "Mithril Hammer",
+          "priority": 0.4322,
+          "pickRate": 0.204
         },
         {
           "itemId": 168,
-          "itemName": "Disperser",
-          "priority": 0.4004,
-          "pickRate": 0.098
+          "itemName": "Desolator",
+          "priority": 0.4001,
+          "pickRate": 0.097
         },
         {
           "itemId": 1,
           "itemName": "Blink Dagger",
-          "priority": 0.3962,
-          "pickRate": 0.084
+          "priority": 0.3971,
+          "pickRate": 0.087
         },
         {
           "itemId": 236,
-          "itemName": "travel_boots_2",
-          "priority": 0.3911,
-          "pickRate": 0.067
+          "itemName": "Dragon Lance",
+          "priority": 0.3908,
+          "pickRate": 0.066
         },
         {
           "itemId": 5,
-          "itemName": "claymore",
-          "priority": 0.3866,
-          "pickRate": 0.052
+          "itemName": "Claymore",
+          "priority": 0.3854,
+          "pickRate": 0.048
         }
       ],
       "situational": [],
       "luxury": [
         {
           "itemId": 51,
-          "itemName": "item_51",
-          "priority": 0.3942,
-          "pickRate": 0.054
+          "itemName": "Demon Edge",
+          "priority": 0.3951,
+          "pickRate": 0.057
         },
         {
           "itemId": 141,
-          "itemName": "Nullifier",
-          "priority": 0.3897,
-          "pickRate": 0.039
+          "itemName": "Daedalus",
+          "priority": 0.3906,
+          "pickRate": 0.042
+        },
+        {
+          "itemId": 149,
+          "itemName": "Crystalys",
+          "priority": 0.3867,
+          "pickRate": 0.029
         },
         {
           "itemId": 102,
-          "itemName": "Mask of Madness",
-          "priority": 0.3864,
-          "pickRate": 0.028
-        },
-        {
-          "itemId": 263,
-          "itemName": "item_263",
+          "itemName": "Force Staff",
           "priority": 0.3861,
           "pickRate": 0.027
         },
         {
-          "itemId": 149,
-          "itemName": "Wind Waker",
+          "itemId": 116,
+          "itemName": "Black King Bar",
           "priority": 0.3858,
           "pickRate": 0.026
         }
@@ -188,87 +188,15 @@
       "reasoning": "Ordem padrão para Carry, Escape"
     },
     "matchups": {
-      "countersToMe": [
-        {
-          "heroId": 80,
-          "heroName": "Hero 80",
-          "advantage": -4.482758620689655,
-          "sampleSize": 29,
-          "reasoning": "4.5% desvantagem"
-        },
-        {
-          "heroId": 57,
-          "heroName": "Hero 57",
-          "advantage": -4.444444444444445,
-          "sampleSize": 18,
-          "reasoning": "4.4% desvantagem"
-        },
-        {
-          "heroId": 66,
-          "heroName": "Hero 66",
-          "advantage": -3.75,
-          "sampleSize": 48,
-          "reasoning": "3.8% desvantagem"
-        },
-        {
-          "heroId": 83,
-          "heroName": "Hero 83",
-          "advantage": -2.9032258064516125,
-          "sampleSize": 31,
-          "reasoning": "2.9% desvantagem"
-        },
-        {
-          "heroId": 73,
-          "heroName": "Hero 73",
-          "advantage": -2.1739130434782608,
-          "sampleSize": 69,
-          "reasoning": "2.2% desvantagem"
-        }
-      ],
-      "goodVs": [
-        {
-          "heroId": 1,
-          "heroName": "Hero 1",
-          "advantage": 3.0158730158730163,
-          "sampleSize": 63,
-          "reasoning": "3.0% vantagem"
-        },
-        {
-          "heroId": 34,
-          "heroName": "Hero 34",
-          "advantage": 2.897196261682242,
-          "sampleSize": 107,
-          "reasoning": "2.9% vantagem"
-        },
-        {
-          "heroId": 126,
-          "heroName": "Hero 126",
-          "advantage": 2.857142857142858,
-          "sampleSize": 98,
-          "reasoning": "2.9% vantagem"
-        },
-        {
-          "heroId": 63,
-          "heroName": "Hero 63",
-          "advantage": 2.7419354838709675,
-          "sampleSize": 124,
-          "reasoning": "2.7% vantagem"
-        },
-        {
-          "heroId": 47,
-          "heroName": "Hero 47",
-          "advantage": 2.2807017543859653,
-          "sampleSize": 57,
-          "reasoning": "2.3% vantagem"
-        }
-      ],
+      "countersToMe": [],
+      "goodVs": [],
       "synergies": []
     },
     "indicators": {
       "winRate": 0.5,
       "popularity": 0.05,
       "sampleSize": 5000,
-      "lastUpdated": "2025-10-09T22:16:45.067Z",
+      "lastUpdated": "2025-10-11T09:52:19.874Z",
       "confidence": 0.559948500216801
     }
   },
@@ -281,134 +209,134 @@
       "starting": [
         {
           "itemId": 16,
-          "itemName": "item_16",
-          "priority": 0.43639999999999995,
-          "pickRate": 0.288
+          "itemName": "Iron Branch",
+          "priority": 0.4346,
+          "pickRate": 0.282
         },
         {
           "itemId": 36,
-          "itemName": "magic_stick",
-          "priority": 0.36829999999999996,
-          "pickRate": 0.061
+          "itemName": "Magic Wand",
+          "priority": 0.3689,
+          "pickRate": 0.063
         },
         {
           "itemId": 44,
-          "itemName": "clarity",
-          "priority": 0.35929999999999995,
-          "pickRate": 0.031
+          "itemName": "Tango",
+          "priority": 0.3596,
+          "pickRate": 0.032
         },
         {
           "itemId": 20,
-          "itemName": "item_20",
-          "priority": 0.359,
-          "pickRate": 0.03
+          "itemName": "Circlet",
+          "priority": 0.3584,
+          "pickRate": 0.028
         },
         {
           "itemId": 34,
-          "itemName": "item_34",
-          "priority": 0.3566,
-          "pickRate": 0.022
+          "itemName": "Magic Stick",
+          "priority": 0.3569,
+          "pickRate": 0.023
         },
         {
           "itemId": 11,
-          "itemName": "item_11",
-          "priority": 0.35359999999999997,
-          "pickRate": 0.012
+          "itemName": "Quelling Blade",
+          "priority": 0.3548,
+          "pickRate": 0.016
         }
       ],
       "early": [
         {
           "itemId": 29,
-          "itemName": "item_29",
-          "priority": 0.3949,
-          "pickRate": 0.103
+          "itemName": "Boots of Speed",
+          "priority": 0.3946,
+          "pickRate": 0.102
         },
         {
           "itemId": 63,
-          "itemName": "Black King Bar",
+          "itemName": "Power Treads",
           "priority": 0.3931,
           "pickRate": 0.097
         },
         {
           "itemId": 22,
-          "itemName": "item_22",
-          "priority": 0.3856,
-          "pickRate": 0.072
+          "itemName": "Blade of Alacrity",
+          "priority": 0.3865,
+          "pickRate": 0.075
         },
         {
           "itemId": 236,
-          "itemName": "travel_boots_2",
-          "priority": 0.3727,
-          "pickRate": 0.029
+          "itemName": "Dragon Lance",
+          "priority": 0.37329999999999997,
+          "pickRate": 0.031
         },
         {
           "itemId": 77,
-          "itemName": "item_77",
-          "priority": 0.3706,
-          "pickRate": 0.022
+          "itemName": "Null Talisman",
+          "priority": 0.37,
+          "pickRate": 0.02
         }
       ],
       "mid": [
         {
           "itemId": 8,
-          "itemName": "item_8",
-          "priority": 0.4319,
-          "pickRate": 0.203
+          "itemName": "Mithril Hammer",
+          "priority": 0.4322,
+          "pickRate": 0.204
         },
         {
           "itemId": 168,
-          "itemName": "Disperser",
-          "priority": 0.4004,
-          "pickRate": 0.098
+          "itemName": "Desolator",
+          "priority": 0.4001,
+          "pickRate": 0.097
         },
         {
           "itemId": 1,
           "itemName": "Blink Dagger",
-          "priority": 0.3962,
-          "pickRate": 0.084
+          "priority": 0.3971,
+          "pickRate": 0.087
         },
         {
           "itemId": 236,
-          "itemName": "travel_boots_2",
-          "priority": 0.3911,
-          "pickRate": 0.067
+          "itemName": "Dragon Lance",
+          "priority": 0.3908,
+          "pickRate": 0.066
         },
         {
           "itemId": 5,
-          "itemName": "claymore",
-          "priority": 0.3866,
-          "pickRate": 0.052
+          "itemName": "Claymore",
+          "priority": 0.3854,
+          "pickRate": 0.048
         }
       ],
       "situational": [],
       "luxury": [
         {
           "itemId": 51,
-          "itemName": "item_51",
-          "priority": 0.3942,
-          "pickRate": 0.054
+          "itemName": "Demon Edge",
+          "priority": 0.3951,
+          "pickRate": 0.057
         },
         {
           "itemId": 141,
-          "itemName": "Nullifier",
-          "priority": 0.3897,
-          "pickRate": 0.039
+          "itemName": "Daedalus",
+          "priority": 0.3906,
+          "pickRate": 0.042
+        },
+        {
+          "itemId": 149,
+          "itemName": "Crystalys",
+          "priority": 0.3867,
+          "pickRate": 0.029
         },
         {
           "itemId": 102,
-          "itemName": "Mask of Madness",
-          "priority": 0.3864,
-          "pickRate": 0.028
-        },
-        {
-          "itemId": 263,
-          "itemName": "item_263",
+          "itemName": "Force Staff",
           "priority": 0.3861,
           "pickRate": 0.027
         },
         {
-          "itemId": 149,
-          "itemName": "Wind Waker",
+          "itemId": 116,
+          "itemName": "Black King Bar",
           "priority": 0.3858,
           "pickRate": 0.026
         }
@@ -464,75 +392,75 @@
       "countersToMe": [
         {
           "heroId": 80,
-          "heroName": "Hero 80",
+          "heroName": "Lone Druid",
           "advantage": -4.482758620689655,
           "sampleSize": 29,
-          "reasoning": "4.5% desvantagem"
+          "reasoning": "4.5% desvantagem em 29 jogos"
         },
         {
           "heroId": 57,
-          "heroName": "Hero 57",
-          "advantage": -4.444444444444445,
-          "sampleSize": 18,
-          "reasoning": "4.4% desvantagem"
+          "heroName": "Omniknight",
+          "advantage": -4.117647058823529,
+          "sampleSize": 17,
+          "reasoning": "4.1% desvantagem em 17 jogos"
         },
         {
           "heroId": 66,
-          "heroName": "Hero 66",
+          "heroName": "Chen",
           "advantage": -3.75,
           "sampleSize": 48,
-          "reasoning": "3.8% desvantagem"
+          "reasoning": "3.8% desvantagem em 48 jogos"
         },
         {
           "heroId": 83,
-          "heroName": "Hero 83",
+          "heroName": "Treant Protector",
           "advantage": -2.9032258064516125,
           "sampleSize": 31,
-          "reasoning": "2.9% desvantagem"
+          "reasoning": "2.9% desvantagem em 31 jogos"
         },
         {
-          "heroId": 73,
-          "heroName": "Hero 73",
-          "advantage": -2.1739130434782608,
-          "sampleSize": 69,
-          "reasoning": "2.2% desvantagem"
+          "heroId": 145,
+          "heroName": "Kez",
+          "advantage": -2.5,
+          "sampleSize": 8,
+          "reasoning": "2.5% desvantagem em 8 jogos"
         }
       ],
       "goodVs": [
         {
           "heroId": 1,
-          "heroName": "Hero 1",
+          "heroName": "Anti-Mage",
           "advantage": 3.0158730158730163,
           "sampleSize": 63,
-          "reasoning": "3.0% vantagem"
-        },
-        {
-          "heroId": 34,
-          "heroName": "Hero 34",
-          "advantage": 2.897196261682242,
-          "sampleSize": 107,
-          "reasoning": "2.9% vantagem"
+          "reasoning": "3.0% vantagem em 63 jogos"
         },
         {
           "heroId": 126,
-          "heroName": "Hero 126",
-          "advantage": 2.857142857142858,
-          "sampleSize": 98,
-          "reasoning": "2.9% vantagem"
+          "heroName": "Void Spirit",
+          "advantage": 3.0000000000000004,
+          "sampleSize": 100,
+          "reasoning": "3.0% vantagem em 100 jogos"
+        },
+        {
+          "heroId": 34,
+          "heroName": "Tinker",
+          "advantage": 2.777777777777777,
+          "sampleSize": 108,
+          "reasoning": "2.8% vantagem em 108 jogos"
         },
         {
           "heroId": 63,
-          "heroName": "Hero 63",
+          "heroName": "Weaver",
           "advantage": 2.7419354838709675,
           "sampleSize": 124,
-          "reasoning": "2.7% vantagem"
+          "reasoning": "2.7% vantagem em 124 jogos"
         },
         {
           "heroId": 47,
-          "heroName": "Hero 47",
+          "heroName": "Viper",
           "advantage": 2.2807017543859653,
           "sampleSize": 57,
-          "reasoning": "2.3% vantagem"
+          "reasoning": "2.3% vantagem em 57 jogos"
         }
       ],
       "synergies": []
@@ -541,323 +469,50 @@
       "winRate": 0.5,
       "popularity": 0.05,
       "sampleSize": 5000,
-      "lastUpdated": "2025-10-09T22:21:36.387Z",
+      "lastUpdated": "2025-10-11T09:56:37.219Z",
       "confidence": 0.559948500216801
     }
   },
-  "hero:16:patch:7.39e:mmr:4000": {
-    "hero": "Sand King",
-    "heroId": 16,
-    "patch": "7.39e",
-    "mmr": 4000,
-    "coreBuild": {
-      "starting": [
-        {
-          "itemId": 16,
-          "itemName": "item_16",
-          "priority": 0.4493,
-          "pickRate": 0.331
-        },
-        {
-          "itemId": 44,
-          "itemName": "clarity",
-          "priority": 0.3776,
-          "pickRate": 0.092
-        },
-        {
-          "itemId": 20,
-          "itemName": "item_20",
-          "priority": 0.3671,
-          "pickRate": 0.057
-        },
-        {
-          "itemId": 42,
-          "itemName": "ward_observer",
-          "priority": 0.36319999999999997,
-          "pickRate": 0.044
-        },
-        {
-          "itemId": 11,
-          "itemName": "item_11",
-          "priority": 0.3599,
-          "pickRate": 0.033
-        },
-        {
-          "itemId": 13,
-          "itemName": "item_13",
-          "priority": 0.3584,
-          "pickRate": 0.028
-        }
-      ],
-      "early": [
-        {
-          "itemId": 29,
-          "itemName": "item_29",
-          "priority": 0.394,
-          "pickRate": 0.1
-        },
-        {
-          "itemId": 4,
-          "itemName": "chainmail",
-          "priority": 0.3832,
-          "pickRate": 0.064
-        },
-        {
-          "itemId": 50,
-          "itemName": "Phase Boots",
-          "priority": 0.3829,
-          "pickRate": 0.063
-        },
-        {
-          "itemId": 41,
-          "itemName": "Bottle",
-          "priority": 0.37929999999999997,
-          "pickRate": 0.051
-        },
-        {
-          "itemId": 73,
-          "itemName": "item_73",
-          "priority": 0.3745,
-          "pickRate": 0.035
-        }
-      ],
-      "mid": [
-        {
-          "itemId": 21,
-          "itemName": "item_21",
-          "priority": 0.413,
-          "pickRate": 0.14
-        },
-        {
-          "itemId": 23,
-          "itemName": "item_23",
-          "priority": 0.3998,
-          "pickRate": 0.096
-        },
-        {
-          "itemId": 60,
-          "itemName": "item_60",
-          "priority": 0.3992,
-          "pickRate": 0.094
-        },
-        {
-          "itemId": 22,
-          "itemName": "item_22",
-          "priority": 0.3986,
-          "pickRate": 0.092
-        },
-        {
-          "itemId": 108,
-          "itemName": "Orchid Malevolence",
-          "priority": 0.398,
-          "pickRate": 0.09
-        }
-      ],
-      "situational": [],
-      "luxury": [
-        {
-          "itemId": 116,
-          "itemName": "Echo Sabre",
-          "priority": 0.3909,
-          "pickRate": 0.043
-        },
-        {
-          "itemId": 149,
-          "itemName": "Wind Waker",
-          "priority": 0.3864,
-          "pickRate": 0.028
-        },
-        {
-          "itemId": 51,
-          "itemName": "item_51",
-          "priority": 0.3849,
-          "pickRate": 0.023
-        },
-        {
-          "itemId": 141,
-          "itemName": "Nullifier",
-          "priority": 0.3849,
-          "pickRate": 0.023
-        },
-        {
-          "itemId": 110,
-          "itemName": "Linken's Sphere",
-          "priority": 0.3831,
-          "pickRate": 0.017
-        }
-      ]
-    },
-    "skillOrder": {
-      "levels": [
-        1,
-        1,
-        2,
-        2,
-        2,
-        3,
-        2,
-        1,
-        1,
-        4,
-        3,
-        3,
-        3,
-        4,
-        4
-      ],
-      "talents": [
-        {
-          "level": 10,
-          "option": "left",
-          "description": "Talent de nível 10",
-          "pickRate": 0.6
-        },
-        {
-          "level": 15,
-          "option": "right",
-          "description": "Talent de nível 15",
-          "pickRate": 0.55
-        },
-        {
-          "level": 20,
-          "option": "left",
-          "description": "Talent de nível 20",
-          "pickRate": 0.52
-        },
-        {
-          "level": 25,
-          "option": "right",
-          "description": "Talent de nível 25",
-          "pickRate": 0.58
-        }
-      ],
-      "reasoning": "Ordem padrão para Initiator, Disabler, Support, Nuker, Escape"
-    },
-    "matchups": {
-      "countersToMe": [
-        {
-          "heroId": 145,
-          "heroName": "Hero 145",
-          "advantage": -4.2857142857142865,
-          "sampleSize": 7,
-          "reasoning": "4.3% desvantagem"
-        },
-        {
-          "heroId": 40,
-          "heroName": "Hero 40",
-          "advantage": -4,
-          "sampleSize": 30,
-          "reasoning": "4.0% desvantagem"
-        },
-        {
-          "heroId": 47,
-          "heroName": "Hero 47",
-          "advantage": -2.8571428571428568,
-          "sampleSize": 14,
-          "reasoning": "2.9% desvantagem"
-        },
-        {
-          "heroId": 80,
-          "heroName": "Hero 80",
-          "advantage": -2.8571428571428568,
-          "sampleSize": 14,
-          "reasoning": "2.9% desvantagem"
-        },
-        {
-          "heroId": 41,
-          "heroName": "Hero 41",
-          "advantage": -2.7659574468085104,
-          "sampleSize": 47,
-          "reasoning": "2.8% desvantagem"
-        }
-      ],
-      "goodVs": [
-        {
-          "heroId": 113,
-          "heroName": "Hero 113",
-          "advantage": 6.363636363636365,
-          "sampleSize": 11,
-          "reasoning": "6.4% vantagem"
-        },
-        {
-          "heroId": 92,
-          "heroName": "Hero 92",
-          "advantage": 3.913043478260869,
-          "sampleSize": 23,
-          "reasoning": "3.9% vantagem"
-        },
-        {
-          "heroId": 111,
-          "heroName": "Hero 111",
-          "advantage": 3.3333333333333326,
-          "sampleSize": 33,
-          "reasoning": "3.3% vantagem"
-        },
-        {
-          "heroId": 108,
-          "heroName": "Hero 108",
-          "advantage": 3.1034482758620685,
-          "sampleSize": 58,
-          "reasoning": "3.1% vantagem"
-        },
-        {
-          "heroId": 36,
-          "heroName": "Hero 36",
-          "advantage": 2.857142857142858,
-          "sampleSize": 28,
-          "reasoning": "2.9% vantagem"
-        }
-      ],
-      "synergies": []
-    },
-    "indicators": {
-      "winRate": 0.5,
-      "popularity": 0.05,
-      "sampleSize": 5000,
-      "lastUpdated": "2025-10-09T22:38:11.197Z",
-      "confidence": 0.559948500216801
-    }
-  },
-  "hero:5:patch:7.39e:mmr:4000": {
+  "hero:5:patch:7.39e:mmr:1000": {
     "hero": "Crystal Maiden",
     "heroId": 5,
     "patch": "7.39e",
-    "mmr": 4000,
+    "mmr": 1000,
     "coreBuild": {
       "starting": [
         {
           "itemId": 16,
-          "itemName": "item_16",
-          "priority": 0.3938,
-          "pickRate": 0.146
+          "itemName": "Iron Branch",
+          "priority": 0.3962,
+          "pickRate": 0.154
         },
         {
           "itemId": 44,
-          "itemName": "clarity",
-          "priority": 0.38149999999999995,
-          "pickRate": 0.105
+          "itemName": "Tango",
+          "priority": 0.3821,
+          "pickRate": 0.107
         },
         {
           "itemId": 1123,
-          "itemName": "item_1123",
-          "priority": 0.3722,
-          "pickRate": 0.074
+          "itemName": "Blood Grenade",
+          "priority": 0.37189999999999995,
+          "pickRate": 0.073
         },
         {
           "itemId": 34,
-          "itemName": "item_34",
-          "priority": 0.37039999999999995,
-          "pickRate": 0.068
+          "itemName": "Magic Stick",
+          "priority": 0.3701,
+          "pickRate": 0.067
         },
         {
-          "itemId": 218,
-          "itemName": "item_218",
-          "priority": 0.36739999999999995,
-          "pickRate": 0.058
+          "itemId": 216,
+          "itemName": "Enchanted Mango",
+          "priority": 0.36679999999999996,
+          "pickRate": 0.056
         },
         {
           "itemId": 43,
-          "itemName": "ward_sentry",
+          "itemName": "Sentry Ward",
           "priority": 0.36619999999999997,
           "pickRate": 0.054
         }
@@ -865,86 +520,80 @@
       "early": [
         {
           "itemId": 29,
-          "itemName": "item_29",
-          "priority": 0.3913,
-          "pickRate": 0.091
+          "itemName": "Boots of Speed",
+          "priority": 0.391,
+          "pickRate": 0.09
         },
         {
           "itemId": 214,
-          "itemName": "item_214",
-          "priority": 0.3862,
-          "pickRate": 0.074
+          "itemName": "Tranquil Boots",
+          "priority": 0.3847,
+          "pickRate": 0.069
         },
         {
           "itemId": 77,
-          "itemName": "item_77",
-          "priority": 0.3721,
-          "pickRate": 0.027
-        },
-        {
-          "itemId": 31,
-          "itemName": "item_31",
-          "priority": 0.36519999999999997,
-          "pickRate": 0.004
+          "itemName": "Null Talisman",
+          "priority": 0.3727,
+          "pickRate": 0.029
         },
         {
           "itemId": 73,
-          "itemName": "item_73",
-          "priority": 0.36519999999999997,
-          "pickRate": 0.004
+          "itemName": "Bracer",
+          "priority": 0.3658,
+          "pickRate": 0.006
+        },
+        {
+          "itemId": 31,
+          "itemName": "Cloak",
+          "priority": 0.3649,
+          "pickRate": 0.003
         }
       ],
       "mid": [
         {
           "itemId": 215,
-          "itemName": "item_215",
+          "itemName": "Shadow Amulet",
+          "priority": 0.3947,
+          "pickRate": 0.079
+        },
+        {
+          "itemId": 254,
+          "itemName": "Glimmer Cape",
           "priority": 0.3944,
           "pickRate": 0.078
         },
         {
-          "itemId": 254,
-          "itemName": "item_254",
-          "priority": 0.3935,
-          "pickRate": 0.075
-        },
-        {
           "itemId": 23,
-          "itemName": "item_23",
+          "itemName": "Staff of Wizardry",
           "priority": 0.3857,
           "pickRate": 0.049
         },
         {
           "itemId": 102,
-          "itemName": "Mask of Madness",
-          "priority": 0.3806,
-          "pickRate": 0.032
+          "itemName": "Force Staff",
+          "priority": 0.38,
+          "pickRate": 0.03
         },
         {
           "itemId": 1128,
-          "itemName": "item_1128",
-          "priority": 0.3767,
-          "pickRate": 0.019
+          "itemName": "Pavise",
+          "priority": 0.3761,
+          "pickRate": 0.017
         }
       ],
       "situational": [],
       "luxury": [
         {
           "itemId": 102,
-          "itemName": "Mask of Madness",
-          "priority": 0.3822,
-          "pickRate": 0.014
+          "itemName": "Force Staff",
+          "priority": 0.3819,
+          "pickRate": 0.013
         },
         {
           "itemId": 232,
-          "itemName": "item_232",
+          "itemName": "Aether Lens",
           "priority": 0.38130000000000003,
           "pickRate": 0.011
-        },
-        {
-          "itemId": 254,
-          "itemName": "item_254",
-          "priority": 0.3792,
-          "pickRate": 0.004
         },
         {
           "itemId": 1,
@@ -954,9 +603,15 @@
         },
         {
           "itemId": 116,
-          "itemName": "Echo Sabre",
-          "priority": 0.3789,
-          "pickRate": 0.003
+          "itemName": "Black King Bar",
+          "priority": 0.3786,
+          "pickRate": 0.002
+        },
+        {
+          "itemId": 254,
+          "itemName": "Glimmer Cape",
+          "priority": 0.3786,
+          "pickRate": 0.002
         }
       ]
     },
@@ -1007,360 +662,15 @@
       "reasoning": "Ordem padrão para Support, Disabler, Nuker"
     },
     "matchups": {
-      "countersToMe": [
-        {
-          "heroId": 113,
-          "heroName": "Hero 113",
-          "advantage": -3.333333333333334,
-          "sampleSize": 21,
-          "reasoning": "3.3% desvantagem"
-        },
-        {
-          "heroId": 88,
-          "heroName": "Hero 88",
-          "advantage": -2.40506329113924,
-          "sampleSize": 79,
-          "reasoning": "2.4% desvantagem"
-        },
-        {
-          "heroId": 73,
-          "heroName": "Hero 73",
-          "advantage": -1.8181818181818177,
-          "sampleSize": 66,
-          "reasoning": "1.8% desvantagem"
-        },
-        {
-          "heroId": 32,
-          "heroName": "Hero 32",
-          "advantage": -1.578947368421053,
-          "sampleSize": 38,
-          "reasoning": "1.6% desvantagem"
-        },
-        {
-          "heroId": 38,
-          "heroName": "Hero 38",
-          "advantage": -1.5384615384615385,
-          "sampleSize": 234,
-          "reasoning": "1.5% desvantagem"
-        }
-      ],
-      "goodVs": [
-        {
-          "heroId": 47,
-          "heroName": "Hero 47",
-          "advantage": 4.166666666666668,
-          "sampleSize": 24,
-          "reasoning": "4.2% vantagem"
-        },
-        {
-          "heroId": 145,
-          "heroName": "Hero 145",
-          "advantage": 3.3333333333333326,
-          "sampleSize": 3,
-          "reasoning": "3.3% vantagem"
-        },
-        {
-          "heroId": 67,
-          "heroName": "Hero 67",
-          "advantage": 3.0434782608695654,
-          "sampleSize": 69,
-          "reasoning": "3.0% vantagem"
-        },
-        {
-          "heroId": 60,
-          "heroName": "Hero 60",
-          "advantage": 2.3529411764705888,
-          "sampleSize": 102,
-          "reasoning": "2.4% vantagem"
-        },
-        {
-          "heroId": 111,
-          "heroName": "Hero 111",
-          "advantage": 2.1739130434782616,
-          "sampleSize": 69,
-          "reasoning": "2.2% vantagem"
-        }
-      ],
+      "countersToMe": [],
+      "goodVs": [],
       "synergies": []
     },
     "indicators": {
       "winRate": 0.5,
       "popularity": 0.05,
       "sampleSize": 5000,
-      "lastUpdated": "2025-10-09T22:50:13.010Z",
-      "confidence": 0.559948500216801
-    }
-  },
-  "hero:14:patch:7.39e:mmr:4000": {
-    "hero": "Pudge",
-    "heroId": 14,
-    "patch": "7.39e",
-    "mmr": 4000,
-    "coreBuild": {
-      "starting": [
-        {
-          "itemId": 16,
-          "itemName": "item_16",
-          "priority": 0.3917,
-          "pickRate": 0.139
-        },
-        {
-          "itemId": 44,
-          "itemName": "clarity",
-          "priority": 0.3725,
-          "pickRate": 0.075
-        },
-        {
-          "itemId": 13,
-          "itemName": "item_13",
-          "priority": 0.3716,
-          "pickRate": 0.072
-        },
-        {
-          "itemId": 1123,
-          "itemName": "item_1123",
-          "priority": 0.3605,
-          "pickRate": 0.035
-        },
-        {
-          "itemId": 20,
-          "itemName": "item_20",
-          "priority": 0.36019999999999996,
-          "pickRate": 0.034
-        },
-        {
-          "itemId": 34,
-          "itemName": "item_34",
-          "priority": 0.35869999999999996,
-          "pickRate": 0.029
-        }
-      ],
-      "early": [
-        {
-          "itemId": 29,
-          "itemName": "item_29",
-          "priority": 0.38889999999999997,
-          "pickRate": 0.083
-        },
-        {
-          "itemId": 73,
-          "itemName": "item_73",
-          "priority": 0.385,
-          "pickRate": 0.07
-        },
-        {
-          "itemId": 4,
-          "itemName": "chainmail",
-          "priority": 0.38139999999999996,
-          "pickRate": 0.058
-        },
-        {
-          "itemId": 50,
-          "itemName": "Phase Boots",
-          "priority": 0.37779999999999997,
-          "pickRate": 0.046
-        },
-        {
-          "itemId": 214,
-          "itemName": "item_214",
-          "priority": 0.37329999999999997,
-          "pickRate": 0.031
-        }
-      ],
-      "mid": [
-        {
-          "itemId": 1,
-          "itemName": "Blink Dagger",
-          "priority": 0.3902,
-          "pickRate": 0.064
-        },
-        {
-          "itemId": 21,
-          "itemName": "item_21",
-          "priority": 0.3896,
-          "pickRate": 0.062
-        },
-        {
-          "itemId": 23,
-          "itemName": "item_23",
-          "priority": 0.3845,
-          "pickRate": 0.045
-        },
-        {
-          "itemId": 22,
-          "itemName": "item_22",
-          "priority": 0.3839,
-          "pickRate": 0.043
-        },
-        {
-          "itemId": 108,
-          "itemName": "Orchid Malevolence",
-          "priority": 0.3839,
-          "pickRate": 0.043
-        }
-      ],
-      "situational": [],
-      "luxury": [
-        {
-          "itemId": 116,
-          "itemName": "Echo Sabre",
-          "priority": 0.3825,
-          "pickRate": 0.015
-        },
-        {
-          "itemId": 1,
-          "itemName": "Blink Dagger",
-          "priority": 0.38130000000000003,
-          "pickRate": 0.011
-        },
-        {
-          "itemId": 119,
-          "itemName": "item_119",
-          "priority": 0.3807,
-          "pickRate": 0.009
-        },
-        {
-          "itemId": 226,
-          "itemName": "item_226",
-          "priority": 0.3804,
-          "pickRate": 0.008
-        },
-        {
-          "itemId": 102,
-          "itemName": "Mask of Madness",
-          "priority": 0.3801,
-          "pickRate": 0.007
-        }
-      ]
-    },
-    "skillOrder": {
-      "levels": [
-        1,
-        1,
-        2,
-        2,
-        2,
-        3,
-        2,
-        1,
-        1,
-        4,
-        3,
-        3,
-        3,
-        4,
-        4
-      ],
-      "talents": [
-        {
-          "level": 10,
-          "option": "left",
-          "description": "Talent de nível 10",
-          "pickRate": 0.6
-        },
-        {
-          "level": 15,
-          "option": "right",
-          "description": "Talent de nível 15",
-          "pickRate": 0.55
-        },
-        {
-          "level": 20,
-          "option": "left",
-          "description": "Talent de nível 20",
-          "pickRate": 0.52
-        },
-        {
-          "level": 25,
-          "option": "right",
-          "description": "Talent de nível 25",
-          "pickRate": 0.58
-        }
-      ],
-      "reasoning": "Ordem padrão para Disabler, Initiator, Durable, Nuker"
-    },
-    "matchups": {
-      "countersToMe": [
-        {
-          "heroId": 145,
-          "heroName": "Hero 145",
-          "advantage": -4,
-          "sampleSize": 10,
-          "reasoning": "4.0% desvantagem"
-        },
-        {
-          "heroId": 77,
-          "heroName": "Hero 77",
-          "advantage": -3.333333333333334,
-          "sampleSize": 99,
-          "reasoning": "3.3% desvantagem"
-        },
-        {
-          "heroId": 82,
-          "heroName": "Hero 82",
-          "advantage": -3.076923076923077,
-          "sampleSize": 26,
-          "reasoning": "3.1% desvantagem"
-        },
-        {
-          "heroId": 73,
-          "heroName": "Hero 73",
-          "advantage": -1.9999999999999996,
-          "sampleSize": 110,
-          "reasoning": "2.0% desvantagem"
-        },
-        {
-          "heroId": 66,
-          "heroName": "Hero 66",
-          "advantage": -1.8518518518518523,
-          "sampleSize": 27,
-          "reasoning": "1.9% desvantagem"
-        }
-      ],
-      "goodVs": [
-        {
-          "heroId": 32,
-          "heroName": "Hero 32",
-          "advantage": 3.8095238095238093,
-          "sampleSize": 42,
-          "reasoning": "3.8% vantagem"
-        },
-        {
-          "heroId": 12,
-          "heroName": "Hero 12",
-          "advantage": 2.6086956521739135,
-          "sampleSize": 46,
-          "reasoning": "2.6% vantagem"
-        },
-        {
-          "heroId": 108,
-          "heroName": "Hero 108",
-          "advantage": 2.4,
-          "sampleSize": 50,
-          "reasoning": "2.4% vantagem"
-        },
-        {
-          "heroId": 40,
-          "heroName": "Hero 40",
-          "advantage": 1.9999999999999996,
-          "sampleSize": 85,
-          "reasoning": "2.0% vantagem"
-        },
-        {
-          "heroId": 6,
-          "heroName": "Hero 6",
-          "advantage": 1.588785046728971,
-          "sampleSize": 107,
-          "reasoning": "1.6% vantagem"
-        }
-      ],
-      "synergies": []
-    },
-    "indicators": {
-      "winRate": 0.5,
-      "popularity": 0.05,
-      "sampleSize": 5000,
-      "lastUpdated": "2025-10-10T00:32:42.399Z",
+      "lastUpdated": "2025-10-11T10:01:22.927Z",
       "confidence": 0.559948500216801
     }
   }

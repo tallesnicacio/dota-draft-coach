@@ -17,7 +17,7 @@ export const mockHeroes: Hero[] = [
   { id: 'primal_beast', name: 'Primal Beast', displayName: 'Primal Beast', image: 'https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/primal_beast.png', primaryAttribute: 'str' },
   { id: 'huskar', name: 'Huskar', displayName: 'Huskar', image: 'https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/huskar.png', primaryAttribute: 'str' },
   { id: 'kunkka', name: 'Kunkka', displayName: 'Kunkka', image: 'https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/kunkka.png', primaryAttribute: 'str' },
-  
+
   // Agility Heroes
   { id: 'templar_assassin', name: 'Templar Assassin', displayName: 'Templar Assassin', image: 'https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/templar_assassin.png', primaryAttribute: 'agi' },
   { id: 'sniper', name: 'Sniper', displayName: 'Sniper', image: 'https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/sniper.png', primaryAttribute: 'agi' },
@@ -40,7 +40,7 @@ export const mockHeroes: Hero[] = [
   { id: 'viper', name: 'Viper', displayName: 'Viper', image: 'https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/viper.png', primaryAttribute: 'agi' },
   { id: 'bloodseeker', name: 'Bloodseeker', displayName: 'Bloodseeker', image: 'https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/bloodseeker.png', primaryAttribute: 'agi' },
   { id: 'clinkz', name: 'Clinkz', displayName: 'Clinkz', image: 'https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/clinkz.png', primaryAttribute: 'agi' },
-  
+
   // Intelligence Heroes
   { id: 'invoker', name: 'Invoker', displayName: 'Invoker', image: 'https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/invoker.png', primaryAttribute: 'int' },
   { id: 'crystal_maiden', name: 'Crystal Maiden', displayName: 'Crystal Maiden', image: 'https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/crystal_maiden.png', primaryAttribute: 'int' },
@@ -60,7 +60,7 @@ export const mockHeroes: Hero[] = [
   { id: 'warlock', name: 'Warlock', displayName: 'Warlock', image: 'https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/warlock.png', primaryAttribute: 'int' },
   { id: 'jakiro', name: 'Jakiro', displayName: 'Jakiro', image: 'https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/jakiro.png', primaryAttribute: 'int' },
   { id: 'necrolyte', name: 'Necrophos', displayName: 'Necrophos', image: 'https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/necrolyte.png', primaryAttribute: 'int' },
-  
+
   // Universal Heroes
   { id: 'magnataur', name: 'Magnus', displayName: 'Magnus', image: 'https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/magnataur.png', primaryAttribute: 'universal' },
   { id: 'enigma', name: 'Enigma', displayName: 'Enigma', image: 'https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/enigma.png', primaryAttribute: 'universal' },
@@ -87,6 +87,10 @@ export const mockBuild: HeroBuild = {
     situational: ['Black King Bar', 'Blink Dagger', 'Hurricane Pike', 'Daedalus', 'Silver Edge', "Linken's Sphere"],
   },
   skillOrder: {
+    id: 'templar_assassin_skill_order',
+    name: 'Templar Assassin Skill Order',
+    image: 'https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/templar_assassin.png',
+    displayName: 'Templar Assassin Skill Order',
     sequence: ['Q', 'W', 'E', 'Q', 'Q', 'R', 'Q', 'W', 'Q', 'W', 'R', 'W', 'W', 'E', 'E', 'R', 'E'],
     talents: [10, 15, 20, 25],
   },

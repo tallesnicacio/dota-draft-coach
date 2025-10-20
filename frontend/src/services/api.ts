@@ -177,6 +177,10 @@ const convertBuild = (backendBuild: BackendHeroBuild): HeroBuild => {
       ],
     },
     skillOrder: {
+      id: `${backendBuild.heroId}-${backendBuild.patch}-${backendBuild.mmr}`,
+      name: backendBuild.hero,
+      image: `https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/${heroName}.png`,
+      displayName: backendBuild.hero,
       sequence: skillSequence,
       talents: talents,
     },

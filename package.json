@@ -13,7 +13,12 @@
     "start": "cd backend && npm start",
     "test": "npm run test:backend",
     "test:backend": "cd backend && npm test",
-    "setup": "npm install && cd backend && npm install && cd ../frontend && npm install"
+    "test:e2e": "cd frontend && npm run test:e2e",
+    "setup": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "mock-gsi:heartbeat": "npx tsx tools/mock-gsi-sender.ts heartbeat",
+    "mock-gsi:snapshot": "npx tsx tools/mock-gsi-sender.ts snapshot",
+    "mock-gsi:simulate": "npx tsx tools/mock-gsi-sender.ts simulate",
+    "mock-gsi:loop": "npx tsx tools/mock-gsi-sender.ts loop"
   },
   "workspaces": [
     "backend",

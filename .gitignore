@@ -44,3 +44,4 @@ workbox-*.js
 # Vite
 .vite/
 vite.config.*.timestamp-*
+backend/.cache/

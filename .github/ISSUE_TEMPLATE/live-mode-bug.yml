@@ -1,0 +1,146 @@
+name: 🐛 Live Mode - Reportar Bug
+description: Reportar um problema técnico com o Live Mode
+title: "[Live Mode Bug] "
+labels: ["live-mode", "bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Reportar Bug do Live Mode
+
+        Descreva o problema que encontrou para que possamos corrigi-lo.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Descrição do Bug
+      description: Descreva claramente o que aconteceu
+      placeholder: Ex: Quando compro BKB no jogo, o app não atualiza...
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Como Reproduzir
+      description: Passos para reproduzir o comportamento
+      placeholder: |
+        1. Iniciar Dota 2
+        2. Entrar em Hero Demo
+        3. Comprar item X
+        4. Ver erro...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportamento Esperado
+      description: O que você esperava que acontecesse?
+      placeholder: Ex: App deveria mostrar BKB como owned...
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Comportamento Atual
+      description: O que realmente aconteceu?
+      placeholder: Ex: App não atualizou, item não aparece...
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs do Backend
+      description: Cole logs relevantes do terminal do backend
+      render: shell
+      placeholder: |
+        [20:50:23 UTC] ERROR: ...
+
+  - type: textarea
+    id: browser-console
+    attributes:
+      label: Console do Navegador
+      description: Abra DevTools (F12) e cole erros do console
+      render: javascript
+      placeholder: |
+        Uncaught Error: ...
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Sistema Operacional
+      options:
+        - Windows 10
+        - Windows 11
+        - Linux (Ubuntu/Debian)
+        - Linux (Arch/Manjaro)
+        - Linux (Other)
+        - macOS
+    validations:
+      required: true
+
+  - type: input
+    id: node-version
+    attributes:
+      label: Versão do Node.js
+      description: Execute `node --version`
+      placeholder: v18.17.0
+    validations:
+      required: true
+
+  - type: input
+    id: npm-version
+    attributes:
+      label: Versão do npm
+      description: Execute `npm --version`
+      placeholder: 9.6.7
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Navegador
+      options:
+        - Chrome
+        - Firefox
+        - Edge
+        - Safari
+        - Opera
+        - Brave
+    validations:
+      required: true
+
+  - type: textarea
+    id: config
+    attributes:
+      label: Configuração do .cfg
+      description: Cole o conteúdo do seu gamestate_integration_coach.cfg (remova o token!)
+      render: text
+      placeholder: |
+        "Dota2 Coach Live"
+        {
+          "uri" "http://127.0.0.1:3001/api/gsi"
+          ...
+        }
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Contexto Adicional
+      description: Screenshots, vídeos, ou qualquer outra informação relevante
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: Backend está rodando (`npm run dev:backend`)
+          required: true
+        - label: Frontend está rodando (`npm run dev:frontend`)
+          required: true
+        - label: Verifiquei que a porta 3001 não está em uso por outro processo
+          required: true
+        - label: Li o [guia de troubleshooting](../LIVE_MODE_SETUP.md#troubleshooting)
+          required: true

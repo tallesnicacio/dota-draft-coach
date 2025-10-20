@@ -1,0 +1,237 @@
+{
+  "auth": {
+    "token": "TEST_TOKEN"
+  },
+  "provider": {
+    "name": "Dota 2",
+    "appid": 570,
+    "version": 53,
+    "timestamp": 1696950123
+  },
+  "map": {
+    "name": "start",
+    "matchid": "7890123456",
+    "game_time": 774,
+    "clock_time": 754,
+    "daytime": true,
+    "nightstalker_night": false,
+    "game_state": "DOTA_GAMERULES_STATE_GAME_IN_PROGRESS",
+    "paused": false,
+    "win_team": "none",
+    "customgamename": "",
+    "ward_purchase_cooldown": 0
+  },
+  "player": {
+    "steamid": "76561198012345678",
+    "accountid": "12345678",
+    "name": "Player Name",
+    "activity": "playing",
+    "kills": 5,
+    "deaths": 2,
+    "assists": 8,
+    "last_hits": 87,
+    "denies": 12,
+    "kill_streak": 2,
+    "commands_issued": 1542,
+    "team_name": "radiant",
+    "gold": 2450,
+    "gold_reliable": 1200,
+    "gold_unreliable": 1250,
+    "gold_from_hero_kills": 850,
+    "gold_from_creep_kills": 3200,
+    "gold_from_income": 1100,
+    "gold_from_shared": 50,
+    "gpm": 512,
+    "xpm": 628
+  },
+  "hero": {
+    "xpos": -1254,
+    "ypos": 3456,
+    "id": 46,
+    "name": "npc_dota_hero_templar_assassin",
+    "level": 12,
+    "xp": 8420,
+    "alive": true,
+    "respawn_seconds": 0,
+    "buyback_cost": 850,
+    "buyback_cooldown": 0,
+    "health": 1420,
+    "max_health": 1680,
+    "health_percent": 84,
+    "mana": 512,
+    "max_mana": 780,
+    "mana_percent": 65,
+    "silenced": false,
+    "stunned": false,
+    "disarmed": false,
+    "magicimmune": false,
+    "hexed": false,
+    "muted": false,
+    "break": false,
+    "smoked": false,
+    "has_debuff": false,
+    "talent_1": false,
+    "talent_2": false,
+    "talent_3": true,
+    "talent_4": false,
+    "talent_5": false,
+    "talent_6": false,
+    "talent_7": false,
+    "talent_8": false
+  },
+  "abilities": {
+    "ability0": {
+      "name": "templar_assassin_refraction",
+      "level": 3,
+      "can_cast": true,
+      "passive": false,
+      "ability_active": false,
+      "cooldown": 0,
+      "ultimate": false
+    },
+    "ability1": {
+      "name": "templar_assassin_meld",
+      "level": 2,
+      "can_cast": true,
+      "passive": false,
+      "ability_active": false,
+      "cooldown": 3,
+      "ultimate": false
+    },
+    "ability2": {
+      "name": "templar_assassin_psi_blades",
+      "level": 4,
+      "can_cast": false,
+      "passive": true,
+      "ability_active": false,
+      "cooldown": 0,
+      "ultimate": false
+    },
+    "ability3": {
+      "name": "templar_assassin_trap",
+      "level": 2,
+      "can_cast": true,
+      "passive": false,
+      "ability_active": false,
+      "cooldown": 0,
+      "ultimate": true,
+      "charges": 3,
+      "max_charges": 3
+    },
+    "ability4": {
+      "name": "plus_high_five",
+      "level": 0,
+      "can_cast": false,
+      "passive": false,
+      "ability_active": false,
+      "cooldown": 0,
+      "ultimate": false
+    },
+    "ability5": {
+      "name": "empty",
+      "level": 0
+    }
+  },
+  "items": {
+    "slot0": {
+      "name": "item_power_treads",
+      "purchaser": 0,
+      "can_cast": true,
+      "cooldown": 0,
+      "passive": false,
+      "charges": 0
+    },
+    "slot1": {
+      "name": "item_desolator",
+      "purchaser": 0,
+      "can_cast": false,
+      "cooldown": 0,
+      "passive": true,
+      "charges": 0
+    },
+    "slot2": {
+      "name": "item_blink",
+      "purchaser": 0,
+      "can_cast": true,
+      "cooldown": 0,
+      "passive": false,
+      "charges": 0
+    },
+    "slot3": {
+      "name": "item_black_king_bar",
+      "purchaser": 0,
+      "can_cast": true,
+      "cooldown": 28,
+      "passive": false,
+      "charges": 0
+    },
+    "slot4": {
+      "name": "item_tpscroll",
+      "purchaser": 0,
+      "can_cast": true,
+      "cooldown": 0,
+      "passive": false,
+      "charges": 1
+    },
+    "slot5": {
+      "name": "empty"
+    },
+    "stash0": {
+      "name": "item_ultimate_orb",
+      "purchaser": 0
+    },
+    "stash1": {
+      "name": "empty"
+    },
+    "stash2": {
+      "name": "empty"
+    },
+    "stash3": {
+      "name": "empty"
+    },
+    "stash4": {
+      "name": "empty"
+    },
+    "stash5": {
+      "name": "empty"
+    },
+    "teleport0": {
+      "name": "item_tpscroll",
+      "purchaser": 0,
+      "charges": 1
+    },
+    "neutral0": {
+      "name": "item_grove_bow",
+      "purchaser": 0,
+      "passive": false,
+      "can_cast": false,
+      "cooldown": 0,
+      "charges": 0
+    }
+  },
+  "draft": {
+    "activeteam": 0,
+    "pick": true,
+    "activeteam_time_remaining": 30,
+    "radiant_bonus_time": 130,
+    "dire_bonus_time": 130,
+    "team2": {
+      "home_team": false,
+      "pick0_id": 1,
+      "pick0_class": "npc_dota_hero_antimage",
+      "pick1_id": 5,
+      "pick1_class": "npc_dota_hero_crystal_maiden",
+      "pick2_id": 0,
+      "pick2_class": "npc_dota_hero_none"
+    },
+    "team3": {
+      "home_team": true,
+      "pick0_id": 46,
+      "pick0_class": "npc_dota_hero_templar_assassin",
+      "pick1_id": 93,
+      "pick1_class": "npc_dota_hero_slark",
+      "pick2_id": 0,
+      "pick2_class": "npc_dota_hero_none"
+    }
+  }
+}

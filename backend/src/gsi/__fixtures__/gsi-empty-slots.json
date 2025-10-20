@@ -1,0 +1,111 @@
+{
+  "auth": {
+    "token": "TEST_TOKEN"
+  },
+  "provider": {
+    "name": "Dota 2",
+    "appid": 570,
+    "version": 53,
+    "timestamp": 1696950100
+  },
+  "map": {
+    "matchid": "7890123456",
+    "clock_time": 100,
+    "game_time": 120
+  },
+  "player": {
+    "steamid": "76561198012345678",
+    "accountid": "12345678",
+    "team_name": "radiant",
+    "gold": 500
+  },
+  "hero": {
+    "id": 46,
+    "name": "npc_dota_hero_templar_assassin",
+    "level": 1
+  },
+  "items": {
+    "slot0": {
+      "name": "empty"
+    },
+    "slot1": {
+      "name": "empty"
+    },
+    "slot2": {
+      "name": "item_tpscroll",
+      "charges": 1,
+      "can_cast": true,
+      "cooldown": 0,
+      "passive": false
+    },
+    "slot3": {
+      "name": "empty"
+    },
+    "slot4": {
+      "name": "empty"
+    },
+    "slot5": {
+      "name": "empty"
+    },
+    "stash0": {
+      "name": "empty"
+    },
+    "stash1": {
+      "name": "empty"
+    },
+    "stash2": {
+      "name": "empty"
+    },
+    "stash3": {
+      "name": "empty"
+    },
+    "stash4": {
+      "name": "empty"
+    },
+    "stash5": {
+      "name": "empty"
+    }
+  },
+  "abilities": {
+    "ability0": {
+      "name": "templar_assassin_refraction",
+      "level": 0,
+      "can_cast": false,
+      "passive": false,
+      "cooldown": 0,
+      "ultimate": false
+    },
+    "ability1": {
+      "name": "templar_assassin_meld",
+      "level": 0,
+      "can_cast": false,
+      "passive": false,
+      "cooldown": 0,
+      "ultimate": false
+    },
+    "ability2": {
+      "name": "templar_assassin_psi_blades",
+      "level": 1,
+      "can_cast": false,
+      "passive": true,
+      "cooldown": 0,
+      "ultimate": false
+    },
+    "ability3": {
+      "name": "templar_assassin_trap",
+      "level": 0,
+      "can_cast": false,
+      "passive": false,
+      "cooldown": 0,
+      "ultimate": true
+    },
+    "ability4": {
+      "name": "empty",
+      "level": 0
+    },
+    "ability5": {
+      "name": "empty",
+      "level": 0
+    }
+  }
+}

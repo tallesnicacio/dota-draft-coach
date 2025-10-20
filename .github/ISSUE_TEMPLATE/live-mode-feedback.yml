@@ -1,0 +1,97 @@
+name: 🔴 Live Mode - Feedback Beta
+description: Compartilhe sua experiência usando o Live Mode (Beta)
+title: "[Live Mode] "
+labels: ["live-mode", "feedback", "beta"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Obrigado por testar o Live Mode! 🎮
+
+        Seu feedback é essencial para melhorarmos essa funcionalidade.
+
+  - type: dropdown
+    id: experience
+    attributes:
+      label: Como foi sua experiência geral?
+      options:
+        - Excelente - Funcionou perfeitamente
+        - Boa - Funcionou bem com pequenos problemas
+        - Regular - Funcionou mas com problemas significativos
+        - Ruim - Muitos problemas
+        - Não funcionou
+    validations:
+      required: true
+
+  - type: dropdown
+    id: setup
+    attributes:
+      label: Conseguiu configurar o GSI facilmente?
+      options:
+        - Sim, foi fácil
+        - Sim, mas demorei um pouco
+        - Não, tive dificuldades
+        - Não consegui configurar
+    validations:
+      required: true
+
+  - type: textarea
+    id: worked
+    attributes:
+      label: O que funcionou bem?
+      description: Descreva aspectos positivos da experiência
+      placeholder: Ex: A detecção de items foi instantânea, recomendações em tempo real foram úteis...
+
+  - type: textarea
+    id: problems
+    attributes:
+      label: Que problemas você encontrou?
+      description: Descreva qualquer bug, lag, ou comportamento inesperado
+      placeholder: Ex: Às vezes desconectava, alguns items não eram detectados...
+
+  - type: textarea
+    id: suggestions
+    attributes:
+      label: Sugestões de melhoria
+      description: O que poderia ser melhor?
+      placeholder: Ex: Seria útil mostrar o gold needed, adicionar notificações quando BKB está em CD...
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Sistema Operacional
+      options:
+        - Windows
+        - Linux
+        - macOS
+    validations:
+      required: true
+
+  - type: dropdown
+    id: usage
+    attributes:
+      label: Como você testou?
+      multiple: true
+      options:
+        - Hero Demo
+        - Bot Match
+        - Turbo
+        - Ranked
+        - Unranked
+        - Custom Lobby
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Informações adicionais
+      description: Qualquer outra coisa que queira compartilhar
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Confirmação
+      options:
+        - label: Li o [guia de configuração](../LIVE_MODE_SETUP.md)
+          required: true
+        - label: Estou usando a versão mais recente do projeto
+          required: true
