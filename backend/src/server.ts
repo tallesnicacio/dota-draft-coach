@@ -46,7 +46,15 @@ app.get('/health', (req, res) => {
 
 // Routes
 app.use('/api/heroes', heroesRouter);
-app.use('/api', gsiRouter);
+
+// Live Mode routes (feature flag)
+const LIVE_MODE_ENABLED = process.env.LIVE_MODE_ENABLED !== 'false'; // Enabled by default
+if (LIVE_MODE_ENABLED) {
+  app.use('/api', gsiRouter);
+  logger.info({ enabled: true }, 'Live Mode is ENABLED');
+} else {
+  logger.warn({ enabled: false }, 'Live Mode is DISABLED');
+}
 
 // 404 handler
 app.use((req, res) => {
@@ -87,8 +95,10 @@ export const wsServer = {
 
 // Only start server if not in test environment
 if (process.env.NODE_ENV !== 'test') {
-  // Initialize WebSocket server
-  getWsServer();
+  // Initialize WebSocket server (only if Live Mode is enabled)
+  if (LIVE_MODE_ENABLED) {
+    getWsServer();
+  }
 
   // Start HTTP server (with WebSocket attached)
   httpServer.listen(PORT, () => {

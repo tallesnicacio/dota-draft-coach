@@ -1,6 +1,13 @@
 # 🎮 Dota 2 Coach
 
+![Status](https://img.shields.io/badge/status-active-success)
+![Live Mode](https://img.shields.io/badge/Live%20Mode-BETA-orange)
+![Tests](https://img.shields.io/badge/tests-passing-brightgreen)
+![License](https://img.shields.io/badge/license-MIT-blue)
+
 Aplicação **mobile-first** em PT-BR para melhorar sua gameplay de Dota 2, fornecendo recomendações de heróis, builds, counters e timers em tempo real.
+
+> 🧪 **Live Mode em BETA**: Agora com integração em tempo real com Dota 2! [Configure agora →](LIVE_MODE_SETUP.md)
 
 ## 🌟 Funcionalidades
 
@@ -386,6 +393,36 @@ A aplicação é uma PWA (Progressive Web App):
 - **Swipe-friendly** interface
 - **Touch-optimized** buttons
 - Paleta de cores temática de Dota 2
+
+## 🧪 Beta Testing - Live Mode
+
+O **Live Mode** está em fase Beta! Estamos buscando feedback para melhorar a funcionalidade.
+
+### Como Participar
+
+1. **Configure o GSI**: Siga o [guia de setup](LIVE_MODE_SETUP.md)
+2. **Teste em partidas**: Hero Demo, Bot Match, ou Ranked
+3. **Compartilhe Feedback**: [Abra uma issue](https://github.com/seu-usuario/dota2-coach/issues/new/choose)
+
+### O que funciona?
+
+✅ Detecção automática de herói em jogo
+✅ Atualização de items em tempo real
+✅ Cálculo de gold needed
+✅ Recomendações dinâmicas baseadas no draft
+✅ WebSocket com auto-reconnect
+
+### Problemas Conhecidos
+
+⚠️ Draft detection não é automática (adicione aliados/inimigos manualmente)
+⚠️ Requer flag `-gamestateintegration` no Steam
+⚠️ Apenas localhost (não funciona remotamente)
+
+### Reportar Bugs
+
+Encontrou um problema? [Reporte aqui →](https://github.com/seu-usuario/dota2-coach/issues/new?template=live-mode-bug.yml)
+
+---
 
 ## 📚 Documentação Adicional
 
