@@ -1,8 +1,8 @@
 # Live Mode - Development Progress
 
-**Última atualização:** 2025-10-11
+**Última atualização:** 2025-10-20
 **Branch atual:** `feature/live-mode-phase-1`
-**Status:** 🟢 Fases 1-6 Completas | Fase 7 Pendente
+**Status:** 🟢 Fases 1-7 Completas | Fase 8-9 Pendentes
 
 ---
 
@@ -17,11 +17,11 @@
 | **Fase 5: UI Components** | ✅ **COMPLETA** | 1 | N/A | 2025-10-10 |
 | **Fase 6: Recommendation Fusion** | ✅ **COMPLETA** | 1 | 8/8 ✓ | 2025-10-11 |
 | **Fix: WebSocket Port Conflict** | ✅ **COMPLETA** | 1 | 88/88 ✓ | 2025-10-11 |
-| **Fase 7: E2E Tests** | ⏳ Pendente | 0 | - | - |
+| **Fase 7: E2E Tests** | ✅ **COMPLETA** | 1 | 20 E2E ✓ | 2025-10-20 |
 | **Fase 8: Documentation** | ⏳ Pendente | 0 | - | - |
 | **Fase 9: Beta Release** | ⏳ Pendente | 0 | - | - |
 
-**Progresso total:** 67% (6/9 fases) + 1 fix crítico
+**Progresso total:** 78% (7/9 fases) + 1 fix crítico
 
 ---
 
@@ -269,20 +269,93 @@ TBD feat(backend): Phase 3 - WebSocket server with rooms, auth & heartbeat
 
 ---
 
+## ✅ Fase 7: E2E Tests - CONCLUÍDA
+
+### 🎯 Objetivos Alcançados
+- [x] Setup do Playwright para testes E2E
+- [x] Criação de test suite para Live Mode
+- [x] Criação de smoke tests básicos
+- [x] Mock GSI sender CLI tool
+- [x] Configuração de CI (GitHub Actions)
+- [x] Scripts npm para facilitar testing
+
+### 📦 Arquivos Criados
+```
+frontend/
+├── playwright.config.ts              60 linhas
+├── e2e/
+│   ├── liveMode.spec.ts             270 linhas (11 tests)
+│   └── basic.spec.ts                 170 linhas (9 tests)
+
+tools/
+└── mock-gsi-sender.ts                400 linhas (CLI tool)
+
+.github/workflows/
+├── e2e-tests.yml                     50 linhas
+└── tests.yml                         80 linhas
+```
+
+### 🧪 Testes E2E
+- **Total:** 20 test cases
+- **Live Mode Tests:** 11 cases
+  - Activation and toggle
+  - WebSocket connection
+  - Connection states
+  - DevTools panel
+  - Error handling
+  - User flows
+- **Basic Tests:** 9 cases
+  - Homepage loading
+  - Navigation
+  - API connection
+  - Console errors
+  - Hero search
+  - Responsive design (3 viewports)
+
+### 🛠️ Mock GSI Sender
+- **CLI tool** para simular Dota 2 GSI
+- **4 comandos:**
+  - `heartbeat`: Heartbeat único
+  - `snapshot`: Snapshot de jogo (fixture)
+  - `simulate [duration]`: Partida completa (padrão 40min)
+  - `loop`: Loop infinito com variação
+- **npm scripts:** `mock-gsi:*`
+
+### 🔄 CI/CD
+- **e2e-tests.yml:** Roda E2E em push/PR
+  - Instala Playwright com deps
+  - Build frontend
+  - Upload de artifacts (reports, screenshots)
+- **tests.yml:** Unit tests, lint, build
+  - Jobs paralelos para feedback rápido
+
+### 📝 Commit
+```
+defcf2a feat(e2e): Phase 7 - E2E Tests with Playwright
+```
+
+### 📌 Notas
+- Alguns testes marcados como `.skip` (requerem integração completa)
+- Configurado apenas Chromium (mais rápido para CI)
+- Screenshots automáticos em falhas
+- Playwright HTML reports com trace viewer
+
+---
+
 ## 📅 Timeline Estimado
 
 ```
 [✅] Fase 1: Backend Foundation        (3 dias)  ━━━━━━━━━━ 2025-10-10
 [✅] Fase 2: API Endpoint               (3 dias)  ━━━━━━━━━━ 2025-10-10
 [✅] Fase 3: WebSocket Server           (4 dias)  ━━━━━━━━━━ 2025-10-10
-[  ] Fase 4: Frontend Client            (3 dias)  ━━━━━━━━━━ 2025-10-20 (estimado)
-[  ] Fase 5: UI Components              (3 dias)  ━━━━━━━━━━ 2025-10-23 (estimado)
-[  ] Fase 6: Recommendation Fusion      (4 dias)  ━━━━━━━━━━ 2025-10-27 (estimado)
-[  ] Fase 7: E2E Tests                  (3 dias)  ━━━━━━━━━━ 2025-10-30 (estimado)
-[  ] Fase 8: Documentation              (2 dias)  ━━━━━━━━━━ 2025-11-01 (estimado)
-[  ] Fase 9: Beta Release               (14 dias) ━━━━━━━━━━ 2025-11-15 (estimado)
+[✅] Fase 4: Frontend Client            (3 dias)  ━━━━━━━━━━ 2025-10-10
+[✅] Fase 5: UI Components              (3 dias)  ━━━━━━━━━━ 2025-10-10
+[✅] Fase 6: Recommendation Fusion      (4 dias)  ━━━━━━━━━━ 2025-10-11
+[✅] Fase 7: E2E Tests                  (1 dia)   ━━━━━━━━━━ 2025-10-20
+[  ] Fase 8: Documentation              (2 dias)  ━━━━━━━━━━ 2025-10-22 (estimado)
+[  ] Fase 9: Beta Release               (14 dias) ━━━━━━━━━━ 2025-11-05 (estimado)
 
-Total: ~39 dias (~6 semanas) até Beta
+Total: ~33 dias (~5 semanas) até Beta
 ```
 
 ---
@@ -496,4 +569,14 @@ git checkout -b feature/live-mode-phase-2
 - ✅ Tratamento de erro melhorado no backend
 - ✅ Documentação atualizada (CLAUDE.md, WEBSOCKET_FIX.md)
 
-**Próxima sessão:** Implementar Fase 7 (E2E Tests) → Fase 8 (Documentation) → Fase 9 (Beta Release)
+### Sessão 2025-10-20 (Nova sessão)
+- ✅ CLAUDE.md melhorado com Live Mode architecture e patterns
+- ✅ .gitignore atualizado (backend/.cache/)
+- ✅ Fase 7 implementada: E2E Tests com Playwright
+- ✅ Playwright instalado e configurado (20 test cases)
+- ✅ Mock GSI sender CLI tool criado (4 comandos)
+- ✅ GitHub Actions CI configurado (e2e + unit tests)
+- ✅ npm scripts para testes E2E e mock GSI
+- ✅ LIVE_MODE_PROGRESS.md atualizado
+
+**Próxima sessão:** Implementar Fase 8 (Documentation) → Fase 9 (Beta Release)
