@@ -7,6 +7,7 @@ import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { PWAUpdatePrompt } from "@/components/PWAUpdatePrompt";
 import { useGameTimers } from "@/hooks/useGameTimers";
 import { useInGameAlerts } from "@/hooks/useInGameAlerts";
+import { GameOverlay } from "@/components/GameOverlay";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
@@ -51,6 +52,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <PWAUpdatePrompt />
+        <GameOverlay />
         <AppContent />
       </TooltipProvider>
     </QueryClientProvider>
