@@ -188,10 +188,10 @@ const Index = () => {
         {/* Live Game Status - Only when connected */}
         {isLiveActive && <LiveGameStatus />}
 
-        {/* Filtros e Timers/Events em Grid */}
+        {/* Filtros e Timers/Events em Grid - SEMPRE 3 colunas */}
         <div className="grid lg:grid-cols-3 gap-6">
           {/* Filtros */}
-          <section className={isLiveActive ? "lg:col-span-1" : "lg:col-span-2"}>
+          <section>
             <div className="glass-card rounded-xl p-6 border h-full">
               <FiltersBar
                 patch={patch}
@@ -212,12 +212,10 @@ const Index = () => {
             />
           </section>
 
-          {/* Próximos Eventos - Only when Live Mode active */}
-          {isLiveActive && (
-            <section>
-              <UpcomingEvents />
-            </section>
-          )}
+          {/* Próximos Eventos - SEMPRE visível */}
+          <section>
+            <UpcomingEvents />
+          </section>
         </div>
 
         {/* Seleção de Herói */}

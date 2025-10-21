@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Timer as TimerType } from '@/types/dota';
-import { Clock, Play, X, Bell, Zap } from 'lucide-react';
+import { Clock, Play, X, Bell, Zap, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import {
@@ -71,6 +71,50 @@ export function Timers({ timers, onAdd, onRemove, onUpdate }: TimersProps) {
     });
   };
 
+  const handleDemo = () => {
+    const now = Date.now();
+
+    // Criar 3 timers demo com diferentes durações
+    const demoTimers = [
+      {
+        id: `demo-1-${now}`,
+        name: '💰 Bounty Rune (Auto)',
+        duration: 180,
+        startTime: now,
+        endTime: now + 180000,
+        active: true,
+        automatic: true,
+        source: 'live-bounty-rune' as const,
+      },
+      {
+        id: `demo-2-${now}`,
+        name: '⚡ Power Rune (Auto)',
+        duration: 420,
+        startTime: now,
+        endTime: now + 420000,
+        active: true,
+        automatic: true,
+        source: 'live-power-rune' as const,
+      },
+      {
+        id: `demo-3-${now}`,
+        name: '🏕️ Stack Camp (Auto)',
+        duration: 60,
+        startTime: now - 45000, // 45s já passados
+        endTime: now + 15000, // 15s restantes
+        active: true,
+        automatic: true,
+        source: 'live-stack' as const,
+      },
+    ];
+
+    demoTimers.forEach(timer => onAdd(timer));
+
+    toast.success('Timers Demo criados!', {
+      description: '3 timers automáticos de exemplo com progress bars',
+    });
+  };
+
   const requestNotificationPermission = async () => {
     if ('Notification' in window && Notification.permission === 'default') {
       const permission = await Notification.requestPermission();
@@ -111,15 +155,26 @@ export function Timers({ timers, onAdd, onRemove, onUpdate }: TimersProps) {
             <Clock className="w-5 h-5 text-primary" />
             Timers de Jogo
           </CardTitle>
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={requestNotificationPermission}
-            className="text-xs"
-          >
-            <Bell className="w-3 h-3 mr-1" />
-            Habilitar notificações
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={handleDemo}
+              className="text-xs"
+            >
+              <Sparkles className="w-3 h-3 mr-1" />
+              Demo
+            </Button>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={requestNotificationPermission}
+              className="text-xs"
+            >
+              <Bell className="w-3 h-3 mr-1" />
+              Notif.
+            </Button>
+          </div>
         </div>
       </CardHeader>
       <CardContent className="space-y-4">
