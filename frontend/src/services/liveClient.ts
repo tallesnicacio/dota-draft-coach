@@ -41,7 +41,8 @@ interface SnapshotMessage extends WSMessage {
 interface AuthResponseMessage extends WSMessage {
   type: 'auth_response';
   success: boolean;
-  message?: string;
+  clientId?: string;
+  error?: string;
 }
 
 interface ErrorMessage extends WSMessage {
@@ -290,13 +291,13 @@ export class LiveClient {
 
   private handleAuthResponse(message: AuthResponseMessage): void {
     if (message.success) {
-      console.log('[LiveClient] Authentication successful');
+      console.log('[LiveClient] Authentication successful', { clientId: message.clientId });
       this.isAuthenticated = true;
       useLiveStore.getState().setStatus('connected');
       useLiveStore.getState().setError(null);
     } else {
-      console.error('[LiveClient] Authentication failed', message.message);
-      useLiveStore.getState().setError(`Authentication failed: ${message.message}`);
+      console.error('[LiveClient] Authentication failed', message.error);
+      useLiveStore.getState().setError(`Authentication failed: ${message.error || 'Unknown error'}`);
       this.disconnect();
     }
   }
@@ -305,8 +306,8 @@ export class LiveClient {
     if (message.success) {
       console.log('[LiveClient] Subscribed to match', message.matchId);
     } else {
-      console.error('[LiveClient] Subscription failed', message.message);
-      useLiveStore.getState().setError(`Subscription failed: ${message.message}`);
+      console.error('[LiveClient] Subscription failed', message.error);
+      useLiveStore.getState().setError(`Subscription failed: ${message.error || 'Unknown error'}`);
     }
   }
 
