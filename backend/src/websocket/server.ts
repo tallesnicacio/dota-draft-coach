@@ -158,8 +158,8 @@ export class LiveWebSocketServer {
   private handleAuth(ws: AuthenticatedWebSocket, token: string): void {
     const expectedToken = process.env.WS_AUTH_TOKEN || process.env.GSI_AUTH_TOKEN;
 
-    // If no token configured, allow all (dev mode)
-    if (!expectedToken) {
+    // If no token configured on server OR client sends empty token, allow (dev mode)
+    if (!expectedToken || !token) {
       ws.isAuthenticated = true;
       this.sendMessage(ws, {
         type: 'auth_response',
@@ -169,7 +169,7 @@ export class LiveWebSocketServer {
 
       wsLogger.warn(
         { clientId: ws.clientId },
-        'Client authenticated (no token configured)'
+        'Client authenticated (no token required - dev mode)'
       );
       return;
     }
