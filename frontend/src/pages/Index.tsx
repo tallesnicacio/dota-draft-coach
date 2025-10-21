@@ -14,6 +14,8 @@ import { Timers } from '@/components/Timers';
 import { LiveBadge } from '@/components/LiveBadge';
 import { LiveSetupBanner } from '@/components/LiveSetupBanner';
 import { LiveDevTools } from '@/components/LiveDevTools';
+import { LiveGameStatus } from '@/components/LiveGameStatus';
+import { UpcomingEvents } from '@/components/UpcomingEvents';
 import { apiService } from '@/services/api';
 import { Button } from '@/components/ui/button';
 import { Sparkles, Trash2 } from 'lucide-react';
@@ -69,6 +71,7 @@ const Index = () => {
   const [loading, setLoading] = useState(false);
   const [setupBannerDismissed, setSetupBannerDismissed] = useState(false);
   const liveStore = useLiveStore();
+  const isLiveActive = liveStore.status === 'connected' && liveStore.snapshot;
 
   // Show setup banner if Live Mode is not connected and not dismissed
   const showSetupBanner = !liveStore.enabled && !setupBannerDismissed;
@@ -176,22 +179,30 @@ const Index = () => {
         </div>
       </header>
 
-      <div className="container mx-auto px-4 py-8 space-y-8">
+      <div className="container mx-auto px-4 py-8 space-y-6">
         {/* Live Setup Banner */}
         {showSetupBanner && (
           <LiveSetupBanner onDismiss={() => setSetupBannerDismissed(true)} />
         )}
 
-        {/* Filtros e Timers */}
+        {/* Live Game Status - Only when connected */}
+        {isLiveActive && <LiveGameStatus />}
+
+        {/* Filtros e Timers/Events em Grid */}
         <div className="grid lg:grid-cols-3 gap-6">
-          <section className="lg:col-span-2 glass-card rounded-xl p-6 border">
-            <FiltersBar
-              patch={patch}
-              mmrBucket={mmrBucket}
-              onPatchChange={setPatch}
-              onMMRChange={setMMRBucket}
-            />
+          {/* Filtros */}
+          <section className={isLiveActive ? "lg:col-span-1" : "lg:col-span-2"}>
+            <div className="glass-card rounded-xl p-6 border h-full">
+              <FiltersBar
+                patch={patch}
+                mmrBucket={mmrBucket}
+                onPatchChange={setPatch}
+                onMMRChange={setMMRBucket}
+              />
+            </div>
           </section>
+
+          {/* Timers Ativos */}
           <section>
             <Timers
               timers={timers}
@@ -200,6 +211,13 @@ const Index = () => {
               onUpdate={updateTimer}
             />
           </section>
+
+          {/* Próximos Eventos - Only when Live Mode active */}
+          {isLiveActive && (
+            <section>
+              <UpcomingEvents />
+            </section>
+          )}
         </div>
 
         {/* Seleção de Herói */}

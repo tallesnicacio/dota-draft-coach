@@ -159,40 +159,62 @@ export function Timers({ timers, onAdd, onRemove, onUpdate }: TimersProps) {
           {timers.map(timer => {
             const remaining = getTimeRemaining(timer);
             const isFinished = remaining === 0 && !timer.active;
+            const progress = timer.active && timer.duration > 0
+              ? ((timer.duration - remaining) / timer.duration) * 100
+              : 0;
 
             return (
               <div
                 key={timer.id}
-                className={`glass-card p-3 rounded-lg flex items-center justify-between border ${
-                  isFinished ? 'border-green-500 animate-pulse' : 'border-border/50'
+                className={`glass-card p-3 rounded-lg border ${
+                  isFinished ? 'border-green-500 animate-pulse bg-green-500/10' : 'border-border/50'
                 }`}
               >
-                <div className="flex-1">
-                  <div className="flex items-center gap-2">
-                    <span className="font-medium text-sm">{timer.name}</span>
-                    {timer.automatic && (
-                      <Badge variant="secondary" className="text-xs gap-1">
-                        <Zap className="w-3 h-3" />
-                        Auto
-                      </Badge>
-                    )}
+                <div className="flex items-center justify-between gap-3 mb-2">
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2">
+                      <span className="font-medium text-sm truncate">{timer.name}</span>
+                      {timer.automatic && (
+                        <Badge variant="secondary" className="text-xs gap-1 shrink-0">
+                          <Zap className="w-3 h-3" />
+                          Auto
+                        </Badge>
+                      )}
+                    </div>
+                    <div className={`text-lg font-mono font-bold ${
+                      isFinished ? 'text-green-400' : remaining < 10 ? 'text-orange-400' : ''
+                    }`}>
+                      {isFinished ? '✓ Pronto!' : formatTime(remaining)}
+                    </div>
                   </div>
-                  <div className={`text-lg font-mono ${isFinished ? 'text-green-400' : ''}`}>
-                    {isFinished ? '✓ Pronto!' : formatTime(remaining)}
-                  </div>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => {
+                      onRemove(timer.id);
+                      toast.info('Timer removido', {
+                        description: timer.name,
+                      });
+                    }}
+                    className="shrink-0"
+                  >
+                    <X className="w-4 h-4" />
+                  </Button>
                 </div>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => {
-                    onRemove(timer.id);
-                    toast.info('Timer removido', {
-                      description: timer.name,
-                    });
-                  }}
-                >
-                  <X className="w-4 h-4" />
-                </Button>
+
+                {/* Progress Bar */}
+                {!isFinished && timer.active && (
+                  <div className="h-2 bg-secondary rounded-full overflow-hidden">
+                    <div
+                      className={`h-full transition-all duration-1000 ${
+                        remaining < 10
+                          ? 'bg-gradient-to-r from-orange-500 to-red-500'
+                          : 'bg-gradient-to-r from-primary to-primary/50'
+                      }`}
+                      style={{ width: `${progress}%` }}
+                    />
+                  </div>
+                )}
               </div>
             );
           })}
