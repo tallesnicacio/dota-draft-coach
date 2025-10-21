@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { PWAUpdatePrompt } from "@/components/PWAUpdatePrompt";
 import { useGameTimers } from "@/hooks/useGameTimers";
+import { useInGameAlerts } from "@/hooks/useInGameAlerts";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
@@ -22,6 +23,13 @@ const queryClient = new QueryClient({
 const AppContent = () => {
   // Enable automatic game timers based on game time
   useGameTimers();
+
+  // Enable in-game alerts (runas, roshan, stacks, etc)
+  useInGameAlerts({
+    enabled: true,
+    soundEnabled: true,
+    desktopNotifications: true,
+  });
 
   return (
     <BrowserRouter>

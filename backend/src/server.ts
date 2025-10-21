@@ -5,6 +5,7 @@ import pinoHttp from 'pino-http';
 import { createServer } from 'http';
 import heroesRouter from './routes/heroes.js';
 import gsiRouter from './routes/gsi.js';
+import draftRouter from './routes/draft.js';
 import { logger } from './utils/logger.js';
 import { LiveWebSocketServer } from './websocket/server.js';
 
@@ -46,6 +47,7 @@ app.get('/health', (req, res) => {
 
 // Routes
 app.use('/api/heroes', heroesRouter);
+app.use('/api/draft', draftRouter);
 
 // Live Mode routes (feature flag)
 const LIVE_MODE_ENABLED = process.env.LIVE_MODE_ENABLED !== 'false'; // Enabled by default

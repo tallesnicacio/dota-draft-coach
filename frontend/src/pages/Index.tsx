@@ -16,6 +16,7 @@ import { LiveSetupBanner } from '@/components/LiveSetupBanner';
 import { LiveDevTools } from '@/components/LiveDevTools';
 import { LiveGameStatus } from '@/components/LiveGameStatus';
 import { UpcomingEvents } from '@/components/UpcomingEvents';
+import { DraftHelper } from '@/components/DraftHelper';
 import { apiService } from '@/services/api';
 import { Button } from '@/components/ui/button';
 import { Sparkles, Trash2 } from 'lucide-react';
@@ -263,6 +264,13 @@ const Index = () => {
                 excludeHeroIds={excludedHeroIds}
               />
             </section>
+
+            {/* Draft Helper - Sugestões de Picks e Bans */}
+            {(allies.length > 0 || enemies.length > 0) && (
+              <section>
+                <DraftHelper />
+              </section>
+            )}
 
             {/* Build e Recomendações */}
             {loading ? (
