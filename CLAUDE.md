@@ -241,6 +241,57 @@ Dota 2 Client → POST /api/gsi → GsiAdapter → SessionManager → WebSocket 
 5. WebSocket broadcast para clientes inscritos no matchId
 6. Frontend atualiza UI em tempo real
 
+### Timers Automáticos (Live Mode Integration)
+
+**O que são Timers Automáticos?**
+Com Live Mode ativo, o sistema detecta eventos do jogo em tempo real e cria timers automaticamente, eliminando a necessidade de iniciar timers manualmente.
+
+**Eventos Detectados:**
+- ✅ **Runa de Poder**: Detecta quando o tempo do jogo atinge múltiplos de 7 minutos (0:00, 7:00, 14:00, etc.)
+- ✅ **Ward Cooldown**: Detecta quando wards são compradas e inicia timer de cooldown
+- ⏳ **Roshan** (planejado): Detectar morte via Aegis no inventário
+- ⏳ **Glyph** (planejado): Requer dados adicionais do GSI
+- ⏳ **Scan** (planejado): Requer dados adicionais do GSI
+
+**Arquitetura:**
+```
+LiveStore (snapshot) → useAutoTimers hook → Detecta eventos → BuildStore (adiciona timer)
+                                                                        ↓
+                                                            UI (Timers component com badge "Auto")
+```
+
+**Implementação:**
+- `useAutoTimers` hook (`frontend/src/hooks/useAutoTimers.ts`): Monitora LiveSnapshot
+- Tipo `Timer` estendido com `automatic: boolean` e `source: 'manual' | 'live-rune' | 'live-ward' | ...`
+- UI mostra badge "Auto" com ícone ⚡ para timers automáticos
+- Convivência pacífica: timers manuais e automáticos funcionam simultaneamente
+
+**Testing:**
+```bash
+# 1. Rodar backend e frontend
+npm run dev
+
+# 2. Em outra aba, simular eventos GSI
+npx tsx scripts/test-auto-timers.ts
+
+# 3. Verificar no frontend:
+# - Ative Live Mode no LiveBadge
+# - Timers com badge "Auto" devem aparecer
+# - Runa: aos 7:00, 14:00, 21:00...
+# - Ward: quando ward_purchase_cooldown > 0
+```
+
+**Deduplicação:**
+- Hook verifica se timer similar já existe (mesmo source, criado nos últimos 30s)
+- Evita criar timers duplicados em payloads consecutivos
+
+**Limitações Atuais:**
+- Dota 2 GSI não fornece dados diretos sobre: Roshan, Glyph, Scan, Tormentor
+- Soluções planejadas:
+  - Roshan: Detectar Aegis no inventário (`items` array)
+  - Glyph/Scan: Analisar `abilities` ou `items` por cooldowns específicos
+  - Tormentor: Timer baseado em tempo do jogo (10:00, 20:00)
+
 ### Testing Live Mode
 
 ```bash

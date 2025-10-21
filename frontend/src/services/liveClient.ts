@@ -72,7 +72,10 @@ export class LiveClient {
     // Detect environment (development vs production)
     const isDev = import.meta.env.DEV;
     const wsProtocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-    const wsHost = isDev ? '127.0.0.1:3001' : window.location.host;
+
+    // In development, use Vite proxy (/ws → ws://localhost:3001/ws)
+    // In production, connect to same host as the page
+    const wsHost = isDev ? window.location.host : window.location.host;
 
     this.wsUrl = `${wsProtocol}//${wsHost}/ws`;
     this.authToken = import.meta.env.VITE_WS_AUTH_TOKEN || '';

@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Timer as TimerType } from '@/types/dota';
-import { Clock, Play, X, Bell } from 'lucide-react';
+import { Clock, Play, X, Bell, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import {
   Select,
   SelectContent,
@@ -61,6 +62,8 @@ export function Timers({ timers, onAdd, onRemove, onUpdate }: TimersProps) {
       startTime: now,
       endTime: now + selectedPreset.duration * 1000,
       active: true,
+      automatic: false,
+      source: 'manual',
     };
     onAdd(newTimer);
     toast.success('Timer iniciado!', {
@@ -165,7 +168,15 @@ export function Timers({ timers, onAdd, onRemove, onUpdate }: TimersProps) {
                 }`}
               >
                 <div className="flex-1">
-                  <div className="font-medium text-sm">{timer.name}</div>
+                  <div className="flex items-center gap-2">
+                    <span className="font-medium text-sm">{timer.name}</span>
+                    {timer.automatic && (
+                      <Badge variant="secondary" className="text-xs gap-1">
+                        <Zap className="w-3 h-3" />
+                        Auto
+                      </Badge>
+                    )}
+                  </div>
                   <div className={`text-lg font-mono ${isFinished ? 'text-green-400' : ''}`}>
                     {isFinished ? '✓ Pronto!' : formatTime(remaining)}
                   </div>

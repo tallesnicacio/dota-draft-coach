@@ -69,6 +69,10 @@ export interface Timer {
   startTime: number;
   endTime: number;
   active: boolean;
+  /** Whether this timer was started automatically via Live Mode */
+  automatic: boolean;
+  /** Source of the timer */
+  source: 'manual' | 'live-rune' | 'live-ward' | 'live-roshan' | 'live-scan' | 'live-glyph';
 }
 
 // ============================================================================
