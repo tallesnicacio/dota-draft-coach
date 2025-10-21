@@ -40,11 +40,32 @@ export function Timers({ timers, onAdd, onRemove, onUpdate }: TimersProps) {
           // Timer acabou
           onUpdate(timer.id, { active: false });
 
-          // Tentar notificar
+          // Toast visual no app
+          toast.success(`⏰ ${timer.name}`, {
+            description: 'Timer finalizado!',
+            duration: 10000, // 10 segundos
+          });
+
+          // Notificação do navegador (com som e vibração)
           if ('Notification' in window && Notification.permission === 'granted') {
-            new Notification(`⏰ ${timer.name}`, {
+            const notification = new Notification(`⏰ ${timer.name}`, {
               body: 'Timer finalizado!',
+              icon: '/pwa-192x192.png',
+              badge: '/pwa-192x192.png',
+              tag: `timer-${timer.id}`,
+              requireInteraction: true, // Mantém a notificação até o usuário fechar
+              vibrate: [200, 100, 200, 100, 200], // Padrão de vibração
+              silent: false, // Com som
             });
+
+            // Auto-fechar após 10 segundos
+            setTimeout(() => notification.close(), 10000);
+
+            // Focar no app quando clicar na notificação
+            notification.onclick = () => {
+              window.focus();
+              notification.close();
+            };
           }
         }
       });
@@ -53,7 +74,12 @@ export function Timers({ timers, onAdd, onRemove, onUpdate }: TimersProps) {
     return () => clearInterval(interval);
   }, [timers, onUpdate]);
 
-  const handleStart = () => {
+  const handleStart = async () => {
+    // Solicitar permissão de notificações se ainda não tiver
+    if ('Notification' in window && Notification.permission === 'default') {
+      await requestNotificationPermission();
+    }
+
     const now = Date.now();
     const newTimer: TimerType = {
       id: `${Date.now()}-${Math.random()}`,
@@ -116,20 +142,68 @@ export function Timers({ timers, onAdd, onRemove, onUpdate }: TimersProps) {
   };
 
   const requestNotificationPermission = async () => {
-    if ('Notification' in window && Notification.permission === 'default') {
+    if (!('Notification' in window)) {
+      toast.error('Navegador não suporta notificações', {
+        description: 'Use um navegador moderno (Chrome, Firefox, Edge)',
+      });
+      return false;
+    }
+
+    if (Notification.permission === 'granted') {
+      toast.success('Notificações já habilitadas!', {
+        description: 'Você receberá alertas quando os timers terminarem',
+      });
+      return true;
+    }
+
+    if (Notification.permission === 'default') {
       const permission = await Notification.requestPermission();
       if (permission === 'granted') {
         toast.success('Notificações habilitadas!', {
           description: 'Você receberá alertas quando os timers terminarem',
         });
+        // Notificação de teste
+        new Notification('🎮 Dota 2 Coach', {
+          body: 'Notificações ativadas! Você será alertado quando os timers terminarem.',
+          icon: '/pwa-192x192.png',
+          badge: '/pwa-192x192.png',
+          vibrate: [200, 100, 200],
+          requireInteraction: false,
+        });
+        return true;
       } else {
         toast.error('Notificações bloqueadas', {
           description: 'Habilite as notificações nas configurações do navegador',
+          duration: 5000,
         });
+        return false;
       }
-    } else if (Notification.permission === 'granted') {
-      toast.info('Notificações já habilitadas', {
-        description: 'Você já receberá alertas dos timers',
+    }
+
+    if (Notification.permission === 'denied') {
+      toast.error('Notificações bloqueadas permanentemente', {
+        description: 'Vá em Configurações do site > Notificações > Permitir',
+        duration: 7000,
+      });
+      return false;
+    }
+
+    return false;
+  };
+
+  const testNotification = () => {
+    if (Notification.permission === 'granted') {
+      new Notification('🔔 Teste de Notificação', {
+        body: 'Se você viu isso, as notificações estão funcionando!',
+        icon: '/pwa-192x192.png',
+        badge: '/pwa-192x192.png',
+        vibrate: [200, 100, 200],
+        requireInteraction: false,
+      });
+      toast.success('Notificação de teste enviada!');
+    } else {
+      toast.error('Permissão de notificações necessária', {
+        description: 'Clique em "Notif." primeiro para permitir',
       });
     }
   };
@@ -170,14 +244,58 @@ export function Timers({ timers, onAdd, onRemove, onUpdate }: TimersProps) {
               size="sm"
               onClick={requestNotificationPermission}
               className="text-xs"
+              title="Permitir notificações"
             >
               <Bell className="w-3 h-3 mr-1" />
-              Notif.
+              {Notification.permission === 'granted' ? '✓' : 'Notif.'}
+            </Button>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={testNotification}
+              className="text-xs"
+              title="Testar notificações"
+            >
+              <Zap className="w-3 h-3 mr-1" />
+              Teste
             </Button>
           </div>
         </div>
       </CardHeader>
       <CardContent className="space-y-4">
+        {/* Aviso de notificações bloqueadas */}
+        {'Notification' in window && Notification.permission === 'denied' && (
+          <div className="bg-orange-500/10 border border-orange-500/50 rounded-lg p-3">
+            <div className="flex items-start gap-2">
+              <Bell className="w-4 h-4 text-orange-400 mt-0.5" />
+              <div className="flex-1">
+                <p className="text-sm font-medium text-orange-400">
+                  Notificações bloqueadas
+                </p>
+                <p className="text-xs text-orange-300/80 mt-1">
+                  Vá em <strong>Configurações do site</strong> → <strong>Notificações</strong> → <strong>Permitir</strong>
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {'Notification' in window && Notification.permission === 'default' && timers.length > 0 && (
+          <div className="bg-blue-500/10 border border-blue-500/50 rounded-lg p-3">
+            <div className="flex items-start gap-2">
+              <Bell className="w-4 h-4 text-blue-400 mt-0.5" />
+              <div className="flex-1">
+                <p className="text-sm font-medium text-blue-400">
+                  Habilite as notificações para alertas
+                </p>
+                <p className="text-xs text-blue-300/80 mt-1">
+                  Clique no botão <strong>Notif.</strong> acima para receber alertas quando os timers terminarem
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Preset selector */}
         <div className="flex gap-2">
           <Select

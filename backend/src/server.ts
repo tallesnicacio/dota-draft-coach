@@ -3,14 +3,17 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import pinoHttp from 'pino-http';
 import { createServer } from 'http';
-import heroesRouter from './routes/heroes.js';
 import gsiRouter from './routes/gsi.js';
-import draftRouter from './routes/draft.js';
+import staticDataRouter from './routes/staticData.js';
 import { logger } from './utils/logger.js';
 import { LiveWebSocketServer } from './websocket/server.js';
+import { StaticDataService } from './services/StaticDataService.js';
 
 // Carregar variáveis de ambiente
 dotenv.config({ path: '../.env' });
+
+// Initialize Static Data Service
+const staticData = StaticDataService.getInstance(process.env.PATCH_PADRAO || '7.39e');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -46,8 +49,8 @@ app.get('/health', (req, res) => {
 });
 
 // Routes
-app.use('/api/heroes', heroesRouter);
-app.use('/api/draft', draftRouter);
+// Static data routes (heroes, items from local files)
+app.use('/api', staticDataRouter);
 
 // Live Mode routes (feature flag)
 const LIVE_MODE_ENABLED = process.env.LIVE_MODE_ENABLED !== 'false'; // Enabled by default
@@ -91,70 +94,87 @@ export const wsServer = {
     return getWsServer();
   },
   broadcastSnapshot: (snapshot: any) => getWsServer().broadcastSnapshot(snapshot),
+  broadcastRecommendations: (matchId: string, recommendations: any) =>
+    getWsServer().broadcastRecommendations(matchId, recommendations),
   getStats: () => getWsServer().getStats(),
   shutdown: () => _wsServer?.shutdown(),
 };
 
 // Only start server if not in test environment
 if (process.env.NODE_ENV !== 'test') {
-  // Initialize WebSocket server (only if Live Mode is enabled)
-  if (LIVE_MODE_ENABLED) {
-    getWsServer();
-  }
+  // Async initialization function
+  (async () => {
+    try {
+      // Load static data first
+      logger.info('🔄 Loading static data...');
+      await staticData.load();
+      logger.info('✅ Static data loaded successfully');
 
-  // Start HTTP server (with WebSocket attached)
-  httpServer.listen(PORT, () => {
-    logger.info(
-      {
-        port: PORT,
-        wsPath: '/ws',
-        patch: process.env.PATCH_PADRAO || '7.39e',
-        mmr: process.env.MMR_PADRAO || '3000',
-        cacheTTL: `${process.env.CACHE_TTL || '21600'}s`,
-        gsiEnabled: true,
-        wsEnabled: true,
-      },
-      '🚀 Dota 2 Coach Backend rodando'
-    );
-  });
+      // Initialize WebSocket server (only if Live Mode is enabled)
+      if (LIVE_MODE_ENABLED) {
+        getWsServer();
+      }
 
-  // Handle server errors (e.g., port already in use)
-  httpServer.on('error', (error: NodeJS.ErrnoException) => {
-    if (error.code === 'EADDRINUSE') {
-      logger.error(
-        {
-          port: PORT,
-          error: error.message,
-        },
-        `❌ Porta ${PORT} já está em uso!`
-      );
-      console.error(`\n${'='.repeat(60)}`);
-      console.error(`❌ ERRO: Porta ${PORT} já está em uso!`);
-      console.error(`${'='.repeat(60)}`);
-      console.error(`\nPara resolver:`);
-      console.error(`1. Verifique processos usando a porta:`);
-      console.error(`   lsof -ti:${PORT}`);
-      console.error(`\n2. Mate o processo:`);
-      console.error(`   kill $(lsof -ti:${PORT})`);
-      console.error(`\n3. Ou use o script de diagnóstico:`);
-      console.error(`   ./scripts/check-ports.sh`);
-      console.error(`${'='.repeat(60)}\n`);
-      process.exit(1);
-    } else {
-      logger.error({ error: error.message }, 'Erro ao iniciar servidor');
+      // Start HTTP server (with WebSocket attached)
+      // Listen on 0.0.0.0 to accept both IPv4 and IPv6 connections
+      httpServer.listen(PORT, '0.0.0.0', () => {
+        logger.info(
+          {
+            port: PORT,
+            host: '0.0.0.0 (IPv4)',
+            wsPath: '/ws',
+            patch: process.env.PATCH_PADRAO || '7.39e',
+            mmr: process.env.MMR_PADRAO || '3000',
+            cacheTTL: `${process.env.CACHE_TTL || '21600'}s`,
+            gsiEnabled: true,
+            wsEnabled: true,
+          },
+          '🚀 Dota 2 Coach Backend rodando'
+        );
+      });
+
+      // Handle server errors (e.g., port already in use)
+      httpServer.on('error', (error: NodeJS.ErrnoException) => {
+        if (error.code === 'EADDRINUSE') {
+          logger.error(
+            {
+              port: PORT,
+              error: error.message,
+            },
+            `❌ Porta ${PORT} já está em uso!`
+          );
+          console.error(`\n${'='.repeat(60)}`);
+          console.error(`❌ ERRO: Porta ${PORT} já está em uso!`);
+          console.error(`${'='.repeat(60)}`);
+          console.error(`\nPara resolver:`);
+          console.error(`1. Verifique processos usando a porta:`);
+          console.error(`   lsof -ti:${PORT}`);
+          console.error(`\n2. Mate o processo:`);
+          console.error(`   kill $(lsof -ti:${PORT})`);
+          console.error(`\n3. Ou use o script de diagnóstico:`);
+          console.error(`   ./scripts/check-ports.sh`);
+          console.error(`${'='.repeat(60)}\n`);
+          process.exit(1);
+        } else {
+          logger.error({ error: error.message }, 'Erro ao iniciar servidor');
+          process.exit(1);
+        }
+      });
+
+      // Graceful shutdown
+      process.on('SIGTERM', () => {
+        logger.info('SIGTERM received, shutting down gracefully');
+        wsServer.shutdown();
+        httpServer.close(() => {
+          logger.info('Server closed');
+          process.exit(0);
+        });
+      });
+    } catch (error) {
+      logger.error({ error }, 'Failed to initialize server');
       process.exit(1);
     }
-  });
-
-  // Graceful shutdown
-  process.on('SIGTERM', () => {
-    logger.info('SIGTERM received, shutting down gracefully');
-    wsServer.shutdown();
-    httpServer.close(() => {
-      logger.info('Server closed');
-      process.exit(0);
-    });
-  });
+  })();
 }
 
 export default app;

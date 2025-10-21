@@ -18,17 +18,13 @@ import { LiveGameStatus } from '@/components/LiveGameStatus';
 import { UpcomingEvents } from '@/components/UpcomingEvents';
 import { DraftHelper } from '@/components/DraftHelper';
 import { GSIDiagnostic } from '@/components/GSIDiagnostic';
+import { DraftAnalysisPanel } from '@/components/DraftAnalysisPanel';
+import { ItemRecommendationPanel } from '@/components/ItemRecommendationPanel';
 import { apiService } from '@/services/api';
 import { Button } from '@/components/ui/button';
 import { Sparkles, Trash2, Stethoscope } from 'lucide-react';
 import { toast } from '@/components/ui/sonner';
 import { Hero } from '@/types/dota';
-import {
-  BuildPanelSkeleton,
-  SkillsPanelSkeleton,
-  MatchupsPanelSkeleton,
-  HeroCardSkeleton,
-} from '@/components/LoadingSkeletons';
 
 const Index = () => {
   const [allHeroes, setAllHeroes] = useState<Hero[]>([]);
@@ -71,7 +67,6 @@ const Index = () => {
     updateTimer,
   } = useBuildStore();
 
-  const [loading, setLoading] = useState(false);
   const [setupBannerDismissed, setSetupBannerDismissed] = useState(false);
   const liveStore = useLiveStore();
   const isLiveActive = liveStore.status === 'connected' && liveStore.snapshot;
@@ -92,52 +87,14 @@ const Index = () => {
     return currentBuild;
   }, [currentBuild, liveStore.status, liveStore.snapshot]);
 
+  // Hero selection now only tracks the selected hero
+  // All builds and recommendations come from Live Mode + AI during gameplay
   useEffect(() => {
-    // Carrega dados reais da API quando seleciona herói ou muda draft
-    const loadHeroData = async () => {
-      if (!selectedHero) {
-        setCurrentBuild(null);
-        return;
-      }
-
-      try {
-        setLoading(true);
-        let build;
-
-        // Se há aliados ou inimigos, busca recomendações ajustadas
-        if (allies.length > 0 || enemies.length > 0) {
-          build = await apiService.getRecommendations(
-            selectedHero.id,
-            patch,
-            mmrBucket,
-            allies,
-            enemies
-          );
-          toast.success('Build atualizada!', {
-            description: `Recomendações ajustadas para ${selectedHero.displayName}`,
-          });
-        } else {
-          // Caso contrário, busca dados base do herói
-          build = await apiService.getHeroData(
-            selectedHero.id,
-            patch,
-            mmrBucket
-          );
-        }
-
-        setCurrentBuild(build);
-      } catch (error) {
-        console.error('Erro ao carregar dados do herói:', error);
-        toast.error('Erro ao carregar build', {
-          description: 'Não foi possível carregar os dados do herói. Tente novamente.',
-        });
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    loadHeroData();
-  }, [selectedHero, allies, enemies, patch, mmrBucket, setCurrentBuild]);
+    if (!selectedHero) {
+      setCurrentBuild(null);
+    }
+    // No longer fetching builds from API - everything comes from Live Mode
+  }, [selectedHero, setCurrentBuild]);
 
   const excludedHeroIds = [
     selectedHero?.id,
@@ -223,6 +180,14 @@ const Index = () => {
         {/* Live Game Status - Only when connected */}
         {isLiveActive && <LiveGameStatus />}
 
+        {/* AI Recommendations - Show when available */}
+        {isLiveActive && liveStore.recommendations && (
+          <div className="grid lg:grid-cols-2 gap-6">
+            {liveStore.recommendations.draftAnalysis && <DraftAnalysisPanel />}
+            {liveStore.recommendations.itemRecommendation && <ItemRecommendationPanel />}
+          </div>
+        )}
+
         {/* Filtros e Timers/Events em Grid - SEMPRE 3 colunas */}
         <div className="grid lg:grid-cols-3 gap-6">
           {/* Filtros */}
@@ -307,17 +272,7 @@ const Index = () => {
             )}
 
             {/* Build e Recomendações */}
-            {loading ? (
-              <div className="grid lg:grid-cols-2 gap-6">
-                <div className="space-y-6">
-                  <BuildPanelSkeleton />
-                  <SkillsPanelSkeleton />
-                </div>
-                <div>
-                  <MatchupsPanelSkeleton />
-                </div>
-              </div>
-            ) : enhancedBuild && (
+            {enhancedBuild ? (
               <div className="grid lg:grid-cols-2 gap-6">
                 <div className="space-y-6">
                   <BuildPanel coreBuild={enhancedBuild.coreBuild} />
@@ -332,6 +287,25 @@ const Index = () => {
                   <MatchupsPanel matchups={enhancedBuild.matchups} />
                 </div>
               </div>
+            ) : (
+              <section className="glass-card rounded-xl p-8 border border-primary/30 text-center">
+                <div className="max-w-2xl mx-auto space-y-4">
+                  <div className="flex justify-center">
+                    <Sparkles className="h-12 w-12 text-primary animate-pulse" />
+                  </div>
+                  <h3 className="text-2xl font-bold">Builds Disponíveis em Live Mode</h3>
+                  <p className="text-muted-foreground">
+                    As recomendações de build, skills e matchups agora são geradas em tempo real
+                    pela IA durante partidas usando o Live Mode.
+                  </p>
+                  <div className="pt-4">
+                    <p className="text-sm text-muted-foreground">
+                      Para ativar o Live Mode, clique no botão no canto superior direito e
+                      siga as instruções de configuração do Game State Integration.
+                    </p>
+                  </div>
+                </div>
+              </section>
             )}
           </>
         )}

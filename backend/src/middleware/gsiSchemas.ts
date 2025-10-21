@@ -12,7 +12,7 @@ import { z } from 'zod';
 // ============================================================================
 
 export const gsiAuthSchema = z.object({
-  token: z.string().min(1, 'Auth token is required'),
+  token: z.string(), // Allow empty token in dev mode
 });
 
 export const gsiProviderSchema = z.object({

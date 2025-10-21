@@ -8,6 +8,7 @@
 import { Router, Request, Response } from 'express';
 import { GsiAdapter } from '../gsi/GsiAdapter.js';
 import { SessionManager } from '../gsi/SessionManager.js';
+import { AIRecommendationEngine } from '../services/AIRecommendationEngine.js';
 import { gsiAuth } from '../middleware/gsiAuth.js';
 import { gsiRateLimiter } from '../middleware/gsiRateLimit.js';
 import { validateContentType, validateGsiPayload } from '../middleware/gsiValidation.js';
@@ -96,6 +97,57 @@ router.post(
         wsBroadcastCount = wsServer.broadcastSnapshot(snapshot);
       }
 
+      // Auto-trigger AI recommendations based on game state
+      let aiRecommendations = null;
+      let aiError = null;
+      let aiBroadcastCount = 0;
+      try {
+        // Only call AI for non-duplicate snapshots
+        if (!result.deduplicated) {
+          const aiEngine = AIRecommendationEngine.getInstance();
+          const recommendations = await aiEngine.getRecommendations(snapshot);
+
+          // Check if we got any recommendations
+          if (recommendations.draftAnalysis || recommendations.itemRecommendation) {
+            aiRecommendations = recommendations;
+
+            // Broadcast AI recommendations via WebSocket
+            if (result.broadcast && matchId) {
+              const { wsServer } = await import('../server.js');
+
+              // Broadcast to clients subscribed to this matchId
+              aiBroadcastCount = wsServer.broadcastRecommendations(matchId, {
+                draftAnalysis: recommendations.draftAnalysis,
+                itemRecommendation: recommendations.itemRecommendation,
+                hero: recommendations.context.myHero?.localized_name,
+                timestamp: recommendations.timestamp,
+              });
+            }
+
+            gsiLogger.info(
+              {
+                matchId,
+                hasDraftAnalysis: !!recommendations.draftAnalysis,
+                hasItemRecommendation: !!recommendations.itemRecommendation,
+                hero: recommendations.context.myHero?.localized_name,
+                aiBroadcastCount,
+              },
+              'AI recommendations generated and broadcasted'
+            );
+          }
+        }
+      } catch (error) {
+        // Don't fail GSI processing if AI fails
+        aiError = error instanceof Error ? error.message : String(error);
+        gsiLogger.warn(
+          {
+            matchId,
+            error: aiError,
+          },
+          'Failed to generate AI recommendations (non-fatal)'
+        );
+      }
+
       gsiLogger.info(
         {
           matchId,
@@ -104,6 +156,7 @@ router.post(
           gameTime,
           broadcast: result.broadcast,
           wsBroadcastCount,
+          aiRecommendations: aiRecommendations ? 'generated' : aiError ? 'failed' : 'skipped',
           processingTime: Date.now() - startTime,
         },
         'GSI snapshot processed'
@@ -178,6 +231,106 @@ router.get('/ws/stats', async (req: Request, res: Response) => {
     res.status(500).json({
       error: 'Failed to get WebSocket stats',
       message: error instanceof Error ? error.message : String(error),
+    });
+  }
+});
+
+/**
+ * POST /recommendations
+ *
+ * Manually request AI recommendations for a LiveSnapshot
+ * Useful for on-demand recommendations or testing
+ *
+ * Request body: LiveSnapshot (from GSI or constructed)
+ * Response: AI recommendations (draft analysis, item recommendations)
+ */
+router.post('/recommendations', async (req: Request, res: Response) => {
+  const startTime = Date.now();
+
+  try {
+    const snapshot = req.body as any; // Should be LiveSnapshot
+
+    if (!snapshot || !snapshot.matchId) {
+      return res.status(400).json({
+        error: 'Bad Request',
+        message: 'Snapshot with matchId is required',
+        code: 'INVALID_SNAPSHOT',
+      });
+    }
+
+    gsiLogger.info(
+      {
+        matchId: snapshot.matchId,
+        hero: snapshot.hero?.name,
+      },
+      'Manual recommendation request received'
+    );
+
+    // Get AI recommendations
+    const aiEngine = AIRecommendationEngine.getInstance();
+    const recommendations = await aiEngine.forceRecommendation(snapshot); // Bypass rate limiting
+
+    // Optionally broadcast to WebSocket clients
+    const broadcast = req.query.broadcast === 'true';
+    let broadcastCount = 0;
+
+    if (broadcast && snapshot.matchId) {
+      const { wsServer } = await import('../server.js');
+      broadcastCount = wsServer.broadcastRecommendations(snapshot.matchId, {
+        draftAnalysis: recommendations.draftAnalysis,
+        itemRecommendation: recommendations.itemRecommendation,
+        hero: recommendations.context.myHero?.localized_name,
+        timestamp: recommendations.timestamp,
+      });
+    }
+
+    const duration = Date.now() - startTime;
+
+    gsiLogger.info(
+      {
+        matchId: snapshot.matchId,
+        hasDraftAnalysis: !!recommendations.draftAnalysis,
+        hasItemRecommendation: !!recommendations.itemRecommendation,
+        broadcast,
+        broadcastCount,
+        durationMs: duration,
+      },
+      'Manual recommendations generated'
+    );
+
+    // Return recommendations
+    res.json({
+      success: true,
+      recommendations: {
+        draftAnalysis: recommendations.draftAnalysis,
+        itemRecommendation: recommendations.itemRecommendation,
+        context: {
+          hero: recommendations.context.myHero?.localized_name,
+          gameTime: recommendations.context.gameTime,
+          gold: recommendations.context.availableGold,
+          gameState: recommendations.context.gameState,
+        },
+      },
+      broadcast: {
+        enabled: broadcast,
+        sentCount: broadcastCount,
+      },
+      timestamp: recommendations.timestamp,
+      processingTimeMs: duration,
+    });
+  } catch (error) {
+    gsiLogger.error(
+      {
+        error: error instanceof Error ? error.message : String(error),
+        stack: error instanceof Error ? error.stack : undefined,
+      },
+      'Failed to generate manual recommendations'
+    );
+
+    res.status(500).json({
+      error: 'Internal Server Error',
+      message: 'Failed to generate recommendations',
+      code: 'RECOMMENDATION_ERROR',
     });
   }
 });

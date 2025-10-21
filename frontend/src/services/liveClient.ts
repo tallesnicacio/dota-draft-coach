@@ -1,4 +1,4 @@
-import { useLiveStore } from '@/store/liveStore';
+import { useLiveStore, AIRecommendations } from '@/store/liveStore';
 import { LiveSnapshot } from '@/types/dota';
 
 /**
@@ -9,7 +9,7 @@ import { LiveSnapshot } from '@/types/dota';
  *
  * Protocol:
  * - Client → Server: auth, subscribe, unsubscribe, ping
- * - Server → Client: auth_response, subscribe_response, snapshot, pong, error
+ * - Server → Client: auth_response, subscribe_response, snapshot, ai_recommendations, pong, error
  *
  * Usage:
  *   const client = LiveClient.getInstance();
@@ -36,6 +36,13 @@ interface SubscribeMessage extends WSMessage {
 interface SnapshotMessage extends WSMessage {
   type: 'snapshot';
   snapshot: LiveSnapshot;
+}
+
+interface AIRecommendationsMessage extends WSMessage {
+  type: 'ai_recommendations';
+  recommendations: AIRecommendations;
+  matchId: string;
+  timestamp: number;
 }
 
 interface AuthResponseMessage extends WSMessage {
@@ -247,6 +254,10 @@ export class LiveClient {
           this.handleSnapshot(message as SnapshotMessage);
           break;
 
+        case 'ai_recommendations':
+          this.handleAIRecommendations(message as AIRecommendationsMessage);
+          break;
+
         case 'pong':
           // Heartbeat response
           break;
@@ -295,6 +306,11 @@ export class LiveClient {
       this.isAuthenticated = true;
       useLiveStore.getState().setStatus('connected');
       useLiveStore.getState().setError(null);
+
+      // Auto-subscribe to matchId "0" (Demo Hero mode) to receive initial snapshots
+      // This allows the client to receive broadcasts even before entering a real match
+      console.log('[LiveClient] Auto-subscribing to Demo Hero (matchId: 0)');
+      this.subscribe('0');
     } else {
       console.error('[LiveClient] Authentication failed', message.error);
       useLiveStore.getState().setError(`Authentication failed: ${message.error || 'Unknown error'}`);
@@ -328,6 +344,20 @@ export class LiveClient {
     if (snapshot.matchId && snapshot.matchId !== this.currentMatchId) {
       this.subscribe(snapshot.matchId);
     }
+  }
+
+  private handleAIRecommendations(message: AIRecommendationsMessage): void {
+    const { recommendations, matchId } = message;
+
+    console.log('[LiveClient] AI Recommendations received', {
+      matchId,
+      hero: recommendations.hero,
+      hasDraftAnalysis: !!recommendations.draftAnalysis,
+      hasItemRecommendation: !!recommendations.itemRecommendation,
+    });
+
+    // Update store with recommendations
+    useLiveStore.getState().updateRecommendations(recommendations);
   }
 
   private handleErrorMessage(message: ErrorMessage): void {

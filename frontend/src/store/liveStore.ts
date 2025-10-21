@@ -12,7 +12,60 @@ import { LiveSnapshot, LiveStatus, LiveReliability } from '@/types/dota';
  * 2. Client receives snapshots via WS
  * 3. LiveClient calls updateSnapshot()
  * 4. UI components react to state changes
+ * 5. AI recommendations received via WS
+ * 6. LiveClient calls updateRecommendations()
  */
+
+/**
+ * AI-powered draft analysis
+ */
+export interface DraftAnalysis {
+  strengths: string[];
+  weaknesses: string[];
+  itemPriorities: {
+    item: string;
+    reason: string;
+    priority: 'critical' | 'high' | 'medium' | 'situational';
+  }[];
+  skillBuildSuggestion: string;
+  playStyleTips: string[];
+  threats: {
+    hero: string;
+    threat: string;
+    counterplay: string;
+  }[];
+}
+
+/**
+ * AI-powered item recommendation
+ */
+export interface ItemRecommendation {
+  nextItem: {
+    name: string;
+    cost: number;
+    reason: string;
+    priority: 'core' | 'luxury' | 'situational';
+  };
+  alternatives: {
+    name: string;
+    cost: number;
+    reason: string;
+  }[];
+  sellRecommendations: {
+    item: string;
+    reason: string;
+  }[];
+}
+
+/**
+ * Combined AI recommendations
+ */
+export interface AIRecommendations {
+  draftAnalysis?: DraftAnalysis;
+  itemRecommendation?: ItemRecommendation;
+  hero?: string;
+  timestamp: number;
+}
 
 export interface LiveState {
   // Connection state
@@ -25,6 +78,10 @@ export interface LiveState {
   matchId: string | null;
   lastUpdate: number | null;
 
+  // AI Recommendations
+  recommendations: AIRecommendations | null;
+  recommendationsTimestamp: number | null;
+
   // Connection quality
   reliability: LiveReliability;
   packetsReceived: number;
@@ -36,6 +93,8 @@ export interface LiveState {
   setStatus: (status: LiveStatus) => void;
   setError: (error: string | null) => void;
   updateSnapshot: (snapshot: LiveSnapshot) => void;
+  updateRecommendations: (recommendations: AIRecommendations) => void;
+  clearRecommendations: () => void;
   incrementPackets: () => void;
   incrementDuplicates: () => void;
   incrementReconnectAttempts: () => void;
@@ -50,6 +109,8 @@ const initialState = {
   snapshot: null,
   matchId: null,
   lastUpdate: null,
+  recommendations: null,
+  recommendationsTimestamp: null,
   reliability: 'unknown' as LiveReliability,
   packetsReceived: 0,
   duplicatePackets: 0,
@@ -95,6 +156,22 @@ export const useLiveStore = create<LiveState>((set, get) => ({
       reliability,
       status: 'connected',
       error: null,
+    });
+  },
+
+  updateRecommendations: (recommendations) => {
+    console.log('[LiveStore] Updating AI recommendations', recommendations);
+    set({
+      recommendations,
+      recommendationsTimestamp: Date.now(),
+    });
+  },
+
+  clearRecommendations: () => {
+    console.log('[LiveStore] Clearing AI recommendations');
+    set({
+      recommendations: null,
+      recommendationsTimestamp: null,
     });
   },
 

@@ -55,6 +55,8 @@ export default defineConfig(({ mode }) => ({
             purpose: 'any maskable',
           },
         ],
+        // Habilitar notificações para timers
+        permissions: ['notifications'],
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,woff,woff2}'],

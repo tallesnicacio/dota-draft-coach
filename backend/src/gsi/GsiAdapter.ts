@@ -31,12 +31,12 @@ export class GsiAdapter {
    * @throws {ValidationError} if payload is invalid
    */
   static normalize(payload: GsiPayload, expectedToken?: string): LiveSnapshot {
-    // Validate auth token
-    if (!payload.auth?.token) {
-      throw new AuthError('Missing auth token');
+    // Validate auth token (allow empty token in dev mode)
+    if (payload.auth?.token === undefined) {
+      throw new AuthError('Missing auth field');
     }
 
-    if (expectedToken && payload.auth.token !== expectedToken) {
+    if (expectedToken && expectedToken !== '' && payload.auth.token !== expectedToken) {
       throw new AuthError('Invalid auth token');
     }
 

@@ -329,7 +329,7 @@ export class LiveWebSocketServer {
 
     const message = JSON.stringify({
       type: 'snapshot',
-      data: snapshot,
+      snapshot: snapshot,
     });
 
     const sentCount = this.roomManager.broadcast(
@@ -344,6 +344,41 @@ export class LiveWebSocketServer {
         sentCount,
       },
       'Snapshot broadcasted'
+    );
+
+    return sentCount;
+  }
+
+  /**
+   * Broadcast AI recommendations to all clients in a match
+   */
+  public broadcastRecommendations(matchId: string, recommendations: any): number {
+    if (!matchId) {
+      wsLogger.debug('No matchId provided, skipping recommendations broadcast');
+      return 0;
+    }
+
+    const message = JSON.stringify({
+      type: 'ai_recommendations',
+      recommendations: recommendations,
+      matchId: matchId,
+      timestamp: Date.now(),
+    });
+
+    const sentCount = this.roomManager.broadcast(
+      matchId,
+      message,
+      this.clients
+    );
+
+    wsLogger.info(
+      {
+        matchId,
+        sentCount,
+        hasDraftAnalysis: !!recommendations.draftAnalysis,
+        hasItemRecommendation: !!recommendations.itemRecommendation,
+      },
+      'AI recommendations broadcasted'
     );
 
     return sentCount;
