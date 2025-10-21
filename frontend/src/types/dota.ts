@@ -72,7 +72,20 @@ export interface Timer {
   /** Whether this timer was started automatically via Live Mode */
   automatic: boolean;
   /** Source of the timer */
-  source: 'manual' | 'live-rune' | 'live-ward' | 'live-roshan' | 'live-scan' | 'live-glyph';
+  source:
+    | 'manual'
+    | 'live-power-rune'
+    | 'live-water-rune'
+    | 'live-bounty-rune'
+    | 'live-tormentor'
+    | 'live-outpost'
+    | 'live-stack'
+    | 'live-pull'
+    | 'live-lotus'
+    | 'live-ward'
+    | 'live-roshan'
+    | 'live-scan'
+    | 'live-glyph';
 }
 
 // ============================================================================

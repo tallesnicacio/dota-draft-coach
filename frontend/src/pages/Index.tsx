@@ -2,6 +2,7 @@ import { useEffect, useState, useMemo } from 'react';
 import { useBuildStore } from '@/store/buildStore';
 import { useLiveStore } from '@/store/liveStore';
 import { mergeLiveWithRecommendations } from '@/services/recommendationFusion';
+import { useAutoPicks } from '@/hooks/useAutoPicks';
 import { FiltersBar } from '@/components/FiltersBar';
 import { TeamDraft } from '@/components/TeamDraft';
 import { BuildPanel } from '@/components/BuildPanel';
@@ -17,6 +18,7 @@ import { apiService } from '@/services/api';
 import { Button } from '@/components/ui/button';
 import { Sparkles, Trash2 } from 'lucide-react';
 import { toast } from '@/components/ui/sonner';
+import { Hero } from '@/types/dota';
 import {
   BuildPanelSkeleton,
   SkillsPanelSkeleton,
@@ -25,6 +27,23 @@ import {
 } from '@/components/LoadingSkeletons';
 
 const Index = () => {
+  const [allHeroes, setAllHeroes] = useState<Hero[]>([]);
+
+  // Load heroes for auto-pick detection
+  useEffect(() => {
+    const loadHeroes = async () => {
+      try {
+        const heroes = await apiService.getHeroes();
+        setAllHeroes(heroes);
+      } catch (error) {
+        console.error('[Index] Failed to load heroes for auto-picks:', error);
+      }
+    };
+    loadHeroes();
+  }, []);
+
+  // Enable automatic pick detection
+  useAutoPicks(allHeroes);
   const {
     selectedHero,
     allies,

@@ -5,7 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { PWAUpdatePrompt } from "@/components/PWAUpdatePrompt";
-import { useAutoTimers } from "@/hooks/useAutoTimers";
+import { useGameTimers } from "@/hooks/useGameTimers";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
@@ -20,8 +20,8 @@ const queryClient = new QueryClient({
 
 // Component wrapper to use hooks
 const AppContent = () => {
-  // Enable automatic timer detection via Live Mode
-  useAutoTimers();
+  // Enable automatic game timers based on game time
+  useGameTimers();
 
   return (
     <BrowserRouter>

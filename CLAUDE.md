@@ -241,56 +241,76 @@ Dota 2 Client → POST /api/gsi → GsiAdapter → SessionManager → WebSocket 
 5. WebSocket broadcast para clientes inscritos no matchId
 6. Frontend atualiza UI em tempo real
 
-### Timers Automáticos (Live Mode Integration)
+### Timers Automáticos 100% (Live Mode Integration)
 
-**O que são Timers Automáticos?**
-Com Live Mode ativo, o sistema detecta eventos do jogo em tempo real e cria timers automaticamente, eliminando a necessidade de iniciar timers manualmente.
+**O que é?**
+Sistema COMPLETAMENTE automático de timers baseado no tempo do jogo (gameTime do GSI). Nenhuma intervenção manual necessária - todos os eventos importantes são calculados e exibidos automaticamente.
 
-**Eventos Detectados:**
-- ✅ **Runa de Poder**: Detecta quando o tempo do jogo atinge múltiplos de 7 minutos (0:00, 7:00, 14:00, etc.)
-- ✅ **Ward Cooldown**: Detecta quando wards são compradas e inicia timer de cooldown
-- ⏳ **Roshan** (planejado): Detectar morte via Aegis no inventário
-- ⏳ **Glyph** (planejado): Requer dados adicionais do GSI
-- ⏳ **Scan** (planejado): Requer dados adicionais do GSI
+**Eventos Rastreados (Todos Automáticos):**
+- ✅ **Bounty Runes** 💰: 0:00, 3:00, 6:00, 9:00... (a cada 3 min)
+- ✅ **Power Runes** ⚡: 7:00, 14:00, 21:00... (a cada 7 min)
+- ✅ **Water Runes** 💧: 2:00, 4:00, 6:00... (a cada 2 min)
+- ✅ **Lotus Pool** 🪷: 7:00, 10:00, 13:00... (a cada 3 min)
+- ✅ **Tormentor** 👹: 20:00, 30:00, 40:00... (a cada 10 min)
+- ✅ **Outpost XP** 🏰: 10:00, 15:00, 20:00... (a cada 5 min)
+- ✅ **Stack Camp** 🏕️: X:53 (a cada minuto)
 
 **Arquitetura:**
 ```
-LiveStore (snapshot) → useAutoTimers hook → Detecta eventos → BuildStore (adiciona timer)
-                                                                        ↓
-                                                            UI (Timers component com badge "Auto")
+GSI → LiveSnapshot (gameTime) → useGameTimers → Calcula próximos eventos → Cria timers automaticamente
+                                                                                       ↓
+                                                                        UI (badge "Auto" ⚡)
 ```
 
 **Implementação:**
-- `useAutoTimers` hook (`frontend/src/hooks/useAutoTimers.ts`): Monitora LiveSnapshot
-- Tipo `Timer` estendido com `automatic: boolean` e `source: 'manual' | 'live-rune' | 'live-ward' | ...`
-- UI mostra badge "Auto" com ícone ⚡ para timers automáticos
-- Convivência pacífica: timers manuais e automáticos funcionam simultaneamente
+- `gameTimers.ts` (`frontend/src/utils/`): Cálculo de eventos baseado em tempo
+- `useGameTimers` hook (`frontend/src/hooks/`): Monitora gameTime e cria timers
+- `useAutoPicks` hook (`frontend/src/hooks/`): Detecta heróis do draft automaticamente
+- Tipo `Timer` com 13 tipos de eventos diferentes
+- Timers aparecem antes do spawn (pre-notification window)
+
+**Picks Automáticos:**
+- ✅ **Herói do jogador**: Detectado via `snapshot.hero.id`
+- ✅ **Aliados**: Detectados via `snapshot.draftHints.allyHeroes`
+- ✅ **Inimigos**: Detectados via `snapshot.draftHints.enemyHeroes`
+- Preenche BuildStore automaticamente durante o jogo
 
 **Testing:**
 ```bash
 # 1. Rodar backend e frontend
 npm run dev
 
-# 2. Em outra aba, simular eventos GSI
-npx tsx scripts/test-auto-timers.ts
+# 2. Em outra aba, simular jogo completo
+npx tsx scripts/test-game-timers.ts
 
 # 3. Verificar no frontend:
 # - Ative Live Mode no LiveBadge
-# - Timers com badge "Auto" devem aparecer
-# - Runa: aos 7:00, 14:00, 21:00...
-# - Ward: quando ward_purchase_cooldown > 0
+# - Timers aparecem automaticamente conforme o tempo
+# - Heróis aparecem no draft automaticamente
+# - Badge "Auto" ⚡ em todos os timers
+```
+
+**Como Funciona:**
+1. GSI envia `gameTime` (segundos desde início do jogo)
+2. `getActiveGameEvents()` calcula quais eventos devem aparecer AGORA
+3. Timer é criado X segundos antes do spawn (configurable per event)
+4. Timer desaparece automaticamente após spawn
+5. Próximo evento do mesmo tipo é calculado automaticamente
+
+**Configuração de Eventos (`DOTA_EVENTS`):**
+```typescript
+{
+  type: 'power-rune',
+  firstSpawn: 420,    // 7:00
+  interval: 420,      // Every 7 minutes
+  preNotify: 60,      // Show 1min before
+}
 ```
 
 **Deduplicação:**
-- Hook verifica se timer similar já existe (mesmo source, criado nos últimos 30s)
-- Evita criar timers duplicados em payloads consecutivos
-
-**Limitações Atuais:**
-- Dota 2 GSI não fornece dados diretos sobre: Roshan, Glyph, Scan, Tormentor
-- Soluções planejadas:
-  - Roshan: Detectar Aegis no inventário (`items` array)
-  - Glyph/Scan: Analisar `abilities` ou `items` por cooldowns específicos
-  - Tormentor: Timer baseado em tempo do jogo (10:00, 20:00)
+- Apenas um timer ativo por tipo de evento
+- Timer é atualizado quando evento anterior termina
+- Não há timers duplicados ou conflitantes
 
 ### Testing Live Mode
 
