@@ -17,9 +17,10 @@ import { LiveDevTools } from '@/components/LiveDevTools';
 import { LiveGameStatus } from '@/components/LiveGameStatus';
 import { UpcomingEvents } from '@/components/UpcomingEvents';
 import { DraftHelper } from '@/components/DraftHelper';
+import { GSIDiagnostic } from '@/components/GSIDiagnostic';
 import { apiService } from '@/services/api';
 import { Button } from '@/components/ui/button';
-import { Sparkles, Trash2 } from 'lucide-react';
+import { Sparkles, Trash2, Stethoscope } from 'lucide-react';
 import { toast } from '@/components/ui/sonner';
 import { Hero } from '@/types/dota';
 import {
@@ -31,6 +32,7 @@ import {
 
 const Index = () => {
   const [allHeroes, setAllHeroes] = useState<Hero[]>([]);
+  const [showDiagnostic, setShowDiagnostic] = useState(false);
 
   // Load heroes for auto-pick detection
   useEffect(() => {
@@ -143,6 +145,28 @@ const Index = () => {
     ...enemies.map(h => h.id),
   ].filter(Boolean) as string[];
 
+  // Se showDiagnostic, mostrar página de diagnóstico
+  if (showDiagnostic) {
+    return (
+      <div className="min-h-screen">
+        <header className="border-b border-border/50 bg-card/30 backdrop-blur-md sticky top-0 z-10">
+          <div className="container mx-auto px-4 py-6">
+            <div className="flex items-center justify-between">
+              <h1 className="text-2xl font-bold">Diagnóstico GSI</h1>
+              <Button
+                variant="outline"
+                onClick={() => setShowDiagnostic(false)}
+              >
+                Voltar
+              </Button>
+            </div>
+          </div>
+        </header>
+        <GSIDiagnostic />
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen pb-12">
       {/* Header */}
@@ -159,6 +183,16 @@ const Index = () => {
             </div>
 
             <div className="flex items-center gap-3">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setShowDiagnostic(true)}
+                className="border-primary/50 hover:bg-primary/10"
+              >
+                <Stethoscope className="h-4 w-4 mr-2" />
+                Diagnóstico GSI
+              </Button>
+
               <LiveBadge />
 
               {selectedHero && (

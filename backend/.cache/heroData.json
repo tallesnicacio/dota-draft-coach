@@ -7180,5 +7180,4289 @@
       "lastUpdated": "2025-10-21T02:03:30.163Z",
       "confidence": 0.559948500216801
     }
+  },
+  "hero:36:patch:7.39e:mmr:Herald-Crusader": {
+    "hero": "Necrophos",
+    "heroId": 36,
+    "patch": "7.39e",
+    "mmr": "Herald-Crusader",
+    "coreBuild": {
+      "starting": [
+        {
+          "itemId": 16,
+          "itemName": "Iron Branch",
+          "priority": 0.4235,
+          "pickRate": 0.245
+        },
+        {
+          "itemId": 20,
+          "itemName": "Circlet",
+          "priority": 0.38149999999999995,
+          "pickRate": 0.105
+        },
+        {
+          "itemId": 44,
+          "itemName": "Tango",
+          "priority": 0.3737,
+          "pickRate": 0.079
+        },
+        {
+          "itemId": 42,
+          "itemName": "Observer Ward",
+          "priority": 0.3614,
+          "pickRate": 0.038
+        },
+        {
+          "itemId": 34,
+          "itemName": "Magic Stick",
+          "priority": 0.3611,
+          "pickRate": 0.037
+        },
+        {
+          "itemId": 237,
+          "itemName": "Faerie Fire",
+          "priority": 0.36019999999999996,
+          "pickRate": 0.034
+        }
+      ],
+      "early": [
+        {
+          "itemId": 29,
+          "itemName": "Boots of Speed",
+          "priority": 0.39339999999999997,
+          "pickRate": 0.098
+        },
+        {
+          "itemId": 77,
+          "itemName": "Null Talisman",
+          "priority": 0.3895,
+          "pickRate": 0.085
+        },
+        {
+          "itemId": 63,
+          "itemName": "Power Treads",
+          "priority": 0.3706,
+          "pickRate": 0.022
+        },
+        {
+          "itemId": 73,
+          "itemName": "Bracer",
+          "priority": 0.3706,
+          "pickRate": 0.022
+        },
+        {
+          "itemId": 54,
+          "itemName": "Sacred Relic",
+          "priority": 0.367,
+          "pickRate": 0.01
+        }
+      ],
+      "mid": [
+        {
+          "itemId": 32,
+          "itemName": "Talisman of Evasion",
+          "priority": 0.3971,
+          "pickRate": 0.087
+        },
+        {
+          "itemId": 137,
+          "itemName": "Radiance",
+          "priority": 0.3971,
+          "pickRate": 0.087
+        },
+        {
+          "itemId": 609,
+          "itemName": "Aghanim's Shard",
+          "priority": 0.3956,
+          "pickRate": 0.082
+        },
+        {
+          "itemId": 54,
+          "itemName": "Sacred Relic",
+          "priority": 0.3947,
+          "pickRate": 0.079
+        },
+        {
+          "itemId": 21,
+          "itemName": "Ogre Axe",
+          "priority": 0.386,
+          "pickRate": 0.05
+        }
+      ],
+      "situational": [],
+      "luxury": [
+        {
+          "itemId": 108,
+          "itemName": "Aghanim's Scepter",
+          "priority": 0.384,
+          "pickRate": 0.02
+        },
+        {
+          "itemId": 53,
+          "itemName": "Reaver",
+          "priority": 0.3837,
+          "pickRate": 0.019
+        },
+        {
+          "itemId": 119,
+          "itemName": "Shiva's Guard",
+          "priority": 0.3831,
+          "pickRate": 0.017
+        },
+        {
+          "itemId": 114,
+          "itemName": "Heart of Tarrasque",
+          "priority": 0.38280000000000003,
+          "pickRate": 0.016
+        },
+        {
+          "itemId": 116,
+          "itemName": "Black King Bar",
+          "priority": 0.3819,
+          "pickRate": 0.013
+        }
+      ]
+    },
+    "skillOrder": {
+      "levels": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        3,
+        2,
+        1,
+        1,
+        4,
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
+      "talents": [
+        {
+          "level": 10,
+          "option": "left",
+          "description": "Talent de nível 10",
+          "pickRate": 0.6
+        },
+        {
+          "level": 15,
+          "option": "right",
+          "description": "Talent de nível 15",
+          "pickRate": 0.55
+        },
+        {
+          "level": 20,
+          "option": "left",
+          "description": "Talent de nível 20",
+          "pickRate": 0.52
+        },
+        {
+          "level": 25,
+          "option": "right",
+          "description": "Talent de nível 25",
+          "pickRate": 0.58
+        }
+      ],
+      "reasoning": "Ordem padrão para Carry, Nuker, Durable, Disabler"
+    },
+    "matchups": {
+      "countersToMe": [
+        {
+          "heroId": 66,
+          "heroName": "Chen",
+          "advantage": -8,
+          "sampleSize": 10,
+          "reasoning": "8.0% desvantagem em 10 jogos"
+        },
+        {
+          "heroId": 89,
+          "heroName": "Naga Siren",
+          "advantage": -7.647058823529411,
+          "sampleSize": 17,
+          "reasoning": "7.6% desvantagem em 17 jogos"
+        },
+        {
+          "heroId": 62,
+          "heroName": "Bounty Hunter",
+          "advantage": -4.3999999999999995,
+          "sampleSize": 25,
+          "reasoning": "4.4% desvantagem em 25 jogos"
+        },
+        {
+          "heroId": 112,
+          "heroName": "Winter Wyvern",
+          "advantage": -4,
+          "sampleSize": 20,
+          "reasoning": "4.0% desvantagem em 20 jogos"
+        },
+        {
+          "heroId": 16,
+          "heroName": "Sand King",
+          "advantage": -3.571428571428571,
+          "sampleSize": 28,
+          "reasoning": "3.6% desvantagem em 28 jogos"
+        }
+      ],
+      "goodVs": [
+        {
+          "heroId": 32,
+          "heroName": "Riki",
+          "advantage": 10,
+          "sampleSize": 4,
+          "reasoning": "10.0% vantagem em 4 jogos"
+        },
+        {
+          "heroId": 145,
+          "heroName": "Kez",
+          "advantage": 7.142857142857142,
+          "sampleSize": 7,
+          "reasoning": "7.1% vantagem em 7 jogos"
+        },
+        {
+          "heroId": 12,
+          "heroName": "Phantom Lancer",
+          "advantage": 4.117647058823531,
+          "sampleSize": 17,
+          "reasoning": "4.1% vantagem em 17 jogos"
+        },
+        {
+          "heroId": 49,
+          "heroName": "Dragon Knight",
+          "advantage": 3.5416666666666674,
+          "sampleSize": 96,
+          "reasoning": "3.5% vantagem em 96 jogos"
+        },
+        {
+          "heroId": 58,
+          "heroName": "Enchantress",
+          "advantage": 3.3333333333333326,
+          "sampleSize": 27,
+          "reasoning": "3.3% vantagem em 27 jogos"
+        }
+      ],
+      "synergies": []
+    },
+    "indicators": {
+      "winRate": 0.5,
+      "popularity": 0.05,
+      "sampleSize": 5000,
+      "lastUpdated": "2025-10-21T02:04:13.312Z",
+      "confidence": 0.559948500216801
+    }
+  },
+  "hero:37:patch:7.39e:mmr:Herald-Crusader": {
+    "hero": "Warlock",
+    "heroId": 37,
+    "patch": "7.39e",
+    "mmr": "Herald-Crusader",
+    "coreBuild": {
+      "starting": [
+        {
+          "itemId": 16,
+          "itemName": "Iron Branch",
+          "priority": 0.3938,
+          "pickRate": 0.146
+        },
+        {
+          "itemId": 44,
+          "itemName": "Tango",
+          "priority": 0.3818,
+          "pickRate": 0.106
+        },
+        {
+          "itemId": 1123,
+          "itemName": "Blood Grenade",
+          "priority": 0.3716,
+          "pickRate": 0.072
+        },
+        {
+          "itemId": 218,
+          "itemName": "Observer and Sentry Wards",
+          "priority": 0.37129999999999996,
+          "pickRate": 0.071
+        },
+        {
+          "itemId": 34,
+          "itemName": "Magic Stick",
+          "priority": 0.36829999999999996,
+          "pickRate": 0.061
+        },
+        {
+          "itemId": 188,
+          "itemName": "Smoke of Deceit",
+          "priority": 0.36739999999999995,
+          "pickRate": 0.058
+        }
+      ],
+      "early": [
+        {
+          "itemId": 29,
+          "itemName": "Boots of Speed",
+          "priority": 0.3901,
+          "pickRate": 0.087
+        },
+        {
+          "itemId": 180,
+          "itemName": "Arcane Boots",
+          "priority": 0.376,
+          "pickRate": 0.04
+        },
+        {
+          "itemId": 59,
+          "itemName": "Energy Booster",
+          "priority": 0.3643,
+          "pickRate": 0.001
+        }
+      ],
+      "mid": [
+        {
+          "itemId": 180,
+          "itemName": "Arcane Boots",
+          "priority": 0.3878,
+          "pickRate": 0.056
+        },
+        {
+          "itemId": 1128,
+          "itemName": "Pavise",
+          "priority": 0.3854,
+          "pickRate": 0.048
+        },
+        {
+          "itemId": 229,
+          "itemName": "Solar Crest",
+          "priority": 0.383,
+          "pickRate": 0.04
+        },
+        {
+          "itemId": 215,
+          "itemName": "Shadow Amulet",
+          "priority": 0.3812,
+          "pickRate": 0.034
+        },
+        {
+          "itemId": 254,
+          "itemName": "Glimmer Cape",
+          "priority": 0.3806,
+          "pickRate": 0.032
+        }
+      ],
+      "situational": [],
+      "luxury": [
+        {
+          "itemId": 102,
+          "itemName": "Force Staff",
+          "priority": 0.3825,
+          "pickRate": 0.015
+        },
+        {
+          "itemId": 254,
+          "itemName": "Glimmer Cape",
+          "priority": 0.3816,
+          "pickRate": 0.012
+        },
+        {
+          "itemId": 229,
+          "itemName": "Solar Crest",
+          "priority": 0.381,
+          "pickRate": 0.01
+        },
+        {
+          "itemId": 108,
+          "itemName": "Aghanim's Scepter",
+          "priority": 0.3801,
+          "pickRate": 0.007
+        },
+        {
+          "itemId": 226,
+          "itemName": "Lotus Orb",
+          "priority": 0.3798,
+          "pickRate": 0.006
+        }
+      ]
+    },
+    "skillOrder": {
+      "levels": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        3,
+        2,
+        1,
+        1,
+        4,
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
+      "talents": [
+        {
+          "level": 10,
+          "option": "left",
+          "description": "Talent de nível 10",
+          "pickRate": 0.6
+        },
+        {
+          "level": 15,
+          "option": "right",
+          "description": "Talent de nível 15",
+          "pickRate": 0.55
+        },
+        {
+          "level": 20,
+          "option": "left",
+          "description": "Talent de nível 20",
+          "pickRate": 0.52
+        },
+        {
+          "level": 25,
+          "option": "right",
+          "description": "Talent de nível 25",
+          "pickRate": 0.58
+        }
+      ],
+      "reasoning": "Ordem padrão para Support, Initiator, Disabler"
+    },
+    "matchups": {
+      "countersToMe": [
+        {
+          "heroId": 113,
+          "heroName": "Arc Warden",
+          "advantage": -5,
+          "sampleSize": 4,
+          "reasoning": "5.0% desvantagem em 4 jogos"
+        },
+        {
+          "heroId": 33,
+          "heroName": "Enigma",
+          "advantage": -4.693877551020408,
+          "sampleSize": 49,
+          "reasoning": "4.7% desvantagem em 49 jogos"
+        },
+        {
+          "heroId": 93,
+          "heroName": "Slark",
+          "advantage": -3.978494623655914,
+          "sampleSize": 93,
+          "reasoning": "4.0% desvantagem em 93 jogos"
+        },
+        {
+          "heroId": 145,
+          "heroName": "Kez",
+          "advantage": -3.333333333333334,
+          "sampleSize": 9,
+          "reasoning": "3.3% desvantagem em 9 jogos"
+        },
+        {
+          "heroId": 90,
+          "heroName": "Keeper of the Light",
+          "advantage": -3.0000000000000004,
+          "sampleSize": 60,
+          "reasoning": "3.0% desvantagem em 60 jogos"
+        }
+      ],
+      "goodVs": [
+        {
+          "heroId": 82,
+          "heroName": "Meepo",
+          "advantage": 3.3333333333333326,
+          "sampleSize": 18,
+          "reasoning": "3.3% vantagem em 18 jogos"
+        },
+        {
+          "heroId": 92,
+          "heroName": "Visage",
+          "advantage": 3.3333333333333326,
+          "sampleSize": 21,
+          "reasoning": "3.3% vantagem em 21 jogos"
+        },
+        {
+          "heroId": 67,
+          "heroName": "Spectre",
+          "advantage": 3.157894736842106,
+          "sampleSize": 38,
+          "reasoning": "3.2% vantagem em 38 jogos"
+        },
+        {
+          "heroId": 107,
+          "heroName": "Earth Spirit",
+          "advantage": 2.9032258064516125,
+          "sampleSize": 31,
+          "reasoning": "2.9% vantagem em 31 jogos"
+        },
+        {
+          "heroId": 18,
+          "heroName": "Sven",
+          "advantage": 1.900826446280992,
+          "sampleSize": 121,
+          "reasoning": "1.9% vantagem em 121 jogos"
+        }
+      ],
+      "synergies": []
+    },
+    "indicators": {
+      "winRate": 0.5,
+      "popularity": 0.05,
+      "sampleSize": 5000,
+      "lastUpdated": "2025-10-21T02:04:17.364Z",
+      "confidence": 0.559948500216801
+    }
+  },
+  "hero:39:patch:7.39e:mmr:Herald-Crusader": {
+    "hero": "Queen of Pain",
+    "heroId": 39,
+    "patch": "7.39e",
+    "mmr": "Herald-Crusader",
+    "coreBuild": {
+      "starting": [
+        {
+          "itemId": 16,
+          "itemName": "Iron Branch",
+          "priority": 0.4457,
+          "pickRate": 0.319
+        },
+        {
+          "itemId": 44,
+          "itemName": "Tango",
+          "priority": 0.37729999999999997,
+          "pickRate": 0.091
+        },
+        {
+          "itemId": 42,
+          "itemName": "Observer Ward",
+          "priority": 0.3716,
+          "pickRate": 0.072
+        },
+        {
+          "itemId": 237,
+          "itemName": "Faerie Fire",
+          "priority": 0.3716,
+          "pickRate": 0.072
+        },
+        {
+          "itemId": 20,
+          "itemName": "Circlet",
+          "priority": 0.35779999999999995,
+          "pickRate": 0.026
+        },
+        {
+          "itemId": 1123,
+          "itemName": "Blood Grenade",
+          "priority": 0.35359999999999997,
+          "pickRate": 0.012
+        }
+      ],
+      "early": [
+        {
+          "itemId": 29,
+          "itemName": "Boots of Speed",
+          "priority": 0.3907,
+          "pickRate": 0.089
+        },
+        {
+          "itemId": 41,
+          "itemName": "Bottle",
+          "priority": 0.3868,
+          "pickRate": 0.076
+        },
+        {
+          "itemId": 63,
+          "itemName": "Power Treads",
+          "priority": 0.38589999999999997,
+          "pickRate": 0.073
+        },
+        {
+          "itemId": 77,
+          "itemName": "Null Talisman",
+          "priority": 0.3838,
+          "pickRate": 0.066
+        },
+        {
+          "itemId": 3,
+          "itemName": "Broadsword",
+          "priority": 0.3688,
+          "pickRate": 0.016
+        }
+      ],
+      "mid": [
+        {
+          "itemId": 23,
+          "itemName": "Staff of Wizardry",
+          "priority": 0.404,
+          "pickRate": 0.11
+        },
+        {
+          "itemId": 21,
+          "itemName": "Ogre Axe",
+          "priority": 0.4022,
+          "pickRate": 0.104
+        },
+        {
+          "itemId": 259,
+          "itemName": "Kaya",
+          "priority": 0.3947,
+          "pickRate": 0.079
+        },
+        {
+          "itemId": 162,
+          "itemName": "Sange",
+          "priority": 0.3875,
+          "pickRate": 0.055
+        },
+        {
+          "itemId": 127,
+          "itemName": "Blade Mail",
+          "priority": 0.3872,
+          "pickRate": 0.054
+        }
+      ],
+      "situational": [],
+      "luxury": [
+        {
+          "itemId": 116,
+          "itemName": "Black King Bar",
+          "priority": 0.3861,
+          "pickRate": 0.027
+        },
+        {
+          "itemId": 108,
+          "itemName": "Aghanim's Scepter",
+          "priority": 0.3855,
+          "pickRate": 0.025
+        },
+        {
+          "itemId": 119,
+          "itemName": "Shiva's Guard",
+          "priority": 0.3855,
+          "pickRate": 0.025
+        },
+        {
+          "itemId": 273,
+          "itemName": "Kaya and Sange",
+          "priority": 0.3825,
+          "pickRate": 0.015
+        },
+        {
+          "itemId": 162,
+          "itemName": "Sange",
+          "priority": 0.3822,
+          "pickRate": 0.014
+        }
+      ]
+    },
+    "skillOrder": {
+      "levels": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        3,
+        2,
+        1,
+        1,
+        4,
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
+      "talents": [
+        {
+          "level": 10,
+          "option": "left",
+          "description": "Talent de nível 10",
+          "pickRate": 0.6
+        },
+        {
+          "level": 15,
+          "option": "right",
+          "description": "Talent de nível 15",
+          "pickRate": 0.55
+        },
+        {
+          "level": 20,
+          "option": "left",
+          "description": "Talent de nível 20",
+          "pickRate": 0.52
+        },
+        {
+          "level": 25,
+          "option": "right",
+          "description": "Talent de nível 25",
+          "pickRate": 0.58
+        }
+      ],
+      "reasoning": "Ordem padrão para Carry, Nuker, Escape"
+    },
+    "matchups": {
+      "countersToMe": [
+        {
+          "heroId": 88,
+          "heroName": "Nyx Assassin",
+          "advantage": -3.1034482758620685,
+          "sampleSize": 87,
+          "reasoning": "3.1% desvantagem em 87 jogos"
+        },
+        {
+          "heroId": 92,
+          "heroName": "Visage",
+          "advantage": -2.727272727272727,
+          "sampleSize": 33,
+          "reasoning": "2.7% desvantagem em 33 jogos"
+        },
+        {
+          "heroId": 82,
+          "heroName": "Meepo",
+          "advantage": -2.727272727272727,
+          "sampleSize": 22,
+          "reasoning": "2.7% desvantagem em 22 jogos"
+        },
+        {
+          "heroId": 145,
+          "heroName": "Kez",
+          "advantage": -2.5,
+          "sampleSize": 24,
+          "reasoning": "2.5% desvantagem em 24 jogos"
+        },
+        {
+          "heroId": 3,
+          "heroName": "Bane",
+          "advantage": -2.0547945205479454,
+          "sampleSize": 146,
+          "reasoning": "2.1% desvantagem em 146 jogos"
+        }
+      ],
+      "goodVs": [
+        {
+          "heroId": 113,
+          "heroName": "Arc Warden",
+          "advantage": 4.2857142857142865,
+          "sampleSize": 28,
+          "reasoning": "4.3% vantagem em 28 jogos"
+        },
+        {
+          "heroId": 95,
+          "heroName": "Troll Warlord",
+          "advantage": 2.0353982300884965,
+          "sampleSize": 113,
+          "reasoning": "2.0% vantagem em 113 jogos"
+        },
+        {
+          "heroId": 57,
+          "heroName": "Omniknight",
+          "advantage": 1.9999999999999996,
+          "sampleSize": 30,
+          "reasoning": "2.0% vantagem em 30 jogos"
+        },
+        {
+          "heroId": 76,
+          "heroName": "Outworld Destroyer",
+          "advantage": 1.910112359550562,
+          "sampleSize": 89,
+          "reasoning": "1.9% vantagem em 89 jogos"
+        },
+        {
+          "heroId": 60,
+          "heroName": "Night Stalker",
+          "advantage": 1.586206896551725,
+          "sampleSize": 145,
+          "reasoning": "1.6% vantagem em 145 jogos"
+        }
+      ],
+      "synergies": []
+    },
+    "indicators": {
+      "winRate": 0.5,
+      "popularity": 0.05,
+      "sampleSize": 5000,
+      "lastUpdated": "2025-10-21T02:04:18.734Z",
+      "confidence": 0.559948500216801
+    }
+  },
+  "hero:40:patch:7.39e:mmr:Herald-Crusader": {
+    "hero": "Venomancer",
+    "heroId": 40,
+    "patch": "7.39e",
+    "mmr": "Herald-Crusader",
+    "coreBuild": {
+      "starting": [
+        {
+          "itemId": 16,
+          "itemName": "Iron Branch",
+          "priority": 0.4115,
+          "pickRate": 0.205
+        },
+        {
+          "itemId": 44,
+          "itemName": "Tango",
+          "priority": 0.37849999999999995,
+          "pickRate": 0.095
+        },
+        {
+          "itemId": 20,
+          "itemName": "Circlet",
+          "priority": 0.3686,
+          "pickRate": 0.062
+        },
+        {
+          "itemId": 34,
+          "itemName": "Magic Stick",
+          "priority": 0.36469999999999997,
+          "pickRate": 0.049
+        },
+        {
+          "itemId": 1123,
+          "itemName": "Blood Grenade",
+          "priority": 0.36469999999999997,
+          "pickRate": 0.049
+        },
+        {
+          "itemId": 218,
+          "itemName": "Observer and Sentry Wards",
+          "priority": 0.36379999999999996,
+          "pickRate": 0.046
+        }
+      ],
+      "early": [
+        {
+          "itemId": 29,
+          "itemName": "Boots of Speed",
+          "priority": 0.391,
+          "pickRate": 0.09
+        },
+        {
+          "itemId": 63,
+          "itemName": "Power Treads",
+          "priority": 0.37479999999999997,
+          "pickRate": 0.036
+        },
+        {
+          "itemId": 92,
+          "itemName": "Urn of Shadows",
+          "priority": 0.3736,
+          "pickRate": 0.032
+        },
+        {
+          "itemId": 180,
+          "itemName": "Arcane Boots",
+          "priority": 0.37,
+          "pickRate": 0.02
+        },
+        {
+          "itemId": 73,
+          "itemName": "Bracer",
+          "priority": 0.3685,
+          "pickRate": 0.015
+        }
+      ],
+      "mid": [
+        {
+          "itemId": 23,
+          "itemName": "Staff of Wizardry",
+          "priority": 0.3941,
+          "pickRate": 0.077
+        },
+        {
+          "itemId": 22,
+          "itemName": "Blade of Alacrity",
+          "priority": 0.3881,
+          "pickRate": 0.057
+        },
+        {
+          "itemId": 1122,
+          "itemName": "Diadem",
+          "priority": 0.3818,
+          "pickRate": 0.036
+        },
+        {
+          "itemId": 102,
+          "itemName": "Force Staff",
+          "priority": 0.38029999999999997,
+          "pickRate": 0.031
+        },
+        {
+          "itemId": 180,
+          "itemName": "Arcane Boots",
+          "priority": 0.3794,
+          "pickRate": 0.028
+        }
+      ],
+      "situational": [],
+      "luxury": [
+        {
+          "itemId": 24,
+          "itemName": "Ultimate Orb",
+          "priority": 0.3843,
+          "pickRate": 0.021
+        },
+        {
+          "itemId": 102,
+          "itemName": "Force Staff",
+          "priority": 0.3843,
+          "pickRate": 0.021
+        },
+        {
+          "itemId": 160,
+          "itemName": "Eye of Skadi",
+          "priority": 0.38130000000000003,
+          "pickRate": 0.011
+        },
+        {
+          "itemId": 108,
+          "itemName": "Aghanim's Scepter",
+          "priority": 0.381,
+          "pickRate": 0.01
+        },
+        {
+          "itemId": 263,
+          "itemName": "Hurricane Pike",
+          "priority": 0.381,
+          "pickRate": 0.01
+        }
+      ]
+    },
+    "skillOrder": {
+      "levels": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        3,
+        2,
+        1,
+        1,
+        4,
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
+      "talents": [
+        {
+          "level": 10,
+          "option": "left",
+          "description": "Talent de nível 10",
+          "pickRate": 0.6
+        },
+        {
+          "level": 15,
+          "option": "right",
+          "description": "Talent de nível 15",
+          "pickRate": 0.55
+        },
+        {
+          "level": 20,
+          "option": "left",
+          "description": "Talent de nível 20",
+          "pickRate": 0.52
+        },
+        {
+          "level": 25,
+          "option": "right",
+          "description": "Talent de nível 25",
+          "pickRate": 0.58
+        }
+      ],
+      "reasoning": "Ordem padrão para Support, Nuker, Initiator, Pusher, Disabler"
+    },
+    "matchups": {
+      "countersToMe": [
+        {
+          "heroId": 145,
+          "heroName": "Kez",
+          "advantage": -10,
+          "sampleSize": 1,
+          "reasoning": "10.0% desvantagem em 1 jogos"
+        },
+        {
+          "heroId": 56,
+          "heroName": "Clinkz",
+          "advantage": -5.555555555555555,
+          "sampleSize": 9,
+          "reasoning": "5.6% desvantagem em 9 jogos"
+        },
+        {
+          "heroId": 3,
+          "heroName": "Bane",
+          "advantage": -4.666666666666667,
+          "sampleSize": 15,
+          "reasoning": "4.7% desvantagem em 15 jogos"
+        },
+        {
+          "heroId": 91,
+          "heroName": "Io",
+          "advantage": -4.545454545454546,
+          "sampleSize": 11,
+          "reasoning": "4.5% desvantagem em 11 jogos"
+        },
+        {
+          "heroId": 1,
+          "heroName": "Anti-Mage",
+          "advantage": -4.2857142857142865,
+          "sampleSize": 14,
+          "reasoning": "4.3% desvantagem em 14 jogos"
+        }
+      ],
+      "goodVs": [
+        {
+          "heroId": 78,
+          "heroName": "Brewmaster",
+          "advantage": 6.000000000000001,
+          "sampleSize": 5,
+          "reasoning": "6.0% vantagem em 5 jogos"
+        },
+        {
+          "heroId": 12,
+          "heroName": "Phantom Lancer",
+          "advantage": 5.555555555555555,
+          "sampleSize": 9,
+          "reasoning": "5.6% vantagem em 9 jogos"
+        },
+        {
+          "heroId": 113,
+          "heroName": "Arc Warden",
+          "advantage": 5,
+          "sampleSize": 4,
+          "reasoning": "5.0% vantagem em 4 jogos"
+        },
+        {
+          "heroId": 6,
+          "heroName": "Drow Ranger",
+          "advantage": 4.2857142857142865,
+          "sampleSize": 14,
+          "reasoning": "4.3% vantagem em 14 jogos"
+        },
+        {
+          "heroId": 9,
+          "heroName": "Mirana",
+          "advantage": 4.2857142857142865,
+          "sampleSize": 14,
+          "reasoning": "4.3% vantagem em 14 jogos"
+        }
+      ],
+      "synergies": []
+    },
+    "indicators": {
+      "winRate": 0.5,
+      "popularity": 0.05,
+      "sampleSize": 5000,
+      "lastUpdated": "2025-10-21T02:04:22.885Z",
+      "confidence": 0.559948500216801
+    }
+  },
+  "hero:38:patch:7.39e:mmr:Herald-Crusader": {
+    "hero": "Beastmaster",
+    "heroId": 38,
+    "patch": "7.39e",
+    "mmr": "Herald-Crusader",
+    "coreBuild": {
+      "starting": [
+        {
+          "itemId": 16,
+          "itemName": "Iron Branch",
+          "priority": 0.4493,
+          "pickRate": 0.331
+        },
+        {
+          "itemId": 36,
+          "itemName": "Magic Wand",
+          "priority": 0.3671,
+          "pickRate": 0.057
+        },
+        {
+          "itemId": 44,
+          "itemName": "Tango",
+          "priority": 0.3614,
+          "pickRate": 0.038
+        },
+        {
+          "itemId": 42,
+          "itemName": "Observer Ward",
+          "priority": 0.3569,
+          "pickRate": 0.023
+        },
+        {
+          "itemId": 34,
+          "itemName": "Magic Stick",
+          "priority": 0.35569999999999996,
+          "pickRate": 0.019
+        },
+        {
+          "itemId": 11,
+          "itemName": "Quelling Blade",
+          "priority": 0.35359999999999997,
+          "pickRate": 0.012
+        }
+      ],
+      "early": [
+        {
+          "itemId": 29,
+          "itemName": "Boots of Speed",
+          "priority": 0.38739999999999997,
+          "pickRate": 0.078
+        },
+        {
+          "itemId": 6,
+          "itemName": "Helm of Iron Will",
+          "priority": 0.3802,
+          "pickRate": 0.054
+        },
+        {
+          "itemId": 164,
+          "itemName": "Helm of the Dominator",
+          "priority": 0.3766,
+          "pickRate": 0.042
+        },
+        {
+          "itemId": 63,
+          "itemName": "Power Treads",
+          "priority": 0.373,
+          "pickRate": 0.03
+        },
+        {
+          "itemId": 21,
+          "itemName": "Ogre Axe",
+          "priority": 0.3721,
+          "pickRate": 0.027
+        }
+      ],
+      "mid": [
+        {
+          "itemId": 21,
+          "itemName": "Ogre Axe",
+          "priority": 0.3974,
+          "pickRate": 0.088
+        },
+        {
+          "itemId": 1,
+          "itemName": "Blink Dagger",
+          "priority": 0.3908,
+          "pickRate": 0.066
+        },
+        {
+          "itemId": 22,
+          "itemName": "Blade of Alacrity",
+          "priority": 0.3887,
+          "pickRate": 0.059
+        },
+        {
+          "itemId": 108,
+          "itemName": "Aghanim's Scepter",
+          "priority": 0.3887,
+          "pickRate": 0.059
+        },
+        {
+          "itemId": 23,
+          "itemName": "Staff of Wizardry",
+          "priority": 0.3872,
+          "pickRate": 0.054
+        }
+      ],
+      "situational": [],
+      "luxury": [
+        {
+          "itemId": 116,
+          "itemName": "Black King Bar",
+          "priority": 0.3879,
+          "pickRate": 0.033
+        },
+        {
+          "itemId": 1,
+          "itemName": "Blink Dagger",
+          "priority": 0.3837,
+          "pickRate": 0.019
+        },
+        {
+          "itemId": 119,
+          "itemName": "Shiva's Guard",
+          "priority": 0.3831,
+          "pickRate": 0.017
+        },
+        {
+          "itemId": 110,
+          "itemName": "Refresher Orb",
+          "priority": 0.3822,
+          "pickRate": 0.014
+        },
+        {
+          "itemId": 55,
+          "itemName": "Hyperstone",
+          "priority": 0.381,
+          "pickRate": 0.01
+        }
+      ]
+    },
+    "skillOrder": {
+      "levels": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        3,
+        2,
+        1,
+        1,
+        4,
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
+      "talents": [
+        {
+          "level": 10,
+          "option": "left",
+          "description": "Talent de nível 10",
+          "pickRate": 0.6
+        },
+        {
+          "level": 15,
+          "option": "right",
+          "description": "Talent de nível 15",
+          "pickRate": 0.55
+        },
+        {
+          "level": 20,
+          "option": "left",
+          "description": "Talent de nível 20",
+          "pickRate": 0.52
+        },
+        {
+          "level": 25,
+          "option": "right",
+          "description": "Talent de nível 25",
+          "pickRate": 0.58
+        }
+      ],
+      "reasoning": "Ordem padrão para Initiator, Disabler, Durable, Nuker"
+    },
+    "matchups": {
+      "countersToMe": [
+        {
+          "heroId": 66,
+          "heroName": "Chen",
+          "advantage": -3.033707865168539,
+          "sampleSize": 89,
+          "reasoning": "3.0% desvantagem em 89 jogos"
+        },
+        {
+          "heroId": 33,
+          "heroName": "Enigma",
+          "advantage": -2.0879120879120885,
+          "sampleSize": 91,
+          "reasoning": "2.1% desvantagem em 91 jogos"
+        },
+        {
+          "heroId": 62,
+          "heroName": "Bounty Hunter",
+          "advantage": -2.045454545454546,
+          "sampleSize": 88,
+          "reasoning": "2.0% desvantagem em 88 jogos"
+        },
+        {
+          "heroId": 3,
+          "heroName": "Bane",
+          "advantage": -1.954022988505747,
+          "sampleSize": 87,
+          "reasoning": "2.0% desvantagem em 87 jogos"
+        },
+        {
+          "heroId": 90,
+          "heroName": "Keeper of the Light",
+          "advantage": -1.6666666666666663,
+          "sampleSize": 72,
+          "reasoning": "1.7% desvantagem em 72 jogos"
+        }
+      ],
+      "goodVs": [
+        {
+          "heroId": 12,
+          "heroName": "Phantom Lancer",
+          "advantage": 4.074074074074074,
+          "sampleSize": 27,
+          "reasoning": "4.1% vantagem em 27 jogos"
+        },
+        {
+          "heroId": 59,
+          "heroName": "Huskar",
+          "advantage": 3.793103448275863,
+          "sampleSize": 58,
+          "reasoning": "3.8% vantagem em 58 jogos"
+        },
+        {
+          "heroId": 6,
+          "heroName": "Drow Ranger",
+          "advantage": 3.52112676056338,
+          "sampleSize": 71,
+          "reasoning": "3.5% vantagem em 71 jogos"
+        },
+        {
+          "heroId": 105,
+          "heroName": "Techies",
+          "advantage": 3.2000000000000006,
+          "sampleSize": 50,
+          "reasoning": "3.2% vantagem em 50 jogos"
+        },
+        {
+          "heroId": 76,
+          "heroName": "Outworld Destroyer",
+          "advantage": 3.1914893617021267,
+          "sampleSize": 47,
+          "reasoning": "3.2% vantagem em 47 jogos"
+        }
+      ],
+      "synergies": []
+    },
+    "indicators": {
+      "winRate": 0.5,
+      "popularity": 0.05,
+      "sampleSize": 5000,
+      "lastUpdated": "2025-10-21T02:04:25.325Z",
+      "confidence": 0.559948500216801
+    }
+  },
+  "hero:41:patch:7.39e:mmr:Herald-Crusader": {
+    "hero": "Faceless Void",
+    "heroId": 41,
+    "patch": "7.39e",
+    "mmr": "Herald-Crusader",
+    "coreBuild": {
+      "starting": [
+        {
+          "itemId": 16,
+          "itemName": "Iron Branch",
+          "priority": 0.4145,
+          "pickRate": 0.215
+        },
+        {
+          "itemId": 11,
+          "itemName": "Quelling Blade",
+          "priority": 0.37129999999999996,
+          "pickRate": 0.071
+        },
+        {
+          "itemId": 44,
+          "itemName": "Tango",
+          "priority": 0.36619999999999997,
+          "pickRate": 0.054
+        },
+        {
+          "itemId": 34,
+          "itemName": "Magic Stick",
+          "priority": 0.36319999999999997,
+          "pickRate": 0.044
+        },
+        {
+          "itemId": 36,
+          "itemName": "Magic Wand",
+          "priority": 0.36319999999999997,
+          "pickRate": 0.044
+        },
+        {
+          "itemId": 20,
+          "itemName": "Circlet",
+          "priority": 0.3584,
+          "pickRate": 0.028
+        }
+      ],
+      "early": [
+        {
+          "itemId": 29,
+          "itemName": "Boots of Speed",
+          "priority": 0.3832,
+          "pickRate": 0.064
+        },
+        {
+          "itemId": 6,
+          "itemName": "Helm of Iron Will",
+          "priority": 0.3811,
+          "pickRate": 0.057
+        },
+        {
+          "itemId": 164,
+          "itemName": "Helm of the Dominator",
+          "priority": 0.37779999999999997,
+          "pickRate": 0.046
+        },
+        {
+          "itemId": 63,
+          "itemName": "Power Treads",
+          "priority": 0.37629999999999997,
+          "pickRate": 0.041
+        },
+        {
+          "itemId": 26,
+          "itemName": "Morbid Mask",
+          "priority": 0.3715,
+          "pickRate": 0.025
+        }
+      ],
+      "mid": [
+        {
+          "itemId": 8,
+          "itemName": "Mithril Hammer",
+          "priority": 0.4064,
+          "pickRate": 0.118
+        },
+        {
+          "itemId": 166,
+          "itemName": "Maelstrom",
+          "priority": 0.3938,
+          "pickRate": 0.076
+        },
+        {
+          "itemId": 55,
+          "itemName": "Hyperstone",
+          "priority": 0.389,
+          "pickRate": 0.06
+        },
+        {
+          "itemId": 158,
+          "itemName": "Mjollnir",
+          "priority": 0.3881,
+          "pickRate": 0.057
+        },
+        {
+          "itemId": 63,
+          "itemName": "Power Treads",
+          "priority": 0.3872,
+          "pickRate": 0.054
+        }
+      ],
+      "situational": [],
+      "luxury": [
+        {
+          "itemId": 24,
+          "itemName": "Ultimate Orb",
+          "priority": 0.399,
+          "pickRate": 0.07
+        },
+        {
+          "itemId": 160,
+          "itemName": "Eye of Skadi",
+          "priority": 0.387,
+          "pickRate": 0.03
+        },
+        {
+          "itemId": 116,
+          "itemName": "Black King Bar",
+          "priority": 0.3864,
+          "pickRate": 0.028
+        },
+        {
+          "itemId": 52,
+          "itemName": "Eaglesong",
+          "priority": 0.3834,
+          "pickRate": 0.018
+        },
+        {
+          "itemId": 139,
+          "itemName": "Butterfly",
+          "priority": 0.3825,
+          "pickRate": 0.015
+        }
+      ]
+    },
+    "skillOrder": {
+      "levels": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        3,
+        2,
+        1,
+        1,
+        4,
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
+      "talents": [
+        {
+          "level": 10,
+          "option": "left",
+          "description": "Talent de nível 10",
+          "pickRate": 0.6
+        },
+        {
+          "level": 15,
+          "option": "right",
+          "description": "Talent de nível 15",
+          "pickRate": 0.55
+        },
+        {
+          "level": 20,
+          "option": "left",
+          "description": "Talent de nível 20",
+          "pickRate": 0.52
+        },
+        {
+          "level": 25,
+          "option": "right",
+          "description": "Talent de nível 25",
+          "pickRate": 0.58
+        }
+      ],
+      "reasoning": "Ordem padrão para Carry, Initiator, Disabler, Escape, Durable"
+    },
+    "matchups": {
+      "countersToMe": [
+        {
+          "heroId": 83,
+          "heroName": "Treant Protector",
+          "advantage": -10,
+          "sampleSize": 4,
+          "reasoning": "10.0% desvantagem em 4 jogos"
+        },
+        {
+          "heroId": 92,
+          "heroName": "Visage",
+          "advantage": -4,
+          "sampleSize": 10,
+          "reasoning": "4.0% desvantagem em 10 jogos"
+        },
+        {
+          "heroId": 61,
+          "heroName": "Broodmother",
+          "advantage": -4,
+          "sampleSize": 10,
+          "reasoning": "4.0% desvantagem em 10 jogos"
+        },
+        {
+          "heroId": 80,
+          "heroName": "Lone Druid",
+          "advantage": -4,
+          "sampleSize": 10,
+          "reasoning": "4.0% desvantagem em 10 jogos"
+        },
+        {
+          "heroId": 113,
+          "heroName": "Arc Warden",
+          "advantage": -3.333333333333334,
+          "sampleSize": 6,
+          "reasoning": "3.3% desvantagem em 6 jogos"
+        }
+      ],
+      "goodVs": [
+        {
+          "heroId": 57,
+          "heroName": "Omniknight",
+          "advantage": 7.142857142857142,
+          "sampleSize": 7,
+          "reasoning": "7.1% vantagem em 7 jogos"
+        },
+        {
+          "heroId": 78,
+          "heroName": "Brewmaster",
+          "advantage": 6.000000000000001,
+          "sampleSize": 5,
+          "reasoning": "6.0% vantagem em 5 jogos"
+        },
+        {
+          "heroId": 32,
+          "heroName": "Riki",
+          "advantage": 4.444444444444445,
+          "sampleSize": 18,
+          "reasoning": "4.4% vantagem em 18 jogos"
+        },
+        {
+          "heroId": 23,
+          "heroName": "Kunkka",
+          "advantage": 3.8888888888888884,
+          "sampleSize": 36,
+          "reasoning": "3.9% vantagem em 36 jogos"
+        },
+        {
+          "heroId": 67,
+          "heroName": "Spectre",
+          "advantage": 3.6363636363636354,
+          "sampleSize": 22,
+          "reasoning": "3.6% vantagem em 22 jogos"
+        }
+      ],
+      "synergies": []
+    },
+    "indicators": {
+      "winRate": 0.5,
+      "popularity": 0.05,
+      "sampleSize": 5000,
+      "lastUpdated": "2025-10-21T02:04:30.127Z",
+      "confidence": 0.559948500216801
+    }
+  },
+  "hero:46:patch:7.39e:mmr:Herald-Crusader": {
+    "hero": "Templar Assassin",
+    "heroId": 46,
+    "patch": "7.39e",
+    "mmr": "Herald-Crusader",
+    "coreBuild": {
+      "starting": [
+        {
+          "itemId": 16,
+          "itemName": "Iron Branch",
+          "priority": 0.4361,
+          "pickRate": 0.287
+        },
+        {
+          "itemId": 36,
+          "itemName": "Magic Wand",
+          "priority": 0.37189999999999995,
+          "pickRate": 0.073
+        },
+        {
+          "itemId": 44,
+          "itemName": "Tango",
+          "priority": 0.3569,
+          "pickRate": 0.023
+        },
+        {
+          "itemId": 34,
+          "itemName": "Magic Stick",
+          "priority": 0.3566,
+          "pickRate": 0.022
+        },
+        {
+          "itemId": 20,
+          "itemName": "Circlet",
+          "priority": 0.35509999999999997,
+          "pickRate": 0.017
+        },
+        {
+          "itemId": 11,
+          "itemName": "Quelling Blade",
+          "priority": 0.3548,
+          "pickRate": 0.016
+        }
+      ],
+      "early": [
+        {
+          "itemId": 63,
+          "itemName": "Power Treads",
+          "priority": 0.394,
+          "pickRate": 0.1
+        },
+        {
+          "itemId": 29,
+          "itemName": "Boots of Speed",
+          "priority": 0.39339999999999997,
+          "pickRate": 0.098
+        },
+        {
+          "itemId": 22,
+          "itemName": "Blade of Alacrity",
+          "priority": 0.3856,
+          "pickRate": 0.072
+        },
+        {
+          "itemId": 236,
+          "itemName": "Dragon Lance",
+          "priority": 0.37329999999999997,
+          "pickRate": 0.031
+        },
+        {
+          "itemId": 596,
+          "itemName": "Falcon Blade",
+          "priority": 0.3697,
+          "pickRate": 0.019
+        }
+      ],
+      "mid": [
+        {
+          "itemId": 8,
+          "itemName": "Mithril Hammer",
+          "priority": 0.4325,
+          "pickRate": 0.205
+        },
+        {
+          "itemId": 168,
+          "itemName": "Desolator",
+          "priority": 0.39949999999999997,
+          "pickRate": 0.095
+        },
+        {
+          "itemId": 1,
+          "itemName": "Blink Dagger",
+          "priority": 0.3983,
+          "pickRate": 0.091
+        },
+        {
+          "itemId": 236,
+          "itemName": "Dragon Lance",
+          "priority": 0.389,
+          "pickRate": 0.06
+        },
+        {
+          "itemId": 5,
+          "itemName": "Claymore",
+          "priority": 0.3872,
+          "pickRate": 0.054
+        }
+      ],
+      "situational": [],
+      "luxury": [
+        {
+          "itemId": 51,
+          "itemName": "Demon Edge",
+          "priority": 0.3918,
+          "pickRate": 0.046
+        },
+        {
+          "itemId": 141,
+          "itemName": "Daedalus",
+          "priority": 0.3879,
+          "pickRate": 0.033
+        },
+        {
+          "itemId": 149,
+          "itemName": "Crystalys",
+          "priority": 0.3861,
+          "pickRate": 0.027
+        },
+        {
+          "itemId": 116,
+          "itemName": "Black King Bar",
+          "priority": 0.3849,
+          "pickRate": 0.023
+        },
+        {
+          "itemId": 263,
+          "itemName": "Hurricane Pike",
+          "priority": 0.3849,
+          "pickRate": 0.023
+        }
+      ]
+    },
+    "skillOrder": {
+      "levels": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        3,
+        2,
+        1,
+        1,
+        4,
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
+      "talents": [
+        {
+          "level": 10,
+          "option": "left",
+          "description": "Talent de nível 10",
+          "pickRate": 0.6
+        },
+        {
+          "level": 15,
+          "option": "right",
+          "description": "Talent de nível 15",
+          "pickRate": 0.55
+        },
+        {
+          "level": 20,
+          "option": "left",
+          "description": "Talent de nível 20",
+          "pickRate": 0.52
+        },
+        {
+          "level": 25,
+          "option": "right",
+          "description": "Talent de nível 25",
+          "pickRate": 0.58
+        }
+      ],
+      "reasoning": "Ordem padrão para Carry, Escape"
+    },
+    "matchups": {
+      "countersToMe": [
+        {
+          "heroId": 80,
+          "heroName": "Lone Druid",
+          "advantage": -4.482758620689655,
+          "sampleSize": 29,
+          "reasoning": "4.5% desvantagem em 29 jogos"
+        },
+        {
+          "heroId": 66,
+          "heroName": "Chen",
+          "advantage": -3.4693877551020416,
+          "sampleSize": 49,
+          "reasoning": "3.5% desvantagem em 49 jogos"
+        },
+        {
+          "heroId": 57,
+          "heroName": "Omniknight",
+          "advantage": -3.333333333333334,
+          "sampleSize": 18,
+          "reasoning": "3.3% desvantagem em 18 jogos"
+        },
+        {
+          "heroId": 83,
+          "heroName": "Treant Protector",
+          "advantage": -2.4137931034482762,
+          "sampleSize": 29,
+          "reasoning": "2.4% desvantagem em 29 jogos"
+        },
+        {
+          "heroId": 73,
+          "heroName": "Alchemist",
+          "advantage": -2.112676056338029,
+          "sampleSize": 71,
+          "reasoning": "2.1% desvantagem em 71 jogos"
+        }
+      ],
+      "goodVs": [
+        {
+          "heroId": 1,
+          "heroName": "Anti-Mage",
+          "advantage": 3.2307692307692304,
+          "sampleSize": 65,
+          "reasoning": "3.2% vantagem em 65 jogos"
+        },
+        {
+          "heroId": 126,
+          "heroName": "Void Spirit",
+          "advantage": 2.952380952380953,
+          "sampleSize": 105,
+          "reasoning": "3.0% vantagem em 105 jogos"
+        },
+        {
+          "heroId": 63,
+          "heroName": "Weaver",
+          "advantage": 2.8000000000000003,
+          "sampleSize": 125,
+          "reasoning": "2.8% vantagem em 125 jogos"
+        },
+        {
+          "heroId": 34,
+          "heroName": "Tinker",
+          "advantage": 2.777777777777777,
+          "sampleSize": 108,
+          "reasoning": "2.8% vantagem em 108 jogos"
+        },
+        {
+          "heroId": 47,
+          "heroName": "Viper",
+          "advantage": 2.727272727272727,
+          "sampleSize": 55,
+          "reasoning": "2.7% vantagem em 55 jogos"
+        }
+      ],
+      "synergies": []
+    },
+    "indicators": {
+      "winRate": 0.5,
+      "popularity": 0.05,
+      "sampleSize": 5000,
+      "lastUpdated": "2025-10-21T02:05:15.644Z",
+      "confidence": 0.559948500216801
+    }
+  },
+  "hero:47:patch:7.39e:mmr:Herald-Crusader": {
+    "hero": "Viper",
+    "heroId": 47,
+    "patch": "7.39e",
+    "mmr": "Herald-Crusader",
+    "coreBuild": {
+      "starting": [
+        {
+          "itemId": 16,
+          "itemName": "Iron Branch",
+          "priority": 0.4214,
+          "pickRate": 0.238
+        },
+        {
+          "itemId": 20,
+          "itemName": "Circlet",
+          "priority": 0.37849999999999995,
+          "pickRate": 0.095
+        },
+        {
+          "itemId": 44,
+          "itemName": "Tango",
+          "priority": 0.37789999999999996,
+          "pickRate": 0.093
+        },
+        {
+          "itemId": 34,
+          "itemName": "Magic Stick",
+          "priority": 0.3599,
+          "pickRate": 0.033
+        },
+        {
+          "itemId": 42,
+          "itemName": "Observer Ward",
+          "priority": 0.3584,
+          "pickRate": 0.028
+        },
+        {
+          "itemId": 237,
+          "itemName": "Faerie Fire",
+          "priority": 0.3584,
+          "pickRate": 0.028
+        }
+      ],
+      "early": [
+        {
+          "itemId": 29,
+          "itemName": "Boots of Speed",
+          "priority": 0.3937,
+          "pickRate": 0.099
+        },
+        {
+          "itemId": 75,
+          "itemName": "Wraith Band",
+          "priority": 0.3832,
+          "pickRate": 0.064
+        },
+        {
+          "itemId": 63,
+          "itemName": "Power Treads",
+          "priority": 0.3805,
+          "pickRate": 0.055
+        },
+        {
+          "itemId": 22,
+          "itemName": "Blade of Alacrity",
+          "priority": 0.37,
+          "pickRate": 0.02
+        },
+        {
+          "itemId": 41,
+          "itemName": "Bottle",
+          "priority": 0.37,
+          "pickRate": 0.02
+        }
+      ],
+      "mid": [
+        {
+          "itemId": 22,
+          "itemName": "Blade of Alacrity",
+          "priority": 0.3938,
+          "pickRate": 0.076
+        },
+        {
+          "itemId": 23,
+          "itemName": "Staff of Wizardry",
+          "priority": 0.3923,
+          "pickRate": 0.071
+        },
+        {
+          "itemId": 236,
+          "itemName": "Dragon Lance",
+          "priority": 0.3878,
+          "pickRate": 0.056
+        },
+        {
+          "itemId": 102,
+          "itemName": "Force Staff",
+          "priority": 0.3827,
+          "pickRate": 0.039
+        },
+        {
+          "itemId": 21,
+          "itemName": "Ogre Axe",
+          "priority": 0.3812,
+          "pickRate": 0.034
+        }
+      ],
+      "situational": [],
+      "luxury": [
+        {
+          "itemId": 116,
+          "itemName": "Black King Bar",
+          "priority": 0.384,
+          "pickRate": 0.02
+        },
+        {
+          "itemId": 263,
+          "itemName": "Hurricane Pike",
+          "priority": 0.384,
+          "pickRate": 0.02
+        },
+        {
+          "itemId": 102,
+          "itemName": "Force Staff",
+          "priority": 0.3825,
+          "pickRate": 0.015
+        },
+        {
+          "itemId": 108,
+          "itemName": "Aghanim's Scepter",
+          "priority": 0.3825,
+          "pickRate": 0.015
+        },
+        {
+          "itemId": 55,
+          "itemName": "Hyperstone",
+          "priority": 0.38130000000000003,
+          "pickRate": 0.011
+        }
+      ]
+    },
+    "skillOrder": {
+      "levels": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        3,
+        2,
+        1,
+        1,
+        4,
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
+      "talents": [
+        {
+          "level": 10,
+          "option": "left",
+          "description": "Talent de nível 10",
+          "pickRate": 0.6
+        },
+        {
+          "level": 15,
+          "option": "right",
+          "description": "Talent de nível 15",
+          "pickRate": 0.55
+        },
+        {
+          "level": 20,
+          "option": "left",
+          "description": "Talent de nível 20",
+          "pickRate": 0.52
+        },
+        {
+          "level": 25,
+          "option": "right",
+          "description": "Talent de nível 25",
+          "pickRate": 0.58
+        }
+      ],
+      "reasoning": "Ordem padrão para Carry, Durable, Initiator, Disabler"
+    },
+    "matchups": {
+      "countersToMe": [
+        {
+          "heroId": 66,
+          "heroName": "Chen",
+          "advantage": -10,
+          "sampleSize": 6,
+          "reasoning": "10.0% desvantagem em 6 jogos"
+        },
+        {
+          "heroId": 145,
+          "heroName": "Kez",
+          "advantage": -10,
+          "sampleSize": 2,
+          "reasoning": "10.0% desvantagem em 2 jogos"
+        },
+        {
+          "heroId": 80,
+          "heroName": "Lone Druid",
+          "advantage": -10,
+          "sampleSize": 1,
+          "reasoning": "10.0% desvantagem em 1 jogos"
+        },
+        {
+          "heroId": 58,
+          "heroName": "Enchantress",
+          "advantage": -6.470588235294117,
+          "sampleSize": 17,
+          "reasoning": "6.5% desvantagem em 17 jogos"
+        },
+        {
+          "heroId": 30,
+          "heroName": "Witch Doctor",
+          "advantage": -5,
+          "sampleSize": 16,
+          "reasoning": "5.0% desvantagem em 16 jogos"
+        }
+      ],
+      "goodVs": [
+        {
+          "heroId": 82,
+          "heroName": "Meepo",
+          "advantage": 10,
+          "sampleSize": 1,
+          "reasoning": "10.0% vantagem em 1 jogos"
+        },
+        {
+          "heroId": 113,
+          "heroName": "Arc Warden",
+          "advantage": 10,
+          "sampleSize": 2,
+          "reasoning": "10.0% vantagem em 2 jogos"
+        },
+        {
+          "heroId": 105,
+          "heroName": "Techies",
+          "advantage": 5.384615384615385,
+          "sampleSize": 13,
+          "reasoning": "5.4% vantagem em 13 jogos"
+        },
+        {
+          "heroId": 111,
+          "heroName": "Oracle",
+          "advantage": 5.384615384615385,
+          "sampleSize": 13,
+          "reasoning": "5.4% vantagem em 13 jogos"
+        },
+        {
+          "heroId": 59,
+          "heroName": "Huskar",
+          "advantage": 4.7058823529411775,
+          "sampleSize": 34,
+          "reasoning": "4.7% vantagem em 34 jogos"
+        }
+      ],
+      "synergies": []
+    },
+    "indicators": {
+      "winRate": 0.5,
+      "popularity": 0.05,
+      "sampleSize": 5000,
+      "lastUpdated": "2025-10-21T02:05:20.625Z",
+      "confidence": 0.559948500216801
+    }
+  },
+  "hero:48:patch:7.39e:mmr:Herald-Crusader": {
+    "hero": "Luna",
+    "heroId": 48,
+    "patch": "7.39e",
+    "mmr": "Herald-Crusader",
+    "coreBuild": {
+      "starting": [
+        {
+          "itemId": 16,
+          "itemName": "Iron Branch",
+          "priority": 0.42679999999999996,
+          "pickRate": 0.256
+        },
+        {
+          "itemId": 36,
+          "itemName": "Magic Wand",
+          "priority": 0.365,
+          "pickRate": 0.05
+        },
+        {
+          "itemId": 44,
+          "itemName": "Tango",
+          "priority": 0.3641,
+          "pickRate": 0.047
+        },
+        {
+          "itemId": 20,
+          "itemName": "Circlet",
+          "priority": 0.36379999999999996,
+          "pickRate": 0.046
+        },
+        {
+          "itemId": 11,
+          "itemName": "Quelling Blade",
+          "priority": 0.36319999999999997,
+          "pickRate": 0.044
+        },
+        {
+          "itemId": 34,
+          "itemName": "Magic Stick",
+          "priority": 0.3611,
+          "pickRate": 0.037
+        }
+      ],
+      "early": [
+        {
+          "itemId": 29,
+          "itemName": "Boots of Speed",
+          "priority": 0.3943,
+          "pickRate": 0.101
+        },
+        {
+          "itemId": 63,
+          "itemName": "Power Treads",
+          "priority": 0.39339999999999997,
+          "pickRate": 0.098
+        },
+        {
+          "itemId": 26,
+          "itemName": "Morbid Mask",
+          "priority": 0.39039999999999997,
+          "pickRate": 0.088
+        },
+        {
+          "itemId": 3,
+          "itemName": "Broadsword",
+          "priority": 0.3841,
+          "pickRate": 0.067
+        },
+        {
+          "itemId": 172,
+          "itemName": "Mask of Madness",
+          "priority": 0.3799,
+          "pickRate": 0.053
+        }
+      ],
+      "mid": [
+        {
+          "itemId": 22,
+          "itemName": "Blade of Alacrity",
+          "priority": 0.41509999999999997,
+          "pickRate": 0.147
+        },
+        {
+          "itemId": 170,
+          "itemName": "Yasha",
+          "priority": 0.3992,
+          "pickRate": 0.094
+        },
+        {
+          "itemId": 1122,
+          "itemName": "Diadem",
+          "priority": 0.3989,
+          "pickRate": 0.093
+        },
+        {
+          "itemId": 147,
+          "itemName": "Manta Style",
+          "priority": 0.3977,
+          "pickRate": 0.089
+        },
+        {
+          "itemId": 5,
+          "itemName": "Claymore",
+          "priority": 0.386,
+          "pickRate": 0.05
+        }
+      ],
+      "situational": [],
+      "luxury": [
+        {
+          "itemId": 139,
+          "itemName": "Butterfly",
+          "priority": 0.3843,
+          "pickRate": 0.021
+        },
+        {
+          "itemId": 102,
+          "itemName": "Force Staff",
+          "priority": 0.384,
+          "pickRate": 0.02
+        },
+        {
+          "itemId": 263,
+          "itemName": "Hurricane Pike",
+          "priority": 0.3837,
+          "pickRate": 0.019
+        },
+        {
+          "itemId": 52,
+          "itemName": "Eaglesong",
+          "priority": 0.3822,
+          "pickRate": 0.014
+        },
+        {
+          "itemId": 116,
+          "itemName": "Black King Bar",
+          "priority": 0.3822,
+          "pickRate": 0.014
+        }
+      ]
+    },
+    "skillOrder": {
+      "levels": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        3,
+        2,
+        1,
+        1,
+        4,
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
+      "talents": [
+        {
+          "level": 10,
+          "option": "left",
+          "description": "Talent de nível 10",
+          "pickRate": 0.6
+        },
+        {
+          "level": 15,
+          "option": "right",
+          "description": "Talent de nível 15",
+          "pickRate": 0.55
+        },
+        {
+          "level": 20,
+          "option": "left",
+          "description": "Talent de nível 20",
+          "pickRate": 0.52
+        },
+        {
+          "level": 25,
+          "option": "right",
+          "description": "Talent de nível 25",
+          "pickRate": 0.58
+        }
+      ],
+      "reasoning": "Ordem padrão para Carry, Nuker, Pusher"
+    },
+    "matchups": {
+      "countersToMe": [
+        {
+          "heroId": 82,
+          "heroName": "Meepo",
+          "advantage": -8.181818181818182,
+          "sampleSize": 11,
+          "reasoning": "8.2% desvantagem em 11 jogos"
+        },
+        {
+          "heroId": 66,
+          "heroName": "Chen",
+          "advantage": -5.833333333333332,
+          "sampleSize": 24,
+          "reasoning": "5.8% desvantagem em 24 jogos"
+        },
+        {
+          "heroId": 89,
+          "heroName": "Naga Siren",
+          "advantage": -3.8888888888888884,
+          "sampleSize": 36,
+          "reasoning": "3.9% desvantagem em 36 jogos"
+        },
+        {
+          "heroId": 4,
+          "heroName": "Bloodseeker",
+          "advantage": -2.8571428571428568,
+          "sampleSize": 42,
+          "reasoning": "2.9% desvantagem em 42 jogos"
+        },
+        {
+          "heroId": 73,
+          "heroName": "Alchemist",
+          "advantage": -2.6436781609195403,
+          "sampleSize": 87,
+          "reasoning": "2.6% desvantagem em 87 jogos"
+        }
+      ],
+      "goodVs": [
+        {
+          "heroId": 78,
+          "heroName": "Brewmaster",
+          "advantage": 3.6363636363636354,
+          "sampleSize": 22,
+          "reasoning": "3.6% vantagem em 22 jogos"
+        },
+        {
+          "heroId": 93,
+          "heroName": "Slark",
+          "advantage": 1.9999999999999996,
+          "sampleSize": 50,
+          "reasoning": "2.0% vantagem em 50 jogos"
+        },
+        {
+          "heroId": 104,
+          "heroName": "Legion Commander",
+          "advantage": 1.9786096256684482,
+          "sampleSize": 187,
+          "reasoning": "2.0% vantagem em 187 jogos"
+        },
+        {
+          "heroId": 31,
+          "heroName": "Lich",
+          "advantage": 1.9496855345911945,
+          "sampleSize": 159,
+          "reasoning": "1.9% vantagem em 159 jogos"
+        },
+        {
+          "heroId": 29,
+          "heroName": "Tidehunter",
+          "advantage": 1.898734177215189,
+          "sampleSize": 79,
+          "reasoning": "1.9% vantagem em 79 jogos"
+        }
+      ],
+      "synergies": []
+    },
+    "indicators": {
+      "winRate": 0.5,
+      "popularity": 0.05,
+      "sampleSize": 5000,
+      "lastUpdated": "2025-10-21T02:05:26.995Z",
+      "confidence": 0.559948500216801
+    }
+  },
+  "hero:54:patch:7.39e:mmr:Herald-Crusader": {
+    "hero": "Lifestealer",
+    "heroId": 54,
+    "patch": "7.39e",
+    "mmr": "Herald-Crusader",
+    "coreBuild": {
+      "starting": [
+        {
+          "itemId": 13,
+          "itemName": "Gauntlets of Strength",
+          "priority": 0.3908,
+          "pickRate": 0.136
+        },
+        {
+          "itemId": 16,
+          "itemName": "Iron Branch",
+          "priority": 0.3857,
+          "pickRate": 0.119
+        },
+        {
+          "itemId": 11,
+          "itemName": "Quelling Blade",
+          "priority": 0.374,
+          "pickRate": 0.08
+        },
+        {
+          "itemId": 44,
+          "itemName": "Tango",
+          "priority": 0.3716,
+          "pickRate": 0.072
+        },
+        {
+          "itemId": 20,
+          "itemName": "Circlet",
+          "priority": 0.3605,
+          "pickRate": 0.035
+        },
+        {
+          "itemId": 34,
+          "itemName": "Magic Stick",
+          "priority": 0.3554,
+          "pickRate": 0.018
+        }
+      ],
+      "early": [
+        {
+          "itemId": 4,
+          "itemName": "Chainmail",
+          "priority": 0.3937,
+          "pickRate": 0.099
+        },
+        {
+          "itemId": 29,
+          "itemName": "Boots of Speed",
+          "priority": 0.3937,
+          "pickRate": 0.099
+        },
+        {
+          "itemId": 50,
+          "itemName": "Phase Boots",
+          "priority": 0.3931,
+          "pickRate": 0.097
+        },
+        {
+          "itemId": 73,
+          "itemName": "Bracer",
+          "priority": 0.3751,
+          "pickRate": 0.037
+        },
+        {
+          "itemId": 6,
+          "itemName": "Helm of Iron Will",
+          "priority": 0.3694,
+          "pickRate": 0.018
+        }
+      ],
+      "mid": [
+        {
+          "itemId": 22,
+          "itemName": "Blade of Alacrity",
+          "priority": 0.3983,
+          "pickRate": 0.091
+        },
+        {
+          "itemId": 170,
+          "itemName": "Yasha",
+          "priority": 0.3956,
+          "pickRate": 0.082
+        },
+        {
+          "itemId": 21,
+          "itemName": "Ogre Axe",
+          "priority": 0.3935,
+          "pickRate": 0.075
+        },
+        {
+          "itemId": 54,
+          "itemName": "Sacred Relic",
+          "priority": 0.3899,
+          "pickRate": 0.063
+        },
+        {
+          "itemId": 137,
+          "itemName": "Radiance",
+          "priority": 0.3896,
+          "pickRate": 0.062
+        }
+      ],
+      "situational": [],
+      "luxury": [
+        {
+          "itemId": 162,
+          "itemName": "Sange",
+          "priority": 0.3858,
+          "pickRate": 0.026
+        },
+        {
+          "itemId": 143,
+          "itemName": "Skull Basher",
+          "priority": 0.3855,
+          "pickRate": 0.025
+        },
+        {
+          "itemId": 108,
+          "itemName": "Aghanim's Scepter",
+          "priority": 0.384,
+          "pickRate": 0.02
+        },
+        {
+          "itemId": 154,
+          "itemName": "Sange and Yasha",
+          "priority": 0.3834,
+          "pickRate": 0.018
+        },
+        {
+          "itemId": 208,
+          "itemName": "Abyssal Blade",
+          "priority": 0.3825,
+          "pickRate": 0.015
+        }
+      ]
+    },
+    "skillOrder": {
+      "levels": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        3,
+        2,
+        1,
+        1,
+        4,
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
+      "talents": [
+        {
+          "level": 10,
+          "option": "left",
+          "description": "Talent de nível 10",
+          "pickRate": 0.6
+        },
+        {
+          "level": 15,
+          "option": "right",
+          "description": "Talent de nível 15",
+          "pickRate": 0.55
+        },
+        {
+          "level": 20,
+          "option": "left",
+          "description": "Talent de nível 20",
+          "pickRate": 0.52
+        },
+        {
+          "level": 25,
+          "option": "right",
+          "description": "Talent de nível 25",
+          "pickRate": 0.58
+        }
+      ],
+      "reasoning": "Ordem padrão para Carry, Durable, Escape, Disabler"
+    },
+    "matchups": {
+      "countersToMe": [
+        {
+          "heroId": 145,
+          "heroName": "Kez",
+          "advantage": -4.2857142857142865,
+          "sampleSize": 7,
+          "reasoning": "4.3% desvantagem em 7 jogos"
+        },
+        {
+          "heroId": 66,
+          "heroName": "Chen",
+          "advantage": -3.6363636363636367,
+          "sampleSize": 22,
+          "reasoning": "3.6% desvantagem em 22 jogos"
+        },
+        {
+          "heroId": 83,
+          "heroName": "Treant Protector",
+          "advantage": -3.0000000000000004,
+          "sampleSize": 20,
+          "reasoning": "3.0% desvantagem em 20 jogos"
+        },
+        {
+          "heroId": 62,
+          "heroName": "Bounty Hunter",
+          "advantage": -2.9824561403508776,
+          "sampleSize": 57,
+          "reasoning": "3.0% desvantagem em 57 jogos"
+        },
+        {
+          "heroId": 55,
+          "heroName": "Dark Seer",
+          "advantage": -2.916666666666666,
+          "sampleSize": 48,
+          "reasoning": "2.9% desvantagem em 48 jogos"
+        }
+      ],
+      "goodVs": [
+        {
+          "heroId": 91,
+          "heroName": "Io",
+          "advantage": 3.999999999999999,
+          "sampleSize": 40,
+          "reasoning": "4.0% vantagem em 40 jogos"
+        },
+        {
+          "heroId": 121,
+          "heroName": "Grimstroke",
+          "advantage": 3.913043478260869,
+          "sampleSize": 46,
+          "reasoning": "3.9% vantagem em 46 jogos"
+        },
+        {
+          "heroId": 12,
+          "heroName": "Phantom Lancer",
+          "advantage": 3.75,
+          "sampleSize": 16,
+          "reasoning": "3.8% vantagem em 16 jogos"
+        },
+        {
+          "heroId": 76,
+          "heroName": "Outworld Destroyer",
+          "advantage": 3.500000000000001,
+          "sampleSize": 40,
+          "reasoning": "3.5% vantagem em 40 jogos"
+        },
+        {
+          "heroId": 92,
+          "heroName": "Visage",
+          "advantage": 3.0000000000000004,
+          "sampleSize": 20,
+          "reasoning": "3.0% vantagem em 20 jogos"
+        }
+      ],
+      "synergies": []
+    },
+    "indicators": {
+      "winRate": 0.5,
+      "popularity": 0.05,
+      "sampleSize": 5000,
+      "lastUpdated": "2025-10-21T02:06:12.205Z",
+      "confidence": 0.559948500216801
+    }
+  },
+  "hero:53:patch:7.39e:mmr:Herald-Crusader": {
+    "hero": "Nature's Prophet",
+    "heroId": 53,
+    "patch": "7.39e",
+    "mmr": "Herald-Crusader",
+    "coreBuild": {
+      "starting": [
+        {
+          "itemId": 16,
+          "itemName": "Iron Branch",
+          "priority": 0.4244,
+          "pickRate": 0.248
+        },
+        {
+          "itemId": 20,
+          "itemName": "Circlet",
+          "priority": 0.37489999999999996,
+          "pickRate": 0.083
+        },
+        {
+          "itemId": 44,
+          "itemName": "Tango",
+          "priority": 0.3701,
+          "pickRate": 0.067
+        },
+        {
+          "itemId": 42,
+          "itemName": "Observer Ward",
+          "priority": 0.36079999999999995,
+          "pickRate": 0.036
+        },
+        {
+          "itemId": 34,
+          "itemName": "Magic Stick",
+          "priority": 0.359,
+          "pickRate": 0.03
+        },
+        {
+          "itemId": 36,
+          "itemName": "Magic Wand",
+          "priority": 0.359,
+          "pickRate": 0.03
+        }
+      ],
+      "early": [
+        {
+          "itemId": 92,
+          "itemName": "Urn of Shadows",
+          "priority": 0.385,
+          "pickRate": 0.07
+        },
+        {
+          "itemId": 29,
+          "itemName": "Boots of Speed",
+          "priority": 0.3838,
+          "pickRate": 0.066
+        },
+        {
+          "itemId": 1122,
+          "itemName": "Diadem",
+          "priority": 0.37929999999999997,
+          "pickRate": 0.051
+        },
+        {
+          "itemId": 63,
+          "itemName": "Power Treads",
+          "priority": 0.3769,
+          "pickRate": 0.043
+        },
+        {
+          "itemId": 267,
+          "itemName": "Spirit Vessel",
+          "priority": 0.37329999999999997,
+          "pickRate": 0.031
+        }
+      ],
+      "mid": [
+        {
+          "itemId": 8,
+          "itemName": "Mithril Hammer",
+          "priority": 0.3932,
+          "pickRate": 0.074
+        },
+        {
+          "itemId": 166,
+          "itemName": "Maelstrom",
+          "priority": 0.3881,
+          "pickRate": 0.057
+        },
+        {
+          "itemId": 609,
+          "itemName": "Aghanim's Shard",
+          "priority": 0.3875,
+          "pickRate": 0.055
+        },
+        {
+          "itemId": 22,
+          "itemName": "Blade of Alacrity",
+          "priority": 0.3872,
+          "pickRate": 0.054
+        },
+        {
+          "itemId": 55,
+          "itemName": "Hyperstone",
+          "priority": 0.3866,
+          "pickRate": 0.052
+        }
+      ],
+      "situational": [],
+      "luxury": [
+        {
+          "itemId": 116,
+          "itemName": "Black King Bar",
+          "priority": 0.3864,
+          "pickRate": 0.028
+        },
+        {
+          "itemId": 263,
+          "itemName": "Hurricane Pike",
+          "priority": 0.3861,
+          "pickRate": 0.027
+        },
+        {
+          "itemId": 51,
+          "itemName": "Demon Edge",
+          "priority": 0.3858,
+          "pickRate": 0.026
+        },
+        {
+          "itemId": 102,
+          "itemName": "Force Staff",
+          "priority": 0.3855,
+          "pickRate": 0.025
+        },
+        {
+          "itemId": 55,
+          "itemName": "Hyperstone",
+          "priority": 0.3852,
+          "pickRate": 0.024
+        }
+      ]
+    },
+    "skillOrder": {
+      "levels": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        3,
+        2,
+        1,
+        1,
+        4,
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
+      "talents": [
+        {
+          "level": 10,
+          "option": "left",
+          "description": "Talent de nível 10",
+          "pickRate": 0.6
+        },
+        {
+          "level": 15,
+          "option": "right",
+          "description": "Talent de nível 15",
+          "pickRate": 0.55
+        },
+        {
+          "level": 20,
+          "option": "left",
+          "description": "Talent de nível 20",
+          "pickRate": 0.52
+        },
+        {
+          "level": 25,
+          "option": "right",
+          "description": "Talent de nível 25",
+          "pickRate": 0.58
+        }
+      ],
+      "reasoning": "Ordem padrão para Carry, Pusher, Escape, Nuker"
+    },
+    "matchups": {
+      "countersToMe": [
+        {
+          "heroId": 62,
+          "heroName": "Bounty Hunter",
+          "advantage": -1.578947368421053,
+          "sampleSize": 57,
+          "reasoning": "1.6% desvantagem em 57 jogos"
+        },
+        {
+          "heroId": 61,
+          "heroName": "Broodmother",
+          "advantage": -1.063829787234043,
+          "sampleSize": 47,
+          "reasoning": "1.1% desvantagem em 47 jogos"
+        },
+        {
+          "heroId": 55,
+          "heroName": "Dark Seer",
+          "advantage": -1.0606060606060608,
+          "sampleSize": 132,
+          "reasoning": "1.1% desvantagem em 132 jogos"
+        },
+        {
+          "heroId": 46,
+          "heroName": "Templar Assassin",
+          "advantage": -0.7645259938837923,
+          "sampleSize": 327,
+          "reasoning": "0.8% desvantagem em 327 jogos"
+        },
+        {
+          "heroId": 10,
+          "heroName": "Morphling",
+          "advantage": -0.6103286384976525,
+          "sampleSize": 213,
+          "reasoning": "0.6% desvantagem em 213 jogos"
+        }
+      ],
+      "goodVs": [
+        {
+          "heroId": 113,
+          "heroName": "Arc Warden",
+          "advantage": 6.470588235294117,
+          "sampleSize": 17,
+          "reasoning": "6.5% vantagem em 17 jogos"
+        },
+        {
+          "heroId": 57,
+          "heroName": "Omniknight",
+          "advantage": 4.2857142857142865,
+          "sampleSize": 28,
+          "reasoning": "4.3% vantagem em 28 jogos"
+        },
+        {
+          "heroId": 56,
+          "heroName": "Clinkz",
+          "advantage": 3.3333333333333326,
+          "sampleSize": 72,
+          "reasoning": "3.3% vantagem em 72 jogos"
+        },
+        {
+          "heroId": 35,
+          "heroName": "Sniper",
+          "advantage": 2.8378378378378377,
+          "sampleSize": 148,
+          "reasoning": "2.8% vantagem em 148 jogos"
+        },
+        {
+          "heroId": 92,
+          "heroName": "Visage",
+          "advantage": 2.6315789473684204,
+          "sampleSize": 19,
+          "reasoning": "2.6% vantagem em 19 jogos"
+        }
+      ],
+      "synergies": []
+    },
+    "indicators": {
+      "winRate": 0.5,
+      "popularity": 0.05,
+      "sampleSize": 5000,
+      "lastUpdated": "2025-10-21T02:06:13.428Z",
+      "confidence": 0.559948500216801
+    }
+  },
+  "hero:55:patch:7.39e:mmr:Herald-Crusader": {
+    "hero": "Dark Seer",
+    "heroId": 55,
+    "patch": "7.39e",
+    "mmr": "Herald-Crusader",
+    "coreBuild": {
+      "starting": [
+        {
+          "itemId": 16,
+          "itemName": "Iron Branch",
+          "priority": 0.4457,
+          "pickRate": 0.319
+        },
+        {
+          "itemId": 44,
+          "itemName": "Tango",
+          "priority": 0.365,
+          "pickRate": 0.05
+        },
+        {
+          "itemId": 36,
+          "itemName": "Magic Wand",
+          "priority": 0.3614,
+          "pickRate": 0.038
+        },
+        {
+          "itemId": 20,
+          "itemName": "Circlet",
+          "priority": 0.3596,
+          "pickRate": 0.032
+        },
+        {
+          "itemId": 34,
+          "itemName": "Magic Stick",
+          "priority": 0.35929999999999995,
+          "pickRate": 0.031
+        },
+        {
+          "itemId": 11,
+          "itemName": "Quelling Blade",
+          "priority": 0.3545,
+          "pickRate": 0.015
+        }
+      ],
+      "early": [
+        {
+          "itemId": 29,
+          "itemName": "Boots of Speed",
+          "priority": 0.3865,
+          "pickRate": 0.075
+        },
+        {
+          "itemId": 6,
+          "itemName": "Helm of Iron Will",
+          "priority": 0.38439999999999996,
+          "pickRate": 0.068
+        },
+        {
+          "itemId": 164,
+          "itemName": "Helm of the Dominator",
+          "priority": 0.38139999999999996,
+          "pickRate": 0.058
+        },
+        {
+          "itemId": 180,
+          "itemName": "Arcane Boots",
+          "priority": 0.37329999999999997,
+          "pickRate": 0.031
+        },
+        {
+          "itemId": 77,
+          "itemName": "Null Talisman",
+          "priority": 0.37,
+          "pickRate": 0.02
+        }
+      ],
+      "mid": [
+        {
+          "itemId": 180,
+          "itemName": "Arcane Boots",
+          "priority": 0.3887,
+          "pickRate": 0.059
+        },
+        {
+          "itemId": 279,
+          "itemName": "Ring of Tarrasque",
+          "priority": 0.3854,
+          "pickRate": 0.048
+        },
+        {
+          "itemId": 90,
+          "itemName": "Pipe of Insight",
+          "priority": 0.3851,
+          "pickRate": 0.047
+        },
+        {
+          "itemId": 79,
+          "itemName": "Mekansm",
+          "priority": 0.3827,
+          "pickRate": 0.039
+        },
+        {
+          "itemId": 231,
+          "itemName": "Guardian Greaves",
+          "priority": 0.3812,
+          "pickRate": 0.034
+        }
+      ],
+      "situational": [],
+      "luxury": [
+        {
+          "itemId": 1,
+          "itemName": "Blink Dagger",
+          "priority": 0.3867,
+          "pickRate": 0.029
+        },
+        {
+          "itemId": 119,
+          "itemName": "Shiva's Guard",
+          "priority": 0.3849,
+          "pickRate": 0.023
+        },
+        {
+          "itemId": 116,
+          "itemName": "Black King Bar",
+          "priority": 0.3816,
+          "pickRate": 0.012
+        },
+        {
+          "itemId": 226,
+          "itemName": "Lotus Orb",
+          "priority": 0.3816,
+          "pickRate": 0.012
+        },
+        {
+          "itemId": 58,
+          "itemName": "Mystic Staff",
+          "priority": 0.38130000000000003,
+          "pickRate": 0.011
+        }
+      ]
+    },
+    "skillOrder": {
+      "levels": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        3,
+        2,
+        1,
+        1,
+        4,
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
+      "talents": [
+        {
+          "level": 10,
+          "option": "left",
+          "description": "Talent de nível 10",
+          "pickRate": 0.6
+        },
+        {
+          "level": 15,
+          "option": "right",
+          "description": "Talent de nível 15",
+          "pickRate": 0.55
+        },
+        {
+          "level": 20,
+          "option": "left",
+          "description": "Talent de nível 20",
+          "pickRate": 0.52
+        },
+        {
+          "level": 25,
+          "option": "right",
+          "description": "Talent de nível 25",
+          "pickRate": 0.58
+        }
+      ],
+      "reasoning": "Ordem padrão para Initiator, Escape, Disabler"
+    },
+    "matchups": {
+      "countersToMe": [
+        {
+          "heroId": 145,
+          "heroName": "Kez",
+          "advantage": -10,
+          "sampleSize": 1,
+          "reasoning": "10.0% desvantagem em 1 jogos"
+        },
+        {
+          "heroId": 83,
+          "heroName": "Treant Protector",
+          "advantage": -5,
+          "sampleSize": 4,
+          "reasoning": "5.0% desvantagem em 4 jogos"
+        },
+        {
+          "heroId": 57,
+          "heroName": "Omniknight",
+          "advantage": -4.2857142857142865,
+          "sampleSize": 7,
+          "reasoning": "4.3% desvantagem em 7 jogos"
+        },
+        {
+          "heroId": 33,
+          "heroName": "Enigma",
+          "advantage": -2.5,
+          "sampleSize": 40,
+          "reasoning": "2.5% desvantagem em 40 jogos"
+        },
+        {
+          "heroId": 107,
+          "heroName": "Earth Spirit",
+          "advantage": -2.1428571428571432,
+          "sampleSize": 28,
+          "reasoning": "2.1% desvantagem em 28 jogos"
+        }
+      ],
+      "goodVs": [
+        {
+          "heroId": 12,
+          "heroName": "Phantom Lancer",
+          "advantage": 10,
+          "sampleSize": 6,
+          "reasoning": "10.0% vantagem em 6 jogos"
+        },
+        {
+          "heroId": 92,
+          "heroName": "Visage",
+          "advantage": 5,
+          "sampleSize": 4,
+          "reasoning": "5.0% vantagem em 4 jogos"
+        },
+        {
+          "heroId": 47,
+          "heroName": "Viper",
+          "advantage": 4.782608695652173,
+          "sampleSize": 23,
+          "reasoning": "4.8% vantagem em 23 jogos"
+        },
+        {
+          "heroId": 63,
+          "heroName": "Weaver",
+          "advantage": 3.411764705882352,
+          "sampleSize": 85,
+          "reasoning": "3.4% vantagem em 85 jogos"
+        },
+        {
+          "heroId": 44,
+          "heroName": "Phantom Assassin",
+          "advantage": 3.1034482758620685,
+          "sampleSize": 87,
+          "reasoning": "3.1% vantagem em 87 jogos"
+        }
+      ],
+      "synergies": []
+    },
+    "indicators": {
+      "winRate": 0.5,
+      "popularity": 0.05,
+      "sampleSize": 5000,
+      "lastUpdated": "2025-10-21T02:06:17.582Z",
+      "confidence": 0.559948500216801
+    }
+  },
+  "hero:56:patch:7.39e:mmr:Herald-Crusader": {
+    "hero": "Clinkz",
+    "heroId": 56,
+    "patch": "7.39e",
+    "mmr": "Herald-Crusader",
+    "coreBuild": {
+      "starting": [
+        {
+          "itemId": 16,
+          "itemName": "Iron Branch",
+          "priority": 0.43069999999999997,
+          "pickRate": 0.269
+        },
+        {
+          "itemId": 36,
+          "itemName": "Magic Wand",
+          "priority": 0.368,
+          "pickRate": 0.06
+        },
+        {
+          "itemId": 44,
+          "itemName": "Tango",
+          "priority": 0.3611,
+          "pickRate": 0.037
+        },
+        {
+          "itemId": 42,
+          "itemName": "Observer Ward",
+          "priority": 0.35929999999999995,
+          "pickRate": 0.031
+        },
+        {
+          "itemId": 34,
+          "itemName": "Magic Stick",
+          "priority": 0.359,
+          "pickRate": 0.03
+        },
+        {
+          "itemId": 20,
+          "itemName": "Circlet",
+          "priority": 0.35569999999999996,
+          "pickRate": 0.019
+        }
+      ],
+      "early": [
+        {
+          "itemId": 29,
+          "itemName": "Boots of Speed",
+          "priority": 0.3949,
+          "pickRate": 0.103
+        },
+        {
+          "itemId": 596,
+          "itemName": "Falcon Blade",
+          "priority": 0.3865,
+          "pickRate": 0.075
+        },
+        {
+          "itemId": 63,
+          "itemName": "Power Treads",
+          "priority": 0.3799,
+          "pickRate": 0.053
+        },
+        {
+          "itemId": 485,
+          "itemName": "Blitz Knuckles",
+          "priority": 0.3706,
+          "pickRate": 0.022
+        },
+        {
+          "itemId": 180,
+          "itemName": "Arcane Boots",
+          "priority": 0.3691,
+          "pickRate": 0.017
+        }
+      ],
+      "mid": [
+        {
+          "itemId": 8,
+          "itemName": "Mithril Hammer",
+          "priority": 0.407,
+          "pickRate": 0.12
+        },
+        {
+          "itemId": 22,
+          "itemName": "Blade of Alacrity",
+          "priority": 0.3887,
+          "pickRate": 0.059
+        },
+        {
+          "itemId": 168,
+          "itemName": "Desolator",
+          "priority": 0.38839999999999997,
+          "pickRate": 0.058
+        },
+        {
+          "itemId": 236,
+          "itemName": "Dragon Lance",
+          "priority": 0.3869,
+          "pickRate": 0.053
+        },
+        {
+          "itemId": 98,
+          "itemName": "Orchid Malevolence",
+          "priority": 0.3857,
+          "pickRate": 0.049
+        }
+      ],
+      "situational": [],
+      "luxury": [
+        {
+          "itemId": 51,
+          "itemName": "Demon Edge",
+          "priority": 0.3879,
+          "pickRate": 0.033
+        },
+        {
+          "itemId": 141,
+          "itemName": "Daedalus",
+          "priority": 0.3873,
+          "pickRate": 0.031
+        },
+        {
+          "itemId": 116,
+          "itemName": "Black King Bar",
+          "priority": 0.3864,
+          "pickRate": 0.028
+        },
+        {
+          "itemId": 263,
+          "itemName": "Hurricane Pike",
+          "priority": 0.3864,
+          "pickRate": 0.028
+        },
+        {
+          "itemId": 149,
+          "itemName": "Crystalys",
+          "priority": 0.3858,
+          "pickRate": 0.026
+        }
+      ]
+    },
+    "skillOrder": {
+      "levels": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        3,
+        2,
+        1,
+        1,
+        4,
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
+      "talents": [
+        {
+          "level": 10,
+          "option": "left",
+          "description": "Talent de nível 10",
+          "pickRate": 0.6
+        },
+        {
+          "level": 15,
+          "option": "right",
+          "description": "Talent de nível 15",
+          "pickRate": 0.55
+        },
+        {
+          "level": 20,
+          "option": "left",
+          "description": "Talent de nível 20",
+          "pickRate": 0.52
+        },
+        {
+          "level": 25,
+          "option": "right",
+          "description": "Talent de nível 25",
+          "pickRate": 0.58
+        }
+      ],
+      "reasoning": "Ordem padrão para Carry, Escape, Pusher"
+    },
+    "matchups": {
+      "countersToMe": [],
+      "goodVs": [],
+      "synergies": []
+    },
+    "indicators": {
+      "winRate": 0.5,
+      "popularity": 0.05,
+      "sampleSize": 5000,
+      "lastUpdated": "2025-10-21T02:06:25.959Z",
+      "confidence": 0.559948500216801
+    }
+  },
+  "hero:62:patch:7.39e:mmr:Herald-Crusader": {
+    "hero": "Bounty Hunter",
+    "heroId": 62,
+    "patch": "7.39e",
+    "mmr": "Herald-Crusader",
+    "coreBuild": {
+      "starting": [
+        {
+          "itemId": 16,
+          "itemName": "Iron Branch",
+          "priority": 0.3947,
+          "pickRate": 0.149
+        },
+        {
+          "itemId": 218,
+          "itemName": "Observer and Sentry Wards",
+          "priority": 0.3851,
+          "pickRate": 0.117
+        },
+        {
+          "itemId": 44,
+          "itemName": "Tango",
+          "priority": 0.3731,
+          "pickRate": 0.077
+        },
+        {
+          "itemId": 1123,
+          "itemName": "Blood Grenade",
+          "priority": 0.3731,
+          "pickRate": 0.077
+        },
+        {
+          "itemId": 237,
+          "itemName": "Faerie Fire",
+          "priority": 0.3611,
+          "pickRate": 0.037
+        },
+        {
+          "itemId": 43,
+          "itemName": "Sentry Ward",
+          "priority": 0.359,
+          "pickRate": 0.03
+        }
+      ],
+      "early": [
+        {
+          "itemId": 29,
+          "itemName": "Boots of Speed",
+          "priority": 0.3847,
+          "pickRate": 0.069
+        },
+        {
+          "itemId": 214,
+          "itemName": "Tranquil Boots",
+          "priority": 0.3757,
+          "pickRate": 0.039
+        },
+        {
+          "itemId": 92,
+          "itemName": "Urn of Shadows",
+          "priority": 0.37,
+          "pickRate": 0.02
+        },
+        {
+          "itemId": 4,
+          "itemName": "Chainmail",
+          "priority": 0.36819999999999997,
+          "pickRate": 0.014
+        },
+        {
+          "itemId": 50,
+          "itemName": "Phase Boots",
+          "priority": 0.3679,
+          "pickRate": 0.013
+        }
+      ],
+      "mid": [
+        {
+          "itemId": 23,
+          "itemName": "Staff of Wizardry",
+          "priority": 0.3845,
+          "pickRate": 0.045
+        },
+        {
+          "itemId": 1122,
+          "itemName": "Diadem",
+          "priority": 0.3812,
+          "pickRate": 0.034
+        },
+        {
+          "itemId": 267,
+          "itemName": "Spirit Vessel",
+          "priority": 0.38029999999999997,
+          "pickRate": 0.031
+        },
+        {
+          "itemId": 185,
+          "itemName": "Drum of Endurance",
+          "priority": 0.37879999999999997,
+          "pickRate": 0.026
+        },
+        {
+          "itemId": 21,
+          "itemName": "Ogre Axe",
+          "priority": 0.3758,
+          "pickRate": 0.016
+        }
+      ],
+      "situational": [],
+      "luxury": [
+        {
+          "itemId": 102,
+          "itemName": "Force Staff",
+          "priority": 0.3831,
+          "pickRate": 0.017
+        },
+        {
+          "itemId": 58,
+          "itemName": "Mystic Staff",
+          "priority": 0.3819,
+          "pickRate": 0.013
+        },
+        {
+          "itemId": 931,
+          "itemName": "Boots of Bearing",
+          "priority": 0.3816,
+          "pickRate": 0.012
+        },
+        {
+          "itemId": 96,
+          "itemName": "Scythe of Vyse",
+          "priority": 0.38130000000000003,
+          "pickRate": 0.011
+        },
+        {
+          "itemId": 81,
+          "itemName": "Vladmir's Offering",
+          "priority": 0.381,
+          "pickRate": 0.01
+        }
+      ]
+    },
+    "skillOrder": {
+      "levels": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        3,
+        2,
+        1,
+        1,
+        4,
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
+      "talents": [
+        {
+          "level": 10,
+          "option": "left",
+          "description": "Talent de nível 10",
+          "pickRate": 0.6
+        },
+        {
+          "level": 15,
+          "option": "right",
+          "description": "Talent de nível 15",
+          "pickRate": 0.55
+        },
+        {
+          "level": 20,
+          "option": "left",
+          "description": "Talent de nível 20",
+          "pickRate": 0.52
+        },
+        {
+          "level": 25,
+          "option": "right",
+          "description": "Talent de nível 25",
+          "pickRate": 0.58
+        }
+      ],
+      "reasoning": "Ordem padrão para Escape, Nuker"
+    },
+    "matchups": {
+      "countersToMe": [
+        {
+          "heroId": 15,
+          "heroName": "Razor",
+          "advantage": -3.333333333333334,
+          "sampleSize": 24,
+          "reasoning": "3.3% desvantagem em 24 jogos"
+        },
+        {
+          "heroId": 56,
+          "heroName": "Clinkz",
+          "advantage": -3.333333333333334,
+          "sampleSize": 12,
+          "reasoning": "3.3% desvantagem em 12 jogos"
+        },
+        {
+          "heroId": 111,
+          "heroName": "Oracle",
+          "advantage": -2.9411764705882346,
+          "sampleSize": 17,
+          "reasoning": "2.9% desvantagem em 17 jogos"
+        },
+        {
+          "heroId": 90,
+          "heroName": "Keeper of the Light",
+          "advantage": -2.1212121212121215,
+          "sampleSize": 33,
+          "reasoning": "2.1% desvantagem em 33 jogos"
+        },
+        {
+          "heroId": 81,
+          "heroName": "Chaos Knight",
+          "advantage": -1.578947368421053,
+          "sampleSize": 19,
+          "reasoning": "1.6% desvantagem em 19 jogos"
+        }
+      ],
+      "goodVs": [
+        {
+          "heroId": 113,
+          "heroName": "Arc Warden",
+          "advantage": 10,
+          "sampleSize": 7,
+          "reasoning": "10.0% vantagem em 7 jogos"
+        },
+        {
+          "heroId": 57,
+          "heroName": "Omniknight",
+          "advantage": 5.555555555555555,
+          "sampleSize": 9,
+          "reasoning": "5.6% vantagem em 9 jogos"
+        },
+        {
+          "heroId": 30,
+          "heroName": "Witch Doctor",
+          "advantage": 4.666666666666666,
+          "sampleSize": 15,
+          "reasoning": "4.7% vantagem em 15 jogos"
+        },
+        {
+          "heroId": 22,
+          "heroName": "Zeus",
+          "advantage": 4.615384615384615,
+          "sampleSize": 104,
+          "reasoning": "4.6% vantagem em 104 jogos"
+        },
+        {
+          "heroId": 36,
+          "heroName": "Necrophos",
+          "advantage": 4.3999999999999995,
+          "sampleSize": 25,
+          "reasoning": "4.4% vantagem em 25 jogos"
+        }
+      ],
+      "synergies": []
+    },
+    "indicators": {
+      "winRate": 0.5,
+      "popularity": 0.05,
+      "sampleSize": 5000,
+      "lastUpdated": "2025-10-21T02:07:09.115Z",
+      "confidence": 0.559948500216801
+    }
+  },
+  "hero:63:patch:7.39e:mmr:Herald-Crusader": {
+    "hero": "Weaver",
+    "heroId": 63,
+    "patch": "7.39e",
+    "mmr": "Herald-Crusader",
+    "coreBuild": {
+      "starting": [
+        {
+          "itemId": 16,
+          "itemName": "Iron Branch",
+          "priority": 0.4154,
+          "pickRate": 0.218
+        },
+        {
+          "itemId": 44,
+          "itemName": "Tango",
+          "priority": 0.3692,
+          "pickRate": 0.064
+        },
+        {
+          "itemId": 34,
+          "itemName": "Magic Stick",
+          "priority": 0.3626,
+          "pickRate": 0.042
+        },
+        {
+          "itemId": 1123,
+          "itemName": "Blood Grenade",
+          "priority": 0.3626,
+          "pickRate": 0.042
+        },
+        {
+          "itemId": 36,
+          "itemName": "Magic Wand",
+          "priority": 0.36229999999999996,
+          "pickRate": 0.041
+        },
+        {
+          "itemId": 20,
+          "itemName": "Circlet",
+          "priority": 0.3599,
+          "pickRate": 0.033
+        }
+      ],
+      "early": [
+        {
+          "itemId": 29,
+          "itemName": "Boots of Speed",
+          "priority": 0.3787,
+          "pickRate": 0.049
+        },
+        {
+          "itemId": 596,
+          "itemName": "Falcon Blade",
+          "priority": 0.3781,
+          "pickRate": 0.047
+        },
+        {
+          "itemId": 63,
+          "itemName": "Power Treads",
+          "priority": 0.3769,
+          "pickRate": 0.043
+        },
+        {
+          "itemId": 92,
+          "itemName": "Urn of Shadows",
+          "priority": 0.3739,
+          "pickRate": 0.033
+        },
+        {
+          "itemId": 7,
+          "itemName": "Javelin",
+          "priority": 0.3685,
+          "pickRate": 0.015
+        }
+      ],
+      "mid": [
+        {
+          "itemId": 8,
+          "itemName": "Mithril Hammer",
+          "priority": 0.3956,
+          "pickRate": 0.082
+        },
+        {
+          "itemId": 22,
+          "itemName": "Blade of Alacrity",
+          "priority": 0.3848,
+          "pickRate": 0.046
+        },
+        {
+          "itemId": 236,
+          "itemName": "Dragon Lance",
+          "priority": 0.3836,
+          "pickRate": 0.042
+        },
+        {
+          "itemId": 23,
+          "itemName": "Staff of Wizardry",
+          "priority": 0.3818,
+          "pickRate": 0.036
+        },
+        {
+          "itemId": 609,
+          "itemName": "Aghanim's Shard",
+          "priority": 0.38,
+          "pickRate": 0.03
+        }
+      ],
+      "situational": [],
+      "luxury": [
+        {
+          "itemId": 149,
+          "itemName": "Crystalys",
+          "priority": 0.3852,
+          "pickRate": 0.024
+        },
+        {
+          "itemId": 51,
+          "itemName": "Demon Edge",
+          "priority": 0.3843,
+          "pickRate": 0.021
+        },
+        {
+          "itemId": 116,
+          "itemName": "Black King Bar",
+          "priority": 0.3831,
+          "pickRate": 0.017
+        },
+        {
+          "itemId": 141,
+          "itemName": "Daedalus",
+          "priority": 0.3822,
+          "pickRate": 0.014
+        },
+        {
+          "itemId": 24,
+          "itemName": "Ultimate Orb",
+          "priority": 0.38130000000000003,
+          "pickRate": 0.011
+        }
+      ]
+    },
+    "skillOrder": {
+      "levels": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        3,
+        2,
+        1,
+        1,
+        4,
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
+      "talents": [
+        {
+          "level": 10,
+          "option": "left",
+          "description": "Talent de nível 10",
+          "pickRate": 0.6
+        },
+        {
+          "level": 15,
+          "option": "right",
+          "description": "Talent de nível 15",
+          "pickRate": 0.55
+        },
+        {
+          "level": 20,
+          "option": "left",
+          "description": "Talent de nível 20",
+          "pickRate": 0.52
+        },
+        {
+          "level": 25,
+          "option": "right",
+          "description": "Talent de nível 25",
+          "pickRate": 0.58
+        }
+      ],
+      "reasoning": "Ordem padrão para Carry, Escape"
+    },
+    "matchups": {
+      "countersToMe": [
+        {
+          "heroId": 66,
+          "heroName": "Chen",
+          "advantage": -5,
+          "sampleSize": 20,
+          "reasoning": "5.0% desvantagem em 20 jogos"
+        },
+        {
+          "heroId": 80,
+          "heroName": "Lone Druid",
+          "advantage": -3.846153846153846,
+          "sampleSize": 13,
+          "reasoning": "3.8% desvantagem em 13 jogos"
+        },
+        {
+          "heroId": 8,
+          "heroName": "Juggernaut",
+          "advantage": -3.5593220338983054,
+          "sampleSize": 59,
+          "reasoning": "3.6% desvantagem em 59 jogos"
+        },
+        {
+          "heroId": 55,
+          "heroName": "Dark Seer",
+          "advantage": -3.4117647058823533,
+          "sampleSize": 85,
+          "reasoning": "3.4% desvantagem em 85 jogos"
+        },
+        {
+          "heroId": 46,
+          "heroName": "Templar Assassin",
+          "advantage": -2.8000000000000003,
+          "sampleSize": 125,
+          "reasoning": "2.8% desvantagem em 125 jogos"
+        }
+      ],
+      "goodVs": [
+        {
+          "heroId": 32,
+          "heroName": "Riki",
+          "advantage": 5,
+          "sampleSize": 12,
+          "reasoning": "5.0% vantagem em 12 jogos"
+        },
+        {
+          "heroId": 1,
+          "heroName": "Anti-Mage",
+          "advantage": 3.68421052631579,
+          "sampleSize": 38,
+          "reasoning": "3.7% vantagem em 38 jogos"
+        },
+        {
+          "heroId": 145,
+          "heroName": "Kez",
+          "advantage": 3.3333333333333326,
+          "sampleSize": 3,
+          "reasoning": "3.3% vantagem em 3 jogos"
+        },
+        {
+          "heroId": 67,
+          "heroName": "Spectre",
+          "advantage": 3.3333333333333326,
+          "sampleSize": 18,
+          "reasoning": "3.3% vantagem em 18 jogos"
+        },
+        {
+          "heroId": 121,
+          "heroName": "Grimstroke",
+          "advantage": 3.1707317073170738,
+          "sampleSize": 41,
+          "reasoning": "3.2% vantagem em 41 jogos"
+        }
+      ],
+      "synergies": []
+    },
+    "indicators": {
+      "winRate": 0.5,
+      "popularity": 0.05,
+      "sampleSize": 5000,
+      "lastUpdated": "2025-10-21T02:07:15.550Z",
+      "confidence": 0.559948500216801
+    }
+  },
+  "hero:64:patch:7.39e:mmr:Herald-Crusader": {
+    "hero": "Jakiro",
+    "heroId": 64,
+    "patch": "7.39e",
+    "mmr": "Herald-Crusader",
+    "coreBuild": {
+      "starting": [
+        {
+          "itemId": 16,
+          "itemName": "Iron Branch",
+          "priority": 0.4058,
+          "pickRate": 0.186
+        },
+        {
+          "itemId": 44,
+          "itemName": "Tango",
+          "priority": 0.3806,
+          "pickRate": 0.102
+        },
+        {
+          "itemId": 1123,
+          "itemName": "Blood Grenade",
+          "priority": 0.37429999999999997,
+          "pickRate": 0.081
+        },
+        {
+          "itemId": 218,
+          "itemName": "Observer and Sentry Wards",
+          "priority": 0.37189999999999995,
+          "pickRate": 0.073
+        },
+        {
+          "itemId": 188,
+          "itemName": "Smoke of Deceit",
+          "priority": 0.3671,
+          "pickRate": 0.057
+        },
+        {
+          "itemId": 43,
+          "itemName": "Sentry Ward",
+          "priority": 0.36529999999999996,
+          "pickRate": 0.051
+        }
+      ],
+      "early": [
+        {
+          "itemId": 29,
+          "itemName": "Boots of Speed",
+          "priority": 0.39189999999999997,
+          "pickRate": 0.093
+        },
+        {
+          "itemId": 180,
+          "itemName": "Arcane Boots",
+          "priority": 0.3709,
+          "pickRate": 0.023
+        },
+        {
+          "itemId": 63,
+          "itemName": "Power Treads",
+          "priority": 0.367,
+          "pickRate": 0.01
+        },
+        {
+          "itemId": 77,
+          "itemName": "Null Talisman",
+          "priority": 0.3661,
+          "pickRate": 0.007
+        },
+        {
+          "itemId": 73,
+          "itemName": "Bracer",
+          "priority": 0.36519999999999997,
+          "pickRate": 0.004
+        }
+      ],
+      "mid": [
+        {
+          "itemId": 180,
+          "itemName": "Arcane Boots",
+          "priority": 0.3878,
+          "pickRate": 0.056
+        },
+        {
+          "itemId": 23,
+          "itemName": "Staff of Wizardry",
+          "priority": 0.3848,
+          "pickRate": 0.046
+        },
+        {
+          "itemId": 1128,
+          "itemName": "Pavise",
+          "priority": 0.3797,
+          "pickRate": 0.029
+        },
+        {
+          "itemId": 215,
+          "itemName": "Shadow Amulet",
+          "priority": 0.37729999999999997,
+          "pickRate": 0.021
+        },
+        {
+          "itemId": 229,
+          "itemName": "Solar Crest",
+          "priority": 0.37729999999999997,
+          "pickRate": 0.021
+        }
+      ],
+      "situational": [],
+      "luxury": [
+        {
+          "itemId": 108,
+          "itemName": "Aghanim's Scepter",
+          "priority": 0.38130000000000003,
+          "pickRate": 0.011
+        },
+        {
+          "itemId": 229,
+          "itemName": "Solar Crest",
+          "priority": 0.381,
+          "pickRate": 0.01
+        },
+        {
+          "itemId": 1,
+          "itemName": "Blink Dagger",
+          "priority": 0.3807,
+          "pickRate": 0.009
+        },
+        {
+          "itemId": 102,
+          "itemName": "Force Staff",
+          "priority": 0.3807,
+          "pickRate": 0.009
+        },
+        {
+          "itemId": 254,
+          "itemName": "Glimmer Cape",
+          "priority": 0.3804,
+          "pickRate": 0.008
+        }
+      ]
+    },
+    "skillOrder": {
+      "levels": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        3,
+        2,
+        1,
+        1,
+        4,
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
+      "talents": [
+        {
+          "level": 10,
+          "option": "left",
+          "description": "Talent de nível 10",
+          "pickRate": 0.6
+        },
+        {
+          "level": 15,
+          "option": "right",
+          "description": "Talent de nível 15",
+          "pickRate": 0.55
+        },
+        {
+          "level": 20,
+          "option": "left",
+          "description": "Talent de nível 20",
+          "pickRate": 0.52
+        },
+        {
+          "level": 25,
+          "option": "right",
+          "description": "Talent de nível 25",
+          "pickRate": 0.58
+        }
+      ],
+      "reasoning": "Ordem padrão para Support, Nuker, Pusher, Disabler"
+    },
+    "matchups": {
+      "countersToMe": [
+        {
+          "heroId": 107,
+          "heroName": "Earth Spirit",
+          "advantage": -2.8125,
+          "sampleSize": 64,
+          "reasoning": "2.8% desvantagem em 64 jogos"
+        },
+        {
+          "heroId": 3,
+          "heroName": "Bane",
+          "advantage": -2.761904761904762,
+          "sampleSize": 105,
+          "reasoning": "2.8% desvantagem em 105 jogos"
+        },
+        {
+          "heroId": 89,
+          "heroName": "Naga Siren",
+          "advantage": -2.615384615384615,
+          "sampleSize": 65,
+          "reasoning": "2.6% desvantagem em 65 jogos"
+        },
+        {
+          "heroId": 112,
+          "heroName": "Winter Wyvern",
+          "advantage": -2.3287671232876717,
+          "sampleSize": 73,
+          "reasoning": "2.3% desvantagem em 73 jogos"
+        },
+        {
+          "heroId": 56,
+          "heroName": "Clinkz",
+          "advantage": -2.1568627450980395,
+          "sampleSize": 51,
+          "reasoning": "2.2% desvantagem em 51 jogos"
+        }
+      ],
+      "goodVs": [
+        {
+          "heroId": 67,
+          "heroName": "Spectre",
+          "advantage": 2.195121951219512,
+          "sampleSize": 41,
+          "reasoning": "2.2% vantagem em 41 jogos"
+        },
+        {
+          "heroId": 82,
+          "heroName": "Meepo",
+          "advantage": 2.1739130434782616,
+          "sampleSize": 23,
+          "reasoning": "2.2% vantagem em 23 jogos"
+        },
+        {
+          "heroId": 78,
+          "heroName": "Brewmaster",
+          "advantage": 2.156862745098038,
+          "sampleSize": 51,
+          "reasoning": "2.2% vantagem em 51 jogos"
+        },
+        {
+          "heroId": 108,
+          "heroName": "Underlord",
+          "advantage": 1.9587628865979378,
+          "sampleSize": 97,
+          "reasoning": "2.0% vantagem em 97 jogos"
+        },
+        {
+          "heroId": 61,
+          "heroName": "Broodmother",
+          "advantage": 1.7647058823529416,
+          "sampleSize": 34,
+          "reasoning": "1.8% vantagem em 34 jogos"
+        }
+      ],
+      "synergies": []
+    },
+    "indicators": {
+      "winRate": 0.5,
+      "popularity": 0.05,
+      "sampleSize": 5000,
+      "lastUpdated": "2025-10-21T02:07:22.797Z",
+      "confidence": 0.559948500216801
+    }
   }
 }
